@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+ 
+{% block content %}
+
+<div class="main">
+    <div class="qna_wrapper">
+        <div class="title">
+            <h1>질문 및 문의</h1>
+        </div>
+        <div class="participation">
+            <h2>스태프 참여를 원할 시</h2>
+            <p>프로젝트 참여를 원하시는 모든 분들에게는 별도의 경력이나 고도의 기술, 경험 등을 요구하지 않으며, 특별한 우대 사항 역시 존재하지 않습니다. 제공된 시놉시스와 비주얼을 보고 흥미를 느끼신 분, 혹은 그저 별 이유 없이 마음이 동한 분 모두를 환영합니다. 아무래도 사람들을 움직이는 가장 강한 힘은 '그냥'이라는 말로 줄여도 될만큼 이유도, 논리도 없는 끌림이기 때문입니다.</p>
+        </div>
+        <div class="participation">
+            <h2>배우 참여를 원할 시</h2>
+            <p>마찬가지로 별도의 경력이나 경험 등을 요구하지 않으며, 이메일과 연락처를 통해 프로필을 제공해 주시는 것에는 열려 있습니다. 하지만 기본적으로 지원자가 40명을 넘어가지 않을 시 (그럴 일이 있을까 싶지만) 프로젝트 진행자인 감독 본인이 지원자 모두를 찾아 뵐 예정입니다. 기존의 '단편영화 오디션'과 같은 허울에서 탈피하고자 함이니 부담 없이 지원해주시면 감독이 직접 두 발로 찾아가겠습니다.</p>
+        </div>
+        <div class="card_wrapper">
+            <div class="card">
+                <div class="card_top">
+                    <img class="card_profile" src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
+                </div>
+                <div class="card_mid">
+                    <div class="card_director">
+                        <p>감독</p>
+                    </div>
+                    <div class="card_name">
+                        <p class="name_ko">박 준</p>
+                        <p class="name_en">Jun Park</p>
+                    </div>
+                </div>
+                <div class="card_bottom">
+                    <p class="textphone"><i class="fas fa-mobile-alt"></i>+82 10-9926-1652</p>
+                    <p class="textemail"><i class="far fa-envelope"></i>wjtrks12@khu.ac.kr</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="card">
+            <img class="card_profile" src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
+            <p class="textphone">+82.10.9926.1652</p>
+            <p class="textor">or</p>
+            <p class="textemail">wjtrks12@khu.ac.kr</p>
+        </div> -->
+    </div>
+</div>
+{% endblock %}
+
+

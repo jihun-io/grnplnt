@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>혹성의 아이</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+</head>
+
+<body>
+    <header>
+        <div class="logo_row">
+            <div class="hamburger_wrapper">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo_wrapper">
+                <a href="/"><img class="logo" src="{{ url_for('static', filename='img/logo.png') }}"></a>
+            </div>
+            <div class="search_wrapper">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        <div class="menu_row_wrapper">
+            <div class="menu_left">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <ul class="menu_row">
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_home }}" href="/">홈</a>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_synopsis }}" href="/synopsis">시놉시스</a>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_character }}" href="/character">캐릭터</a>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_gallery }}" href="/gallery">갤러리</a>
+                    <ul class="submenu">
+                        <li class="submenu_items">
+                            <a href="/comingsoon">Coming Soon</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_videos }}" href="/videos">영상</a>
+                    <ul class="submenu">
+                        <li class="submenu_items">
+                            <a href="/comingsoon">Coming Soon</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_download }}" href="/download">다운로드</a>
+                    <ul class="submenu">
+                        <li class="submenu_items">
+                            <a href="/comingsoon">Coming Soon</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu_btn">
+                    <a class="menu_link {{ selected_social }}" href="/social/guestbook">소셜</a>
+                    <ul class="submenu">
+                        <li class="submenu_items">
+                            <a href="/social/guestbook">방명록</a>
+                        </li>
+                        <li class="submenu_items">
+                            <a href="/social/qna">질문 및 문의</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="menu_right">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="copyright">
+        <p>Copyright © 2024 Jun Park</p>
+    </footer>
+
+</body>
+
+</html>

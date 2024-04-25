@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+ 
+{% block content %}
+<div class="main">
+    <div class="synopsis_wrapper" style="background-image: url({{ url_for('static', filename='img/synopsis-background_1920.jpg') }}); background-size: cover; background-position: center center;">
+    <!-- <div class="synopsis_wrapper" style="background-image: url({{ url_for('static', filename='img/synopsis-background-character_3840.jpg') }}); background-size: cover; background-position: center center;"> -->
+        <div class="synopsis_text_wrapper">
+            <h1>시놉시스</h1>
+            <p>자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는 수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

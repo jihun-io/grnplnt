@@ -1,0 +1,620 @@
+@import "reset.css";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: #303032;
+    background-color: #f9f9f5;
+    font-weight: 600;
+}
+
+body {
+    /* min-width: 700px; */
+}
+
+a {
+    color:#303032;
+    text-decoration-line: none;
+}
+
+
+header {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.logo_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hamburger_wrapper {
+    width: 100px;
+    text-align: center;
+}
+
+.logo_wrapper {
+    width: 300px;
+}
+
+.logo {
+    width: 300px;
+}
+
+.search_wrapper {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu_row_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu_left, .menu_right {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+}
+
+.menu_left {
+    margin-right: 10px;
+}
+
+.menu_left i {
+    padding-left: 10px;
+}
+
+.menu_right {
+    margin-left: 10px;
+}
+
+.menu_right i {
+    padding-right: 10px;
+}
+
+
+
+.menu_row {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    width: calc(100% - 60px);
+    height: 50px;
+    margin-top: 25px;
+}
+
+.menu_row::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.menu_bold {
+    font-weight: 900;
+}
+
+.menu_btn {
+    width: 100px;
+    min-width: 80px;
+    height: 100%;
+    /* display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; */
+}
+
+.menu_link {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    padding: 0px 20px 0px 20px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.submenu {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: #fff;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; /* 초기 투명도를 0으로 설정 */
+    visibility: hidden; /* 초기 상태를 '숨김'으로 설정 */
+    transition: opacity 0.2s, visibility 0.2s; /* 투명도와 visibility 변경에 0.5초 동안의 전환 효과를 적용 */
+}
+
+.menu_btn:hover .submenu {
+    opacity: 1; /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
+    visibility: visible; /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
+}
+
+.submenu_items {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main {
+    min-height: 300px;
+    width: 100%;
+}
+
+.hero {
+    width: 100%;
+}
+
+.cs_wrapper {
+    height: calc(100% - 375px - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    font-size: 60px;
+}
+
+.synopsis_wrapper {
+    height: calc(100% - 575px - 50px);
+    /* height: 480px; */
+    padding: 100px 0 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.synopsis_text_wrapper {
+    text-align: center;
+    width: 50%;
+    /* line-height: 25px; */
+    word-break: keep-all;
+    text-shadow: 0px 0px 5px #303032;
+}
+
+.synopsis_text_wrapper h1 {
+    font-size: 3em;
+    padding-bottom: 50px;
+    font-weight: 900;
+}
+
+.synopsis_text_wrapper p {
+    text-align : justify;
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+.black_bg {
+    background-color: #303032;
+    display: flex;
+    justify-content: center;
+}
+
+.character_wrapper {
+    max-width: 900px;
+    background-color: #303032;
+    color: #fff;
+}
+
+.character {
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.character_pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #303032;
+}
+
+.portrait {
+    width: 201px;
+    height: 201px;
+    border-radius: 50%;
+}
+
+.hush {
+    background-color: #fe80bf;
+}
+.jelly {
+    background-color: #89ff50;
+}
+.pony {
+    background-color: #fef880;
+}
+
+.character_name {
+    margin-bottom: 25px;
+}
+
+.character_name h2 {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.character_desc p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    word-break: keep-all;
+    text-align : justify;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 12px;
+    color:#a1a1a8;
+    font-weight: 500;
+}
+
+.guestbook {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-sizing: border-box;
+}
+
+input {
+    height: 30px;
+}
+
+.write_area input, .write_area textarea {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: #303032;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.write_area #name {
+    width: 40%;
+}
+.write_area #pw {
+    width: 60%;
+}
+
+.write_area textarea {
+    min-height: 150px;
+}
+
+
+.write_area {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+}
+
+.userinfo {
+    display: flex;
+
+}
+
+.write_content {
+    width: 100%;
+}
+
+.write_btn {
+    display: flex;
+    justify-content: right;
+}
+
+.guestbook_submit {
+    width: 70px;
+}
+
+.guestbook_list {
+    width: 75%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.guestbook_post {
+    /* border: 1px solid #303032; */
+    padding: 10px;
+    /* margin-bottom: 20px; */
+}
+
+hr {
+    border-width: 1px 0 0 0;
+    border-color: #a1a1a8
+}
+
+.guestbook_post_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.guestbook_post_date {
+    display: flex;
+    flex-direction: row;
+}
+
+.guestbook_post_date i {
+    margin-left: 2em;                                                                                                                           
+}
+
+.guestbook_post_content {
+    line-height: 1.5em;
+}
+
+
+
+
+.title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.qna_wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.participation {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.participation h2 {
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+.participation p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    word-break: keep-all;
+    text-align: justify;
+}
+
+.card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card {
+    width: 50vw;
+    height: 27vw;
+    /* box-sizing:border-box; */
+    /* aspect-ratio: 9/5; */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+    margin: 20px 0px 50px 0px;
+    background-color: #fff;
+
+
+}
+
+.card_top .card_profile {
+    width: 8vw;
+}
+
+/* .textphone {
+    font-size: 5vw;
+    font-weight: 900;
+}
+
+.textor, .textemail {
+    font-size: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+} */
+
+.card_top, .card_mid, .card_bottom {
+    width: 95%;
+    height: 33.3333333%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+    align-items: left;
+    /* margin: 2vw; */
+}
+
+.card_top {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.card_mid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 2.2vw;
+}
+
+.card_director {
+    font-size: 2vw;
+    font-weight: 800;
+}
+
+.card_name {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vw;
+}
+
+.name_ko {
+    margin-right: 3vw;
+}
+
+.card_bottom {
+    display: flex;
+    font-size: 1.8vw;
+    font-weight: 600;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.card_bottom .textphone {
+    margin-bottom: 1vw;
+}
+
+.card_bottom i {
+    width: 3vw;
+    text-align: center;
+    margin-right: 1vw;
+}
+
+@media(max-width:679px){
+    .logo, .logo_wrapper {
+        width: 150px;
+    }
+
+    .menu_btn{
+        width: 50px;
+    }
+    .menu_link {
+        padding: 0px;
+    }
+
+    .menu_row {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
+    .menu_btn:hover .submenu {
+        opacity: 0; /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
+        visibility: hidden; /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
+    }
+
+    .cs_wrapper {
+        height: calc(100% - 225px - 50px);
+    }
+
+    .comingsoon {
+        font-weight: 900;
+        font-size: 0.7em;
+    }
+    
+    .synopsis_wrapper {
+        height: calc(100% - 425px - 50px);
+    }
+
+    .synopsis_text_wrapper {
+        width: 75%;
+    }
+
+    .synopsis_text_wrapper p {
+        font-size: 1.3em;
+        line-height: 1.3em;
+        word-break: normal;
+        text-align: justify;
+    }
+
+    .character {
+        height: auto;
+    }
+
+    .character_pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .portrait {
+        width: 121px;
+        height: 121px;
+    }
+
+    .character_desc p {
+        word-break: normal;
+    }
+
+    .participation p {
+        font-size: 1em;
+        line-height: 1.3em;
+        word-break: normal;
+        text-align: justify;
+    }
+
+    .card {
+        width: 70vw;
+        height: 38vw;
+    }
+
+    .card_director {
+        font-size: 2.8vw;
+        font-weight: 800;
+    }
+
+    .card_top .card_profile {
+        width: 11.2vw;
+    }
+
+    .name_ko {
+        margin-right: 4.2vw;
+    }
+
+    .card_mid {
+        font-size: 3.08vw;
+    }
+
+    .card_bottom {
+        font-size: 2.52vw;
+    }
+
+    .write_area, .guestbook_list {
+        width: 85%;
+    }
+}
+
+@media(max-width:619px){
+    .menu_left, .menu_right {
+        visibility: visible;
+    }
+}
