@@ -4,9 +4,35 @@
 
 <div class="main">
     <div class="qna_wrapper">
-        <div class="title">
-            <h1>질문 및 문의</h1>
+        <div class="dropdown_wrapper">
+            <div class="dropdown">
+                <div class="dropdown_row">
+                    <h1><a class="dropdown_text" href="#" onclick="toggleDropdown()">질문 및 문의<i id="dropdown_icon" class="fas fa-chevron-down"></i></a></h1>
+                </div>
+                <ul id="dropdown_list" class="dropdown_list">
+                    <!-- <li class="dropdown_list_item">방명록</li> -->
+                    <li class="dropdown_list_item"><a href="./guestbook">방명록</a></li>
+                </ul>
+            </div>
         </div>
+        
+        <script>
+            function toggleDropdown() {
+                var dropdownList = document.getElementById("dropdown_list");
+                var dropdownIcon = document.getElementById("dropdown_icon");
+                if (dropdownList.classList.contains("open")) {
+                    dropdownList.classList.remove("open");
+                    dropdownIcon.classList.remove("rotate");
+                } else {
+                    dropdownList.classList.add("open");
+                    dropdownIcon.classList.add("rotate");
+    
+                }
+            }
+        </script>
+        <!-- <div class="title">
+            <h1>질문 및 문의</h1>
+        </div> -->
         <div class="participation">
             <h2>스태프 참여를 원할 시</h2>
             <p>프로젝트 참여를 원하시는 모든 분들에게는 별도의 경력이나 고도의 기술, 경험 등을 요구하지 않으며, 특별한 우대 사항 역시 존재하지 않습니다. 제공된 시놉시스와 비주얼을 보고 흥미를 느끼신 분, 혹은 그저 별 이유 없이 마음이 동한 분 모두를 환영합니다. 아무래도 사람들을 움직이는 가장 강한 힘은 '그냥'이라는 말로 줄여도 될만큼 이유도, 논리도 없는 끌림이기 때문입니다.</p>

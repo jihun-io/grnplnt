@@ -1,11 +1,20 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, render_template_string, url_for, request, redirect, session
+import sqlite3
 import os
+import hashlib
 from time import time
 from datetime import datetime, timedelta
+import secrets
 
 
 
 app = Flask(__name__)
+
+# 비밀 키 로드
+secret_path = 'secret-key.txt'
+with open(secret_path, "r") as file:
+    app.secret_key = file.read()
+app.permanent_session_lifetime = timedelta(minutes=30)
 
 
 # 개발자 모드 추가
@@ -75,7 +84,141 @@ def social():
 
 @app.route('/social/guestbook')
 def guestbook():
-    return render_template('guestbook.html', selected_social = 'menu_bold')
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute("SELECT username, date, content, sn FROM guestbook ORDER BY date DESC")
+    posts = c.fetchall()
+    
+    return render_template('guestbook.html', selected_social = 'menu_bold', posts = posts)
+
+@app.route('/social/guestbook/submit', methods=['POST'])
+def guestbook_submit():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        content = request.form['content']
+        
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        
+        salt = os.urandom(32)
+        hashed_password = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)
+        
+        now = datetime.now()
+        
+        date = now.strftime('%Y-%m-%d %H:%M:%S')
+        
+        c.execute("INSERT INTO guestbook (username, password, salt, content, date) VALUES (?, ?, ?, ?, ?)", (username, hashed_password, salt, content, date))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('guestbook'))
+    else:
+        return redirect(url_for('guestbook'))
+    
+@app.route('/social/guestbook/del', methods=['GET', 'POST'])
+def guestbook_del():
+    if request.method == 'POST':
+        sn = request.args.get('id')
+        pw = request.form['pw_edit']
+        
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        
+        c.execute("SELECT password, salt FROM guestbook WHERE SN = ?", (sn,))
+        result = c.fetchone()
+                
+        if result is None:
+            return redirect(url_for('guestbook'))
+        else:
+            db_password, salt = result
+            hashed_password = hashlib.pbkdf2_hmac('sha256', pw.encode('utf-8'), salt, 100000)
+            
+            if db_password == hashed_password:
+                c.execute("DELETE FROM guestbook WHERE SN = ?", (sn,))
+                conn.commit()
+                conn.close()
+
+                return redirect(url_for('guestbook'))
+            else:
+                return render_template_string("""<html><head><title>혹성의 아이</title><script type="text/javascript">window.onload = function() {alert("비밀번호가 올바르지 않습니다.");window.location.href = "/social/guestbook";};</script></head><body></body></html>""")
+    else:
+        return redirect(url_for('guestbook'))
+    
+@app.route('/social/guestbook/edit', methods=['GET', 'POST'])
+def guestbook_edit():
+    if request.method == 'POST':
+        sn = request.args.get('id')
+        pw = request.form['pw_edit']
+        
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        
+        c.execute("SELECT password, salt FROM guestbook WHERE SN = ?", (sn,))
+        result = c.fetchone()
+            
+        if result is None:
+            return redirect(url_for('guestbook'))
+        else:
+            db_password, salt = result
+            hashed_password = hashlib.pbkdf2_hmac('sha256', pw.encode('utf-8'), salt, 100000)
+            
+            if db_password == hashed_password:
+                token = secrets.token_urlsafe(16)
+                # c.execute("INSERT INTO guestbook (modifyToken) VALUES (?)", (token))
+                c.execute("UPDATE guestbook SET modifyToken = ? WHERE SN = ?", (token, sn))
+                conn.commit()
+                conn.close()
+                session['token'] = token
+                session['sn'] = sn
+                
+                return redirect(url_for('guestbook_modify'))
+            else:
+                return render_template_string("""<html><head><title>혹성의 아이</title><script type="text/javascript">window.onload = function() {alert("비밀번호가 올바르지 않습니다.");window.location.href = "/social/guestbook";};</script></head><body></body></html>""")
+    else:
+        return redirect(url_for('guestbook'))
+    
+@app.route('/social/guestbook/modify')
+def guestbook_modify():
+    if 'token' in session:
+        token = session['token']
+        sn = session['sn']
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute("SELECT username, content FROM guestbook WHERE modifyToken = ?", (token,))
+        result = c.fetchone()
+        
+        if result == None:
+            return redirect(url_for('guestbook'))
+        else:
+            return render_template('guestbook_modify.html', result = result, sn = sn)
+    else:
+        return redirect(url_for('guestbook'))
+
+@app.route('/social/guestbook/modify/submit', methods=['GET', 'POST'])
+def guestbook_modify_submit():
+    if 'token' in session:
+        if request.method == 'POST':
+            username = request.form['username']
+            password = request.form['password']
+            content = request.form['content']
+            sn = request.args.get('id')
+            
+            conn = sqlite3.connect('database.db')
+            c = conn.cursor()
+            
+            salt = os.urandom(32)
+            hashed_password = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)
+            
+            c.execute("UPDATE guestbook SET username = ?, password = ?, salt = ?, content = ? WHERE sn = ?", (username, hashed_password, salt, content, sn,))
+            conn.commit()
+            conn.close()
+            session.pop('token', None)
+            session.pop('sn', None)
+            return redirect(url_for('guestbook'))
+        else:
+            return redirect(url_for('guestbook'))
+    else:
+        return redirect(url_for('guestbook'))
 
 @app.route('/social/qna')
 def qna():

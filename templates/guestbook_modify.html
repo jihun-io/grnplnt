@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+ 
+{% block content %}
+<!-- <div class="modal">
+    <div class="modal_body">
+        <p>모달 내용</p>
+    </div>
+</div> -->
+<div class="qna_wrapper">
+    <div class="dropdown_wrapper">
+        <div class="dropdown">
+            <div class="dropdown_row">
+                <h1><a class="dropdown_text" href="#" onclick="toggleDropdown()">방명록<i id="dropdown_icon" class="fas fa-chevron-down"></i></a></h1>
+            </div>
+            <ul id="dropdown_list" class="dropdown_list">
+                <!-- <li class="dropdown_list_item">방명록</li> -->
+                <li class="dropdown_list_item"><a href="./qna">질문 및 문의</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            var dropdownList = document.getElementById("dropdown_list");
+            var dropdownIcon = document.getElementById("dropdown_icon");
+            if (dropdownList.classList.contains("open")) {
+                dropdownList.classList.remove("open");
+                dropdownIcon.classList.remove("rotate");
+            } else {
+                dropdownList.classList.add("open");
+                dropdownIcon.classList.add("rotate");
+            }
+        }
+
+    </script>
+    <form id="write" method="post" action="./modify/submit?id={{ sn }}" class="write_area">
+        <div class="userinfo">
+            <input type="text" id="name" name="username" placeholder="이름" value="{{ result[0] }}" required>
+            <input type="password" id="pw" name="password" placeholder="비밀번호" required>
+        </div>
+        <textarea name="content" form="write" required>{{ result[1] }}</textarea>
+        <div class="write_btn">
+            <input type="submit" class="guestbook_submit">
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
