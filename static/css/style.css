@@ -231,6 +231,12 @@ header {
     color: #fff;
 }
 
+.character_hero {
+    width: 100%;
+    aspect-ratio: 16/9;
+
+}
+
 .character {
     box-sizing: border-box;
     width: 100%;
