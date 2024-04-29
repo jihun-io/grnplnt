@@ -621,20 +621,11 @@ hr {
     color: #303032;
 }
 
+
+
 .card_top .card_profile {
     width: 8vw;
 }
-
-/* .textphone {
-    font-size: 5vw;
-    font-weight: 900;
-}
-
-.textor, .textemail {
-    font-size: 2vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-} */
 
 .card_top, .card_mid, .card_bottom {
     width: 95%;
@@ -692,6 +683,88 @@ hr {
     width: 3vw;
     text-align: center;
     margin-right: 1vw;
+}
+
+@media(min-width:1000px){
+    .card {
+        width: 37.5vw;
+        height: 20.25vw;
+        padding: 1.5vw;
+    }
+
+    .card_director {
+        font-size: 1.5vw;
+    }
+
+    .card_top .card_profile {
+        width: 6vw;
+    }
+
+    .name_ko {
+        margin-right: 2.25vw;
+    }
+
+    .card_mid {
+        font-size: 1.65vw;
+    }
+
+    .card_name {
+        margin-top: 0.75vw;
+    }
+
+    .card_bottom {
+        font-size: 1.35vw;
+    }
+
+    .card_bottom i {
+        width: 2.25vw;
+        margin-right: 0.75vw;
+    }
+
+    .card_bottom .textphone {
+        margin-bottom: 0.75vw;
+    }
+}
+
+@media(min-width:1280px){
+    .card {
+        width: 25vw;
+        height: 13.5vw;
+        padding: 1vw;
+    }
+
+    .card_director {
+        font-size: 1vw;
+    }
+
+    .card_top .card_profile {
+        width: 4vw;
+    }
+
+    .name_ko {
+        margin-right: 1.5vw;
+    }
+
+    .card_mid {
+        font-size: 1.1vw;
+    }
+
+    .card_name {
+        margin-top: 0.5vw;
+    }
+
+    .card_bottom {
+        font-size: 0.9vw;
+    }
+
+    .card_bottom i {
+        width: 1.5vw;
+        margin-right: 0.5vw;
+    }
+
+    .card_bottom .textphone {
+        margin-bottom: 0.5vw;
+    }
 }
 
 @media(max-width:679px){
