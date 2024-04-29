@@ -96,13 +96,13 @@
                         scrollLeft = scrollLeft + (menuRow.scrollWidth - menuRow.clientWidth) / 2 ;
                     }
 
-                    if (scrollLeft <= 0) {
+                    if (scrollLeft <= 3) {
                         menuLeft.style.opacity = '0';
                     } else {
                         menuLeft.style.opacity = '1';
                     }
 
-                    if (scrollLeft + menuRow.clientWidth >= menuRow.scrollWidth) {
+                    if (scrollLeft + menuRow.clientWidth >= menuRow.scrollWidth - 3) {
                         menuRight.style.opacity = '0';
                     } else {
                         menuRight.style.opacity = '1';
