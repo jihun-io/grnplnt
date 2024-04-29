@@ -4,4 +4,6 @@ static/.DS_Store
 .DS_Store
 dev.txt
 secret-key.txt
-database.db
+.db
+.env
+/env
