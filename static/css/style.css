@@ -2,11 +2,39 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
 @import url("https://use.typekit.net/rjd5iff.css");
 
+@font-face {
+    font-family: 'PyeongChangPeace';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'PyeongChangPeace';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.ttf') format("truetype");
+    font-display: swap;
+} 
+
+@font-face{
+    font-family:'DNFBitBitv2';
+    font-style:normal;font-weight:400;src:url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+}
+
 html {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    color: #303032;
+    color: #383430;
     background-color: #f9f9f5;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 body {
@@ -14,15 +42,29 @@ body {
 }
 
 a {
-    color: #303032;
+    color: #383430;
     text-decoration-line: none;
 }
 
+h1, h2 {
+    font-family: "DNFBitBitv2";
+}
+
+.character h1, .character h2 {
+    font-family: "PyeongChangPeace";
+    font-weight: 300!important;
+}
+
+.hush, .pony, .jelly {
+    background-color: #f9f9f5;
+}
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'PyeongChangPeace';
+    font-weight: 300;
 }
 
 .logo_row {
@@ -110,7 +152,7 @@ header {
 
 
 .menu_bold {
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .menu_btn {
@@ -202,8 +244,8 @@ header {
 .embla img {
     width: 100%;
     aspect-ratio: 16 / 9;
-    /* max-height: calc(100% - 75px - 15px); */
 }
+
 .embla__button {
     width: 54px;
      height: 54px;
@@ -237,7 +279,7 @@ header {
     font-weight: 500;
     font-style: normal;
     color: #f9f9f5;
-    text-shadow: 0px 0px 5px #303032;
+    text-shadow: 0px 0px 5px #383430;
 }
 
 
@@ -258,31 +300,32 @@ header {
     width: 50%;
     /* line-height: 25px; */
     word-break: keep-all;
-    text-shadow: 0px 0px 5px #303032;
+    text-shadow: 0px 0px 5px #383430;
 }
 
 .synopsis_text_wrapper h1 {
+    font-family: "PyeongChangPeace";
     font-size: 3em;
     padding-bottom: 50px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .synopsis_text_wrapper p {
-    text-align: justify;
+    text-align: center;
     font-size: 1.5em;
     line-height: 1.5em;
 }
 
 .black_bg {
-    background-color: #303032;
+    /* background-color: #383430; */
     display: flex;
     justify-content: center;
 }
 
 .character_wrapper {
     max-width: 900px;
-    background-color: #303032;
-    color: #fff;
+    /* background-color: #383430;
+    color: #fff; */
 }
 
 .character_hero {
@@ -308,7 +351,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #303032;
+    /* border: 1px solid #383430; */
 }
 
 .portrait {
@@ -316,7 +359,7 @@ header {
     height: 201px;
     border-radius: 50%;
 }
-
+/* 
 .hush {
     background-color: #fe80bf;
 }
@@ -327,7 +370,7 @@ header {
 
 .pony {
     background-color: #fef880;
-}
+} */
 
 .character_name {
     margin-bottom: 25px;
@@ -339,7 +382,7 @@ header {
 }
 
 .character_desc p {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.4em;
     word-break: keep-all;
     text-align: justify;
@@ -465,7 +508,7 @@ input {
 .write_area input,
 .write_area textarea {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    color: #303032;
+    color: #383430;
     font-weight: 600;
     font-size: 16px;
     margin: 5px;
@@ -475,7 +518,7 @@ input {
 
 .guestbook_post_input input {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    color: #303032;
+    color: #383430;
     font-weight: 600;
     border: 1px solid #a1a1a8;
     border-radius: 5px;
@@ -545,7 +588,7 @@ input {
 }
 
 .guestbook_post {
-    /* border: 1px solid #303032; */
+    /* border: 1px solid #383430; */
     padding: 10px;
     /* margin-bottom: 20px; */
 }
@@ -560,7 +603,7 @@ hr {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .guestbook_post_date {
@@ -676,7 +719,7 @@ hr {
     padding: 2vw;
     margin: 20px 0px 50px 0px;
     background-color: #fff;
-    color: #303032;
+    color: #383430;
 }
 
 
@@ -864,15 +907,16 @@ hr {
     .synopsis_text_wrapper p {
         font-size: 1.3em;
         line-height: 1.3em;
-        word-break: normal;
-        text-align: justify;
+        /* word-break: normal; */
+        text-align: center;
     }
 
     .character {
         height: auto;
+        flex-direction: column;
     }
 
-    .character_pic {
+    /* .character_pic {
         width: 120px;
         height: 120px;
     }
@@ -880,7 +924,7 @@ hr {
     .portrait {
         width: 121px;
         height: 121px;
-    }
+    } */
 
     .character_desc p {
         word-break: normal;
@@ -955,7 +999,7 @@ hr {
 
 @media (prefers-color-scheme: dark) {
     html {
-        background-color: #303032;
+        background-color: #383430;
         color: #f9f9f5;
     }
 
@@ -969,7 +1013,7 @@ hr {
     }
 
     /* .card p {
-        color: #303032!important;
+        color: #383430!important;
     } */
 
     .card {
