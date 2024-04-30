@@ -14,7 +14,7 @@ body {
 }
 
 a {
-    color:#303032;
+    color: #303032;
     text-decoration-line: none;
 }
 
@@ -60,7 +60,8 @@ header {
     align-items: center;
 }
 
-.menu_left, .menu_right {
+.menu_left,
+.menu_right {
     height: 75px;
     display: flex;
     align-items: center;
@@ -68,7 +69,8 @@ header {
     display: none;
 }
 
-.menu_left, .menu_right {
+.menu_left,
+.menu_right {
     width: 30px;
 }
 
@@ -104,7 +106,7 @@ header {
 
 .menu_row::-webkit-scrollbar {
     display: none;
-  }
+}
 
 
 .menu_bold {
@@ -136,21 +138,26 @@ header {
     width: 100%;
     height: 100px;
     border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     background-color: #fff;
     z-index: 2;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    opacity: 0; /* 초기 투명도를 0으로 설정 */
-    visibility: hidden; /* 초기 상태를 '숨김'으로 설정 */
-    transition: opacity 0.2s, visibility 0.2s; /* 투명도와 visibility 변경에 0.5초 동안의 전환 효과를 적용 */
+    opacity: 0;
+    /* 초기 투명도를 0으로 설정 */
+    visibility: hidden;
+    /* 초기 상태를 '숨김'으로 설정 */
+    transition: opacity 0.2s, visibility 0.2s;
+    /* 투명도와 visibility 변경에 0.5초 동안의 전환 효과를 적용 */
 }
 
 .menu_btn:hover .submenu {
-    opacity: 1; /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
-    visibility: visible; /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
+    opacity: 1;
+    /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
+    visibility: visible;
+    /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
 }
 
 .submenu_items {
@@ -168,6 +175,53 @@ header {
     width: 100%;
 }
 
+
+
+
+.embla {
+    overflow: hidden;
+    max-width: 1280px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.embla img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* max-height: calc(100% - 75px - 15px); */
+}
+.embla__button {
+    width: 54px;
+     height: 54px;
+     margin-top: -1.5rem;
+     font-size: 30px;
+     background-color: #fff !important;;
+     color: #000 !important;;
+     border: 2px solid #424239;
+      display: flex !important;
+     border-radius: 50%;
+     top: 175px;
+     z-index: 500;
+   }
+
+
+
+
+
 .cs_wrapper {
     height: calc(100% - 75px - 50px);
     display: flex;
@@ -182,7 +236,7 @@ header {
     font-family: "futura-pt-condensed", sans-serif;
     font-weight: 500;
     font-style: normal;
-    color:#f9f9f5;
+    color: #f9f9f5;
     text-shadow: 0px 0px 5px #303032;
 }
 
@@ -214,7 +268,7 @@ header {
 }
 
 .synopsis_text_wrapper p {
-    text-align : justify;
+    text-align: justify;
     font-size: 1.5em;
     line-height: 1.5em;
 }
@@ -266,9 +320,11 @@ header {
 .hush {
     background-color: #fe80bf;
 }
+
 .jelly {
     background-color: #89ff50;
 }
+
 .pony {
     background-color: #fef880;
 }
@@ -286,7 +342,7 @@ header {
     font-size: 1.2em;
     line-height: 1.4em;
     word-break: keep-all;
-    text-align : justify;
+    text-align: justify;
 }
 
 .copyright {
@@ -295,7 +351,7 @@ header {
     justify-content: center;
     height: 50px;
     font-size: 12px;
-    color:#a1a1a8;
+    color: #a1a1a8;
     font-weight: 500;
 }
 
@@ -323,6 +379,7 @@ header {
 .dropdown i {
     margin-left: 1em;
 }
+
 .dropdown_text {
     display: flex;
     align-items: center;
@@ -379,9 +436,7 @@ header {
     overflow: auto;
 }
 
-.modal_body {
-
-}
+.modal_body {}
 
 
 
@@ -407,7 +462,8 @@ input {
     box-sizing: border-box;
 }
 
-.write_area input, .write_area textarea {
+.write_area input,
+.write_area textarea {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     color: #303032;
     font-weight: 600;
@@ -426,8 +482,9 @@ input {
     padding: 0 1em 0 1em;
 }
 
-.edit_submit, .del_submit {
-    font-weight: 800!important;
+.edit_submit,
+.del_submit {
+    font-weight: 800 !important;
 }
 
 .edit_submit {
@@ -435,17 +492,19 @@ input {
 }
 
 .del_submit {
-    background-color: #ff6d50!important;
+    background-color: #ff6d50 !important;
 }
 
 .write_area #name {
     width: 40%;
 }
+
 .write_area #pw {
     width: 60%;
 }
 
-.userinfo #name, .userinfo #pw {
+.userinfo #name,
+.userinfo #pw {
     height: 3em;
     padding: 0 1em 0 1em;
 }
@@ -475,8 +534,8 @@ input {
     height: 3em;
     border: 1px solid #a1a1a8;
     border-radius: 5px;
-    background-color: rgb(137,255,80);
-    font-weight: 900!important;
+    background-color: rgb(137, 255, 80);
+    font-weight: 900 !important;
 }
 
 .guestbook_list {
@@ -512,19 +571,18 @@ hr {
 }
 
 .guestbook_post_date p {
-    margin-right: 1em;                                                                                                                           
+    margin-right: 1em;
 }
+
 .guestbook_post_date i {
-    margin-left: 2em;                                                                                                                           
+    margin-left: 2em;
 }
 
-.more {
-
-}
+.more {}
 
 .more i {
-    margin-left: 0.5em;                                                                                                                           
-    margin-right: 0.5em;                                                                                                                           
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 .guestbook_post_input {
@@ -610,7 +668,7 @@ hr {
     height: 27vw;
     /* box-sizing:border-box; */
     /* aspect-ratio: 9/5; */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -627,7 +685,9 @@ hr {
     width: 8vw;
 }
 
-.card_top, .card_mid, .card_bottom {
+.card_top,
+.card_mid,
+.card_bottom {
     width: 95%;
     height: 33.3333333%;
     display: flex;
@@ -642,6 +702,7 @@ hr {
     display: flex;
     flex-direction: row-reverse;
 }
+
 .card_mid {
     display: flex;
     flex-direction: column;
@@ -685,7 +746,7 @@ hr {
     margin-right: 1vw;
 }
 
-@media(min-width:1000px){
+@media(min-width:1000px) {
     .card {
         width: 37.5vw;
         height: 20.25vw;
@@ -726,7 +787,7 @@ hr {
     }
 }
 
-@media(min-width:1280px){
+@media(min-width:1280px) {
     .card {
         width: 25vw;
         height: 13.5vw;
@@ -767,14 +828,15 @@ hr {
     }
 }
 
-@media(max-width:679px){
+@media(max-width:679px) {
     /* .logo, .logo_wrapper {
         width: 150px;
     } */
 
-    .menu_btn{
+    .menu_btn {
         width: 50px;
     }
+
     .menu_link {
         padding: 0px;
     }
@@ -785,8 +847,10 @@ hr {
     }
 
     .menu_btn:hover .submenu {
-        opacity: 0; /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
-        visibility: hidden; /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
+        opacity: 0;
+        /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
+        visibility: hidden;
+        /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
     }
 
     .comingsoon {
@@ -865,8 +929,10 @@ hr {
     } */
 }
 
-@media(max-width: 699px){
-    .menu_left, .menu_right {
+@media(max-width: 699px) {
+
+    .menu_left,
+    .menu_right {
         /* visibility: visible; */
         display: flex;
         justify-content: center;
@@ -892,7 +958,13 @@ hr {
         background-color: #303032;
         color: #f9f9f5;
     }
-    p, h1, h2, a, ul, li {
+
+    p,
+    h1,
+    h2,
+    a,
+    ul,
+    li {
         color: #f9f9f5;
     }
 
@@ -905,8 +977,11 @@ hr {
         background-color: rgb(63, 63, 65);
     }
 
-    .write_area textarea, .userinfo input, .write_area textarea, .guestbook_post_input input {
-        color: #f9f9f5!important;
+    .write_area textarea,
+    .userinfo input,
+    .write_area textarea,
+    .guestbook_post_input input {
+        color: #f9f9f5 !important;
         background-color: rgb(63, 63, 65);
     }
 }
