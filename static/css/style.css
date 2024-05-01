@@ -52,7 +52,7 @@ h1, h2 {
 
 .character h1, .character h2 {
     font-family: "PyeongChangPeace";
-    font-weight: 300!important;
+    font-weight: 300;
 }
 
 .hush, .pony, .jelly {
@@ -61,6 +61,7 @@ h1, h2 {
 
 header {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'PyeongChangPeace';
@@ -95,7 +96,10 @@ header {
 }
 
 .menu_row_wrapper {
-    width: 100%;
+    /* width: 100%; */
+    height: 75px;
+    transition-property: height;
+    transition-duration: 0.3s;
     /* max-width: 800px; */
     display: flex;
     flex-direction: row;
@@ -136,15 +140,39 @@ header {
 
 .menu_row {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     align-content: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     /* margin-left: 100px;
     margin-right: 100px; */
     width: calc(100% - 80px);
-    height: 50px;
-    margin-top: 25px;
+    height: 100px;
+    padding-top: 75px;
+    transition-property: padding-top;
+    transition-duration: 0.3s;
+    font-size: 1.2em;
+
 }
+
+/* .menu_row.open {
+    padding-top: 0;
+} */
+
+/* .menu_row_wrapper.open {
+    height: 125px;
+} */
+
+.menu_row_1 {
+    /* width: calc(100% - 80px); */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-around;
+}
+
 
 .menu_row::-webkit-scrollbar {
     display: none;
@@ -155,15 +183,9 @@ header {
     font-weight: 700;
 }
 
-.menu_btn {
+.menu_btn, .submenu_row {
     width: 100px;
-    min-width: 80px;
-    height: 100%;
-    /* display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; */
+    /* min-width: 80px; */
 }
 
 .menu_link {
@@ -175,6 +197,62 @@ header {
     white-space: nowrap;
 }
 
+#main {
+    margin-top: 0px;
+    transition-behavior: "height";
+    transition-duration: 0.3s;
+}
+
+#main.open {
+    margin-top: 50px;
+}
+
+.submenu_row_wrapper {
+    /* width: calc(100% - 80px); */
+    height: 0px;
+    margin-top: 0em;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.submenu_row_wrapper.open {
+    height: 60px;
+    margin-top: 0em;
+}
+
+/* .submenu_row {
+    width: 60px;
+    padding: 0px 20px 0px 20px;
+} */
+
+.submenu_items {
+    font-size: 0.8em;
+    margin: 0.8em 0 0.8em 0;
+
+    text-align: center;
+}
+
+.menu_btn i {
+    margin-left: 0.5em;
+}
+
+.menu_btn i {
+    font-size: 0.7em;
+    rotate: 0deg;
+    transition-property: rotate;
+    transition-duration: 0.2s;
+}
+
+.menu_btn i.rotate {
+    rotate: 180deg;
+}
+
+/* 
 .submenu {
     position: relative;
     width: 100%;
@@ -188,24 +266,19 @@ header {
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    /* 초기 투명도를 0으로 설정 */
     visibility: hidden;
-    /* 초기 상태를 '숨김'으로 설정 */
     transition: opacity 0.2s, visibility 0.2s;
-    /* 투명도와 visibility 변경에 0.5초 동안의 전환 효과를 적용 */
 }
 
 .menu_btn:hover .submenu {
     opacity: 1;
-    /* 메뉴 버튼에 마우스를 올리면 투명도를 1로 변경 */
     visibility: visible;
-    /* 메뉴 버튼에 마우스를 올리면 상태를 '보임'으로 변경 */
 }
 
 .submenu_items {
     margin-top: 10px;
     margin-bottom: 10px;
-}
+} */
 
 .main {
     min-height: calc(100% - 75px - 50px);
@@ -227,6 +300,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    position:relative;
 }
 
 .embla__container {
@@ -258,8 +332,37 @@ header {
      border-radius: 50%;
      top: 175px;
      z-index: 500;
-   }
+}
 
+.controller {
+    position: absolute;
+
+    /* top: 29%; */
+    left: 0%;
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    pointer-events: none; 
+
+}
+
+.controller button {
+    width: 10%;
+    height: 30%;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.5em;
+    z-index: 1;
+    pointer-events:all; 
+
+}
 
 
 
@@ -323,7 +426,7 @@ header {
 }
 
 .character_wrapper {
-    max-width: 900px;
+    /* max-width: 900px; */
     /* background-color: #383430;
     color: #fff; */
 }
@@ -378,7 +481,6 @@ header {
 
 .character_name h2 {
     font-size: 2em;
-    font-weight: 900;
 }
 
 .character_desc p {
@@ -467,20 +569,6 @@ header {
     font-size: 1.2em;
     margin: 5px 0px 5px 0px;
 }
-
-.modal {
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffffbb;
-    overflow: auto;
-}
-
-.modal_body {}
-
 
 
 .guestbook {
@@ -680,15 +768,63 @@ hr {
 }
 
 .participation {
+    display: none;
+    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.participation h2 {
+.jobs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.jobs h2 {
     font-size: 1.5em;
     padding-top: 10px;
     padding-bottom: 15px;
     font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    cursor:pointer;
+}
+
+.jobs h2#staffs_btn {
+    align-items: flex-end;
+}
+.jobs h2#actors_btn {
+    align-items: flex-start;
+}
+
+.participation.show {
+    display: flex;
+}
+
+.jobs h2::after {
+    content: "";
+    width: 0%;
+    height: 0.2em;
+    margin-top: 0.2em;
+    border-radius: 10px;
+    background-color: #383430;
+    transition-property: "width";
+    transition-duration: 0.2s;
+}
+.jobs h2.underbar::after {
+    width: 100%;
+}
+
+.participation h3 {
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-weight: 800;
+    margin-top: 1em;
+}
+
+.participation h3:nth-child(1) {
+    margin-top: 0em;
 }
 
 .participation p {
@@ -696,6 +832,93 @@ hr {
     line-height: 1.5em;
     word-break: keep-all;
     text-align: justify;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+
+}
+
+.chart .row_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.chart .row_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.chart .box {
+    width: 20vw;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #383430;
+    border-radius: 2px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.chart .box.long {
+    min-width: 80px;
+}
+
+
+.chart .box.title {
+    width: 10em;
+}
+
+.chart .box.title p {
+    font-family: "DNFBitBitv2";
+}
+
+.chart p {
+    text-align: center!important;
+}
+
+.chart .box p {
+    margin: 0 1em 0 1em;
+    word-break: keep-all;
+
+}
+
+.desc {
+    font-size: 0.8em!important;
+    height: 1em;
+    white-space:nowrap;
+}
+
+.occ p {
+    color:rgb(137, 255, 80);
+    font-weight: 800;
+}
+
+.vac p {
+    color: #fe80bf;
+    font-weight: 800;
+}
+
+.occ p, .vac p {
+    font-size: 1em;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+
+.logo_small, .logo_small img {
+    width: 3em;
+}
+
+.logo_small {
+    margin-bottom: 1em;
 }
 
 .card_wrapper {
@@ -763,6 +986,7 @@ hr {
     display: flex;
     flex-direction: row;
     margin-top: 1vw;
+    font-weight: 600;
 }
 
 .name_ko {
@@ -871,14 +1095,14 @@ hr {
     }
 }
 
-@media(max-width:679px) {
+@media(max-width:779px) {
     /* .logo, .logo_wrapper {
         width: 150px;
     } */
 
-    .menu_btn {
+    /* .menu_btn, .submenu_row {
         width: 50px;
-    }
+    } */
 
     .menu_link {
         padding: 0px;
@@ -916,15 +1140,9 @@ hr {
         flex-direction: column;
     }
 
-    /* .character_pic {
-        width: 120px;
-        height: 120px;
+    .character_name {
+        margin-top: 25px;
     }
-
-    .portrait {
-        width: 121px;
-        height: 121px;
-    } */
 
     .character_desc p {
         word-break: normal;
@@ -935,6 +1153,22 @@ hr {
         line-height: 1.3em;
         word-break: normal;
         text-align: justify;
+    }
+
+    .occ p, .vac p {
+        font-size: 0.7em;
+    }
+
+    .jobs_wrapper .box {
+        font-size: 0.8em;
+    }
+
+    .jobs_wrapper .desc {
+        font-size: 0.7em!important;
+    }
+
+    .chart .box p {
+        margin: 0 1em 0 1em;
     }
 
     .card {
@@ -968,27 +1202,31 @@ hr {
         height: 3em;
     }
 
-    /* .write_area, .guestbook_list, .dropdown_wrapper {
-        width: 85%;
-    } */
-}
-
-@media(max-width: 699px) {
 
     .menu_left,
     .menu_right {
         /* visibility: visible; */
         display: flex;
+        align-items: center;
         justify-content: center;
+        flex-direction: column;
         opacity: 0;
         transition-property: opacity;
         transition-duration: 0.1s;
     }
 
     .menu_row {
-        width: calc(100% - 130px);
+        width: calc(100vw - 130px);
     }
 
+    .submenu_row_wrapper {
+
+    }
+
+    .submenu_row {
+        padding: 0;
+    }
+    
     .logo_wrapper {
         width: 70px;
         margin-left: 0px;
@@ -1027,5 +1265,17 @@ hr {
     .guestbook_post_input input {
         color: #f9f9f5 !important;
         background-color: rgb(63, 63, 65);
+    }
+
+    .jobs h2::after {
+        background-color: #f9f9f5;
+    }
+
+    .chart .box {
+        border: 1px solid #f9f9f5;
+    }
+
+    .occ p, .vac p {
+        text-shadow: 0px 0px 5px #000;
     }
 }
