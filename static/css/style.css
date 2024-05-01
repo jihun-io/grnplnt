@@ -38,7 +38,8 @@ html {
 }
 
 body {
-    /* min-width: 700px; */
+    overflow-x: hidden;
+
 }
 
 a {
