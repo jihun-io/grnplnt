@@ -8,3 +8,4 @@ secret-key.txt
 .env
 /env
 database 복사본.db
+database.db
