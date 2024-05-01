@@ -1,4 +1,4 @@
-from flask import Flask, render_template, render_template_string, url_for, request, redirect, session
+from flask import Flask, render_template, render_template_string, url_for, request, redirect, session, send_file
 import sqlite3
 import os
 import hashlib
@@ -36,17 +36,6 @@ def dated_url_for(endpoint, **values):
         if endpoint == 'static':
             values['_'] = startup_time
     return url_for(endpoint,**values)
-
-
-# 리셋
-# selected_home = 'normal'
-# selected_synopsis = 'normal'
-# selected_character = 'normal'
-# selected_gallery = 'normal'
-# selected_videos = 'normal'
-# selected_downloads = 'normal'
-# selected_social = 'normal'
-
 
 
 @app.route('/')
@@ -219,10 +208,18 @@ def guestbook_modify_submit():
             return redirect(url_for('guestbook'))
     else:
         return redirect(url_for('guestbook'))
+    
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
 
 @app.route('/social/qna')
 def qna():
     return render_template('qna.html', selected_social = 'menu_bold')
+
+@app.route('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf')
+def download_pdf():
+    return send_file('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf', as_attachment=True, minetype='application/pdf', attachment_filename='혹성의 아이 캡스톤 발표본.pdf')
 
 host_addr = "0.0.0.0"
 port_num = "4062"
