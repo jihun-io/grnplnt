@@ -1101,6 +1101,10 @@ hr {
 }
 
 @media(min-width:1280px) {
+    .controller {
+        left: calc((100vw - 1280px) / 2);
+    }
+
     .card {
         width: 25vw;
         height: 13.5vw;
