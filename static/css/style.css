@@ -55,7 +55,7 @@ h1, h2 {
     font-weight: 300;
 }
 
-.hush, .pony, .jelly {
+.hush, .pony, .jelly, .fullface {
     background-color: #f9f9f5;
 }
 
@@ -185,7 +185,6 @@ header {
 
 .menu_btn, .submenu_row {
     width: 100px;
-    /* min-width: 80px; */
 }
 
 .menu_link {
@@ -364,7 +363,7 @@ header {
 }
 
 .controller i {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 
@@ -868,8 +867,8 @@ hr {
     justify-content: center;
     border: 1px solid #383430;
     border-radius: 2px;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .chart .box.long {
@@ -890,7 +889,9 @@ hr {
 }
 
 .chart .box p {
+    min-width: 80px;
     margin: 0 1em 0 1em;
+    word-wrap: break-word;
     word-break: keep-all;
 
 }
@@ -1115,6 +1116,10 @@ hr {
     .menu_row {
         overflow-x: scroll;
         overflow-y: hidden;
+    }
+
+    .menu_btn, .submenu_row {
+        width: 90px;
     }
 
     .menu_btn:hover .submenu {
