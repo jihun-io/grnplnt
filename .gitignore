@@ -9,3 +9,4 @@ secret-key.txt
 /env
 database 복사본.db
 database.db
+*.db
