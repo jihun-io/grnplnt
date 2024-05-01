@@ -217,9 +217,9 @@ def admin():
 def qna():
     return render_template('qna.html', selected_social = 'menu_bold')
 
-# @app.route('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf')
-# def download_pdf():
-#     return send_file('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf', as_attachment=True, minetype='application/pdf', attachment_filename='혹성의 아이 캡스톤 발표본.pdf')
+@app.route('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf')
+def download_pdf():
+    return send_file('/static/files/혹성의%20아이%20캡스톤%20발표본.pdf', as_attachment=True, minetype='application/pdf', attachment_filename='혹성의 아이 캡스톤 발표본.pdf')
 
 host_addr = "0.0.0.0"
 port_num = "4062"
