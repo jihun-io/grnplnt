@@ -10,3 +10,5 @@ secret-key.txt
 database 복사본.db
 database.db
 *.db
+database.db
+*.db
