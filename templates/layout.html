@@ -12,66 +12,93 @@
 
 <body>
     <header>
-        <div class="menu_row_wrapper">
+        <div class="menu_row_wrapper" id="menu_row_wrapper">
             <div class="logo_wrapper">
                 <a href="/"><img class="logo" src="{{ url_for('static', filename='img/logo_nomargin.png') }}"></a>
             </div>
             <div class="menu_left">
                 <i class="fas fa-chevron-left"></i>
             </div>
-            <ul class="menu_row" id="menuBar">
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_home }}" href="/">홈</a>
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_synopsis }}" href="/synopsis">시놉시스</a>
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_character }}" href="/character">캐릭터</a>
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_gallery }}" href="/gallery">갤러리</a>
-                    <!-- <ul class="submenu">
-                        <li class="submenu_items">
-                            <a href="/comingsoon">Coming Soon</a>
-                        </li>
-                    </ul> -->
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_videos }}" href="/videos">영상</a>
-                    <!-- <ul class="submenu">
-                        <li class="submenu_items">
-                            <a href="/comingsoon">Coming Soon</a>
-                        </li>
-                    </ul> -->
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_download }}" href="/download">다운로드</a>
-                    <!-- <ul class="submenu">
-                        <li class="submenu_items">
-                            <a href="/comingsoon">Coming Soon</a>
-                        </li>
-                    </ul> -->
-                </li>
-                <li class="menu_btn">
-                    <a class="menu_link {{ selected_social }}" href="/social/qna">소셜</a>
-                    <!-- <ul class="submenu">
-                        <li class="submenu_items">
+            <div class="menu_row" id="menu_row">
+                <ul class="menu_row_1" id="menuBar">
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_home }}" href="/">홈</a>
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_synopsis }}" href="/synopsis">시놉시스</a>
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_character }}" href="/character">캐릭터</a>
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_gallery }}" href="/gallery">갤러리</a>
+                        <!-- <ul class="submenu">
+                            <li class="submenu_items">
+                                <a href="/comingsoon">Coming Soon</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_videos }}" href="/videos">영상</a>
+                        <!-- <ul class="submenu">
+                            <li class="submenu_items">
+                                <a href="/comingsoon">Coming Soon</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_download }}" href="/download">다운로드</a>
+                        <!-- <ul class="submenu">
+                            <li class="submenu_items">
+                                <a href="/comingsoon">Coming Soon</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                    <li class="menu_btn">
+                        <a class="menu_link {{ selected_social }}" href="#" onclick="toggleDropdown()">소셜<i id="dropdown_icon" class="fas fa-chevron-down"></i></a>
+                        <!-- <ul class="submenu">
+                            <li class="submenu_items">
+                                <a href="/social/qna">질문 및 문의</a>
+                            </li>
+                            <li class="submenu_items">
+                                <a href="/social/guestbook">방명록</a>
+                            </li>
+                        </ul> -->
+                    </li>
+                </ul>
+                <div class="submenu_row_wrapper" id="submenu_row_wrapper">
+                    <ul class="submenu_row ">
+                    </ul>
+                    <ul class="submenu_row ">
+                    </ul>
+                    <ul class="submenu_row ">
+                    </ul>
+                    <ul class="submenu_row ">
+                    </ul>
+                    <ul class="submenu_row ">
+
+                    </ul>
+                    <ul class="submenu_row ">
+
+                    </ul>
+                    <ul class="submenu_row  ">
+                        <li class="submenu_items ">
                             <a href="/social/qna">질문 및 문의</a>
                         </li>
-                        <li class="submenu_items">
+                        <li class="submenu_items ">
                             <a href="/social/guestbook">방명록</a>
                         </li>
-                    </ul> -->
-                </li>
-            </ul>
+                    </ul>
+                </div>
+            </div>
             <div class="menu_right">
                 <i class="fas fa-chevron-right"></i>
             </div>
         </div>
+
         <script>
             window.addEventListener("DOMContentLoaded", (event) => {
-                const menuBar = document.querySelector("#menuBar"); // 메뉴 바의 ID를 #menuBar로 가정
+                const menuBar = document.querySelector("#menu_row"); // 메뉴 바의 ID를 #menuBar로 가정
                 const activeLink = document.querySelector(".menu_bold"); // 현재 페이지를 나타내는 링크에 'active' 클래스가 있다고 가정
 
                 if (menuBar && activeLink) {
@@ -80,21 +107,17 @@
                     const activeLinkLeftOffset = activeLink.offsetLeft;
 
                     // 현재 페이지에 해당하는 링크를 메뉴 바의 가운데에 위치하게 하기 위해 스크롤 위치를 조정
-                    menuBar.scrollLeft = activeLinkLeftOffset - menuBarHalfWidth + activeLinkHalfWidth;
+                    menuBar.scrollLeft = activeLinkLeftOffset - menuBarHalfWidth + activeLinkHalfWidth - 65;
+                    console.log(menuBar.scrollLeft);
                 }
+
+
 
                 const menuRow = document.querySelector('.menu_row');
                 const menuLeft = document.querySelector('.menu_left');
                 const menuRight = document.querySelector('.menu_right');
                 function checkScroll() {
-                    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
                     let scrollLeft = menuRow.scrollLeft;
-                    // console.log(isSafari)
-
-                    // Safari에서 scrollLeft 값 조정
-                    if (isSafari) {
-                        scrollLeft = scrollLeft + (menuRow.scrollWidth - menuRow.clientWidth) / 2 ;
-                    }
 
                     if (scrollLeft <= 3) {
                         menuLeft.style.opacity = '0';
@@ -113,10 +136,32 @@
                 menuRow.addEventListener('scroll', checkScroll);
                 checkScroll();
             });
+
+
+            function toggleDropdown() {
+                var submenuRowWrapper = document.getElementById("submenu_row_wrapper");
+                var menuRowWrapper = document.getElementById("menu_row_wrapper");
+                var menuRow = document.getElementById("menu_row");
+                var main = document.getElementById("main");
+                var dropdownIcon = document.getElementById("dropdown_icon");
+                if (submenuRowWrapper.classList.contains("open")) {
+                    submenuRowWrapper.classList.remove("open");
+                    main.classList.remove("open");
+                    // menuRow.classList.remove("open");
+                    dropdownIcon.classList.remove("rotate");
+                } else {
+                    submenuRowWrapper.classList.add("open");
+                    main.classList.add("open");
+                    // menuRowWrapper.classList.add("open");
+                    // menuRow.classList.add("open");
+                    dropdownIcon.classList.add("rotate");
+    
+                }
+            }
         </script>
     </header>
 
-    <main>
+    <main id="main" >
         {% block content %}{% endblock %}
     </main>
 
