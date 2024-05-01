@@ -164,7 +164,7 @@ header {
 } */
 
 .menu_row_1 {
-    /* width: calc(100% - 80px); */
+    /* width: calc(100vw - 80px); */
 
     display: flex;
     flex-direction: row;
@@ -194,6 +194,7 @@ header {
     padding: 0px 20px 0px 20px;
     justify-content: center;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 #main {
@@ -207,7 +208,7 @@ header {
 }
 
 .submenu_row_wrapper {
-    /* width: calc(100% - 80px); */
+    /* width: calc(100vw - 80px); */
     height: 0px;
     margin-top: 0em;
     overflow: hidden;
@@ -280,7 +281,7 @@ header {
 } */
 
 .main {
-    min-height: calc(100% - 75px - 50px);
+    min-height: calc(100vh - 75px - 50px);
     /* min-height: 300px; */
     width: 100%;
 }
@@ -370,7 +371,7 @@ header {
 
 
 .cs_wrapper {
-    height: calc(100% - 75px - 50px);
+    height: calc(100vh - 75px - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,7 +390,7 @@ header {
 
 
 .synopsis_wrapper {
-    height: calc(100% - 275px - 50px);
+    height: calc(100vh - 275px - 50px);
     /* height: 480px; */
     padding: 100px 0 100px 0;
     display: flex;
@@ -692,12 +693,12 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* margin-bottom: 20px; */
+    margin-bottom: 5px;
     font-weight: 700;
 }
 
 .guestbook_post_namedate {
-    width: calc(100% - 22px);
+    width: calc(100vw - 22px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -769,7 +770,7 @@ hr {
 }
 
 .qna_wrapper {
-    min-height: calc(100% - 75px - 50px);
+    min-height: calc(100vh - 75px - 50px);
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
@@ -1033,6 +1034,11 @@ hr {
     margin-right: 1vw;
 }
 
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .download_wrapper {
     width: 100%;
     display: flex;
@@ -1168,6 +1174,11 @@ hr {
     .menu_row {
         overflow-x: scroll;
         overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+    }
+    .menu_row::-webkit-scrollbar{
+        display: none;
     }
 
     .menu_btn, .submenu_row {

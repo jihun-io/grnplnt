@@ -69,7 +69,7 @@
             <h3>자격 요건</h3>
             <p>헤드 포지션은 물론 부원까지 모두 어떤 요건도 없습니다.</p>
             <h3>참여 방법</h3>
-            <p>웹페이지 하단의 연락처로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <p><span class="link" onclick="scrollToAnchor('#contact')">웹페이지 하단의 연락처</span>로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
             <h3>작업 시작일</h3>
             <p>본 작품의 리뷰가 끝나는 5월 9일 이후 바로 시작되며, 자세한 내용은 하단에 첨부된 PDF 파일 ‘로드맵’ 부분에 명시되어 있습니다. 기말고사 기간에는 학업에 영향이 없도록 조율할
                 예정입니다.</p>
@@ -81,11 +81,12 @@
         </div>
         <div class="participation" id="actors">
             <h3>배역</h3>
-            <p>본 홈페이지와 <u><a href="#document">PDF 첨부파일</a></u>에 명시된 인물인 젤리, 허쉬, 포니, 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지 않습니다.</p>
+            <p>본 홈페이지와 <span class="link" onclick="scrollToAnchor('#document')">PDF 첨부파일</span>에 명시된 인물인 젤리, 허쉬, 포니, 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지
+                않습니다.</p>
             <h3>지원방식</h3>
             <p>명시된 감독의 번호, 혹은 이메일로 연락주시면 되며, 양식은 존재하지 않습니다. 이후 감독이 직접 찾아뵙도록 하겠습니다.</p>
             <h3>참여 방법</h3>
-            <p>웹페이지 하단의 연락처로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <p><span class="link" onclick="scrollToAnchor('#contact')">웹페이지 하단의 연락처</span>로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
             <h3>촬영일</h3>
             <p>7월 말에서 8월 초가 될 가능성이 높습니다. 프리 프로덕션 속도에 따라서 변경될 수도 있지만 8월을 넘어가는 일이 없도록 할 것입니다.</p>
             <h3>촬영 지역</h3>
@@ -95,7 +96,7 @@
 
 
 
-        <div class="card_wrapper">
+        <div id="contact" class="card_wrapper">
             <div class="card">
                 <div class="card_top">
                     <img class="card_profile" src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
@@ -116,16 +117,18 @@
             </div>
         </div>
         <div class="title">
-            <h1 id="document">자료</h1>
+            <h1>자료</h1>
         </div>
         <div class="embedded_document_wrapper">
-            <iframe class="embedded_document" src="https://drive.google.com/file/d/1aq1iqGtJMiBMv9L7wwK6IBOt7S_8YEqJ/preview"></iframe>
+            <iframe id="document" class="embedded_document"
+                src="https://drive.google.com/file/d/1aq1iqGtJMiBMv9L7wwK6IBOt7S_8YEqJ/preview"></iframe>
         </div>
         <div class="download_wrapper">
-            <a class="download_btn" href="/static/files/혹성의%20아이%20캡스톤%20발표본.pdf" download="혹성의 아이 캡스톤 발표본.pdf">PDF 다운로드</a>
+            <a class="download_btn" href="/static/files/혹성의%20아이%20캡스톤%20발표본.pdf"
+                download="혹성의 아이 캡스톤 발표본.pdf">PDF 다운로드</a>
             <!-- <a class="download_btn" onclick="window.open('{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }};')" download="">PDF 다운로드</a> -->
         </div>
-        
+
         <!-- <object data="{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }}" type="application/pdf" style="width: 100%; aspect-ratio: 16/9;"></object> -->
     </div>
     <script>
@@ -144,6 +147,16 @@
                 staffsContent.classList.remove("show");
                 actorsBtn.classList.add("underbar");
                 staffsBtn.classList.remove("underbar");
+            }
+        }
+
+        function scrollToAnchor(anchorId) {
+            var anchor = document.querySelector(anchorId);
+            if (anchor) {
+                anchor.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             }
         }
     </script>
