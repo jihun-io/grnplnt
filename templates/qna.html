@@ -81,7 +81,7 @@
         </div>
         <div class="participation" id="actors">
             <h3>배역</h3>
-            <p>본 홈페이지와 PDF 첨부파일에 명시된 인물인 젤리, 허쉬, 포니, 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지 않습니다.</p>
+            <p>본 홈페이지와 <u><a href="#document">PDF 첨부파일</a></u>에 명시된 인물인 젤리, 허쉬, 포니, 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지 않습니다.</p>
             <h3>지원방식</h3>
             <p>명시된 감독의 번호, 혹은 이메일로 연락주시면 되며, 양식은 존재하지 않습니다. 이후 감독이 직접 찾아뵙도록 하겠습니다.</p>
             <h3>참여 방법</h3>
@@ -115,12 +115,18 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="card">
-            <img class="card_profile" src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
-            <p class="textphone">+82.10.9926.1652</p>
-            <p class="textor">or</p>
-            <p class="textemail">wjtrks12@khu.ac.kr</p>
-        </div> -->
+        <div class="title">
+            <h1 id="document">자료</h1>
+        </div>
+        <div class="embedded_document_wrapper">
+            <iframe class="embedded_document" src="https://drive.google.com/file/d/1aq1iqGtJMiBMv9L7wwK6IBOt7S_8YEqJ/preview"></iframe>
+        </div>
+        <div class="download_wrapper">
+            <a class="download_btn" href="{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }}" download="">PDF 다운로드</a>
+            <!-- <a class="download_btn" onclick="window.open('{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }};')" download="">PDF 다운로드</a> -->
+        </div>
+        
+        <!-- <object data="{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }}" type="application/pdf" style="width: 100%; aspect-ratio: 16/9;"></object> -->
     </div>
     <script>
         function showContent(jobs) {

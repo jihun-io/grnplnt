@@ -873,9 +873,10 @@ hr {
     align-items: center;
     justify-content: center;
     border: 1px solid #383430;
-    border-radius: 2px;
+    border-radius: 5px;
     margin-left: 3px;
     margin-right: 3px;
+    background-color: #fff;
 }
 
 .chart .box.long {
@@ -1023,6 +1024,39 @@ hr {
     width: 3vw;
     text-align: center;
     margin-right: 1vw;
+}
+
+.download_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.download_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    height: 3em;
+    background-color: rgb(137, 255, 80);
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.embedded_document_wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.embedded_document {
+    width: 100%;
+    height: 100%;
 }
 
 @media(min-width:1000px) {
@@ -1249,6 +1283,11 @@ hr {
         display: flex;
         justify-content: center;
     }
+
+    .embedded_document_wrapper {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1293,10 +1332,16 @@ hr {
 
     .chart .box {
         border: 1px solid #f9f9f5;
+        background-color: rgb(63, 63, 65);
+
     }
 
     .occ p, .vac p {
         text-shadow: 0px 0px 5px #000;
+    }
+
+    .download_btn {
+        color:rgb(63, 63, 65);
     }
 
     
