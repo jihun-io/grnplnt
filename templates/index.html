@@ -6,7 +6,7 @@
 <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
 <div class="cs_wrapper">
-    <div class="embla" onmousedown="loopStop();">
+    <div class="embla" onmousedown="loopStop();" ontouchend="loopStop();">
         <div class="embla__container">
             <div class="embla__slide">
                 <img src="{{ url_for('static', filename='img/hero-image1.jpg') }}">
