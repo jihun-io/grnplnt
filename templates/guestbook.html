@@ -1,57 +1,12 @@
 {% extends 'layout.html' %}
  
 {% block content %}
-<!-- <div class="modal">
-    <div class="modal_body">
-        <p>모달 내용</p>
-    </div>
-</div> -->
 <div class="qna_wrapper">
-    <div class="dropdown_wrapper">
-        <div class="dropdown">
-            <div class="dropdown_row">
-                <h1><a class="dropdown_text" href="#" onclick="toggleDropdown()">방명록<i id="dropdown_icon" class="fas fa-chevron-down"></i></a></h1>
-            </div>
-            <ul id="dropdown_list" class="dropdown_list">
-                <!-- <li class="dropdown_list_item">방명록</li> -->
-                <li class="dropdown_list_item"><a href="./qna">질문 및 문의</a></li>
-            </ul>
-        </div>
+    <div class="title">
+        <h1>방명록</h1>
     </div>
     
     <script>
-        function toggleDropdown() {
-            var dropdownList = document.getElementById("dropdown_list");
-            var dropdownIcon = document.getElementById("dropdown_icon");
-            if (dropdownList.classList.contains("open")) {
-                dropdownList.classList.remove("open");
-                dropdownIcon.classList.remove("rotate");
-            } else {
-                dropdownList.classList.add("open");
-                dropdownIcon.classList.add("rotate");
-            }
-        }
-
-        function editDropdown(num) {
-            var dropdownList = document.getElementById("edit" + num);
-            if (dropdownList.classList.contains("open")) {
-                dropdownList.classList.remove("open");
-            } else {
-                dropdownList.classList.add("open");
-            }
-        }
-
-        function editPost(num, edit) {
-            var form = document.getElementById("editform" + num);
-            if (edit == 0) {
-                form.action="./guestbook/edit?id=" + num;
-            } else if (edit == 1) {
-                form.action="./guestbook/del?id=" + num;
-            } else {
-                
-            }
-        }
-
     </script>
     <form id="write" method="post" action="./guestbook/submit" class="write_area">
         <div class="userinfo">
@@ -95,6 +50,29 @@
         {% endif %}
         {% endfor %}
     </div>
+    <script>
+
+        function editDropdown(num) {
+            var dropdownList = document.getElementById("edit" + num);
+            if (dropdownList.classList.contains("open")) {
+                dropdownList.classList.remove("open");
+            } else {
+                dropdownList.classList.add("open");
+            }
+        }
+
+        function editPost(num, edit) {
+            var form = document.getElementById("editform" + num);
+            if (edit == 0) {
+                form.action="./guestbook/edit?id=" + num;
+            } else if (edit == 1) {
+                form.action="./guestbook/del?id=" + num;
+            } else {
+                
+            }
+        }
+
+    </script>
 </div>
 {% endblock %}
 
