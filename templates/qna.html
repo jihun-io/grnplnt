@@ -1,46 +1,100 @@
 {% extends 'layout.html' %}
- 
+
 {% block content %}
 
 <div class="main">
     <div class="qna_wrapper">
-        <div class="dropdown_wrapper">
-            <div class="dropdown">
-                <div class="dropdown_row">
-                    <h1><a class="dropdown_text" href="#" onclick="toggleDropdown()">질문 및 문의<i id="dropdown_icon" class="fas fa-chevron-down"></i></a></h1>
-                </div>
-                <ul id="dropdown_list" class="dropdown_list">
-                    <!-- <li class="dropdown_list_item">방명록</li> -->
-                    <li class="dropdown_list_item"><a href="./guestbook">방명록</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <script>
-            function toggleDropdown() {
-                var dropdownList = document.getElementById("dropdown_list");
-                var dropdownIcon = document.getElementById("dropdown_icon");
-                if (dropdownList.classList.contains("open")) {
-                    dropdownList.classList.remove("open");
-                    dropdownIcon.classList.remove("rotate");
-                } else {
-                    dropdownList.classList.add("open");
-                    dropdownIcon.classList.add("rotate");
-    
-                }
-            }
-        </script>
-        <!-- <div class="title">
+        <div class="title">
             <h1>질문 및 문의</h1>
-        </div> -->
-        <div class="participation">
-            <h2>스태프 참여를 원할 시</h2>
-            <p>프로젝트 참여를 원하시는 모든 분들에게는 별도의 경력이나 고도의 기술, 경험 등을 요구하지 않으며, 특별한 우대 사항 역시 존재하지 않습니다. 제공된 시놉시스와 비주얼을 보고 흥미를 느끼신 분, 혹은 그저 별 이유 없이 마음이 동한 분 모두를 환영합니다. 아무래도 사람들을 움직이는 가장 강한 힘은 '그냥'이라는 말로 줄여도 될만큼 이유도, 논리도 없는 끌림이기 때문입니다.</p>
         </div>
-        <div class="participation">
-            <h2>배우 참여를 원할 시</h2>
-            <p>마찬가지로 별도의 경력이나 경험 등을 요구하지 않으며, 이메일과 연락처를 통해 프로필을 제공해 주시는 것에는 열려 있습니다. 하지만 기본적으로 지원자가 40명을 넘어가지 않을 시 (그럴 일이 있을까 싶지만) 프로젝트 진행자인 감독 본인이 지원자 모두를 찾아 뵐 예정입니다. 기존의 '단편영화 오디션'과 같은 허울에서 탈피하고자 함이니 부담 없이 지원해주시면 감독이 직접 두 발로 찾아가겠습니다.</p>
+        <div class="jobs">
+            <h2 class="underbar" id="staffs_btn" onclick="showContent(staffs)">스태프</h2>
+            <h2 id="actors_btn" onclick="showContent(actors)">배우</h2>
         </div>
+        <div class="participation show" id="staffs">
+            <h3>참여 가능한 포지션</h3>
+            <div class="chart">
+                <div class="row_1">
+                    <div class="logo_small">
+                        <img src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
+                    </div>
+                    <div class="box title">
+                        <p>혹성의 아이</p>
+                    </div>
+                </div>
+
+                <div class="row_2">
+                    <div class="jobs_wrapper">
+                        <div class="text occ">
+                            <p>OCCUPIED</p>
+                        </div>
+                        <div class="box short">
+                            <p>감독</p>
+                        </div>
+                        <p class="desc"></p>
+
+                    </div>
+                    <div class="jobs_wrapper">
+                        <div class="text vac">
+                            <p>VACANCY</p>
+                        </div>
+                        <div class="box short">
+                            <p>제작</p>
+                        </div>
+                        <p class="desc"></p>
+                    </div>
+                    <div class="jobs_wrapper">
+                        <div class="text vac">
+                            <p>VACANCY</p>
+                        </div>
+                        <div class="box long">
+                            <p>촬영·조명·사운드</p>
+                        </div>
+                        <p class="desc"></p>
+                    </div>
+                    <div class="jobs_wrapper">
+                        <div class="text vac">
+                            <p>VACANCY</p>
+                        </div>
+                        <div class="box long">
+                            <p>비주얼 메이킹</p>
+                        </div>
+                        <p class="desc">* 연출, 미술 통합</p>
+                    </div>
+                </div>
+
+            </div>
+            <p>해당 시나리오는 한정된 공간 안에서 이루어지는 이야기이기에 공간과 인물, 오브제 디자인의 고려 사항이 많을 것으로 예상됩니다. 따라서 감독이 연출, 미술로부터 쉼 없이 조언을 받아야 한다고
+                판단하여 연출부와 미술부는 비주얼 메이킹이라는 대전제 안에 포함시켰습니다.</p>
+            <h3>자격 요건</h3>
+            <p>헤드 포지션은 물론 부원까지 모두 어떤 요건도 없습니다.</p>
+            <h3>참여 방법</h3>
+            <p>웹페이지 하단의 연락처로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <h3>작업 시작일</h3>
+            <p>본 작품의 리뷰가 끝나는 5월 9일 이후 바로 시작되며, 자세한 내용은 하단에 첨부된 PDF 파일 ‘로드맵’ 부분에 명시되어 있습니다. 기말고사 기간에는 학업에 영향이 없도록 조율할
+                예정입니다.</p>
+            <h3>촬영일</h3>
+            <p>7월 말에서 8월 초가 될 가능성이 높습니다. 프리 프로덕션 속도에 따라서 변경될 수도 있지만 8월을 넘어가는 일이 없도록 할 것입니다.</p>
+            <h3>촬영지역</h3>
+            <p>학교 근방에서 벗어나지 않도록 고려하여 시나리오를 구성했습니다.</p>
+
+        </div>
+        <div class="participation" id="actors">
+            <h3>무슨 배역이 있는지</h3>
+            <p>본 홈페이지와 PDF 첨부파일에 명시된 인물인 젤리, 허쉬, 포니, 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지 않습니다.</p>
+            <h3>지원방식</h3>
+            <p>명시된 감독의 번호, 혹은 이메일로 연락주시면 되며, 양식은 존재하지 않습니다. 이후 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <h3>참여 방법</h3>
+            <p>웹페이지 하단의 연락처로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <h3>촬영일</h3>
+            <p>7월 말에서 8월 초가 될 가능성이 높습니다. 프리 프로덕션 속도에 따라서 변경될 수도 있지만 8월을 넘어가는 일이 없도록 할 것입니다.</p>
+            <h3>촬영 지역</h3>
+            <p>학교 근방에서 벗어나지 않도록 고려하여 시나리오를 구성했습니다.</p>
+        </div>
+
+
+
+
         <div class="card_wrapper">
             <div class="card">
                 <div class="card_top">
@@ -68,7 +122,24 @@
             <p class="textemail">wjtrks12@khu.ac.kr</p>
         </div> -->
     </div>
+    <script>
+        function showContent(jobs) {
+            var staffsContent = document.getElementById("staffs");
+            var actorsContent = document.getElementById("actors");
+            var staffsBtn = document.getElementById("staffs_btn");
+            var actorsBtn = document.getElementById("actors_btn");
+            if (jobs == staffs) {
+                staffsContent.classList.add("show");
+                actorsContent.classList.remove("show");
+                staffsBtn.classList.add("underbar");
+                actorsBtn.classList.remove("underbar");
+            } else if (jobs == actors) {
+                actorsContent.classList.add("show");
+                staffsContent.classList.remove("show");
+                actorsBtn.classList.add("underbar");
+                staffsBtn.classList.remove("underbar");
+            }
+        }
+    </script>
 </div>
 {% endblock %}
-
-
