@@ -6,7 +6,7 @@
 <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
 <div class="cs_wrapper">
-    <div class="embla">
+    <div class="embla" onmousedown="loopStop();">
         <div class="embla__container">
             <div class="embla__slide">
                 <img src="{{ url_for('static', filename='img/hero-image1.jpg') }}">
@@ -25,12 +25,43 @@
             </div>
         </div>
     </div>
+    <div class="controller">
+        <button id="left" onclick="prev()"><i class="fas fa-chevron-left"></i></button>
+        <button id="rigft" onclick="next()"><i class="fas fa-chevron-right"></i></button>
+    </div>
 </div>
 <script type="text/javascript">
     var emblaNode = document.querySelector(".embla");
     var options = { loop: true };
-    var plugins = [EmblaCarouselAutoplay()]; // Plugins
+    // var plugins = [EmblaCarouselAutoplay()]; // Plugins
 
-    var embla = EmblaCarousel(emblaNode, options, plugins);
+    // var embla = EmblaCarousel(emblaNode, options, plugins);
+    var embla = EmblaCarousel(emblaNode, options);
+    
+    isLoop = true;
+    time = 3000;
+
+    setInterval(autoPlay, time);
+
+    function autoPlay() {
+        if (isLoop) {
+            embla.scrollNext();
+        }
+    }
+
+    function prev() {
+        embla.scrollPrev();
+        loopStop();
+    }
+    function next() {
+        embla.scrollNext();
+        loopStop();
+    }
+
+    function loopStop() {
+        isLoop = false;
+        setTimeout(function(){isLoop = true;}, 10000)
+    }
+
 </script>
 {% endblock %}
