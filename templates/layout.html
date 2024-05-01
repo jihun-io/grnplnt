@@ -18,7 +18,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-icon-144x144.png') }}">
     <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-icon-152x152.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-icon-180x180.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ url_for('static', filename='android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{ url_for('static', filename='android-icon-192x192.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
@@ -26,6 +27,29 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ url_for('static', filename='ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="혹성의 아이" />
+    <meta name="description"
+        content="자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는 수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://grnplnt.life/" />
+    <meta property="og:title" content="혹성의 아이" />
+    <meta property="og:description"
+        content="자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는 수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다." />
+    <meta property="og:image" content="{{ url_for('static', filename='img/hero-image1.jpg') }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://grnplnt.life/" />
+    <meta property="twitter:title" content="혹성의 아이" />
+    <meta property="twitter:description"
+        content="자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는 수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다." />
+    <meta property="twitter:image" content="{{ url_for('static', filename='img/hero-image1.jpg') }}" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
 </head>
 
 <body>
@@ -73,7 +97,8 @@
                         </ul> -->
                     </li>
                     <li class="menu_btn">
-                        <a class="menu_link {{ selected_social }}" href="#" onclick="toggleDropdown()">소셜<i id="dropdown_icon" class="fas fa-chevron-down"></i></a>
+                        <a class="menu_link {{ selected_social }}" href="#" onclick="toggleDropdown()">소셜<i
+                                id="dropdown_icon" class="fas fa-chevron-down"></i></a>
                         <!-- <ul class="submenu">
                             <li class="submenu_items">
                                 <a href="/social/qna">질문 및 문의</a>
@@ -173,13 +198,13 @@
                     // menuRowWrapper.classList.add("open");
                     // menuRow.classList.add("open");
                     dropdownIcon.classList.add("rotate");
-    
+
                 }
             }
         </script>
     </header>
 
-    <main id="main" >
+    <main id="main">
         {% block content %}{% endblock %}
     </main>
 
