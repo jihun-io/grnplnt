@@ -282,7 +282,7 @@ header {
 } */
 
 .main {
-    min-height: calc(100vh - 75px - 50px);
+    min-height: calc(100% - 75px - 50px);
     /* min-height: 300px; */
     width: 100%;
 }
@@ -372,7 +372,7 @@ header {
 
 
 .cs_wrapper {
-    height: calc(100vh - 75px - 50px);
+    height: calc(100% - 75px - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -391,7 +391,7 @@ header {
 
 
 .synopsis_wrapper {
-    height: calc(100vh - 275px - 50px);
+    height: calc(100% - 275px - 50px);
     /* height: 480px; */
     padding: 100px 0 100px 0;
     display: flex;
@@ -771,7 +771,7 @@ hr {
 }
 
 .qna_wrapper {
-    min-height: calc(100vh - 75px - 50px);
+    min-height: calc(100% - 75px - 50px);
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
