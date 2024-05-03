@@ -1215,6 +1215,10 @@ hr {
         flex-direction: column;
     }
 
+    .character_info {
+        width: 100%;
+    }
+
     .character_name {
         margin-top: 25px;
     }
