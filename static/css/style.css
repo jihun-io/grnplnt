@@ -913,10 +913,15 @@ hr {
 
 }
 
+.desc_wrapper {
+    height: 3em;
+}
+
 .desc {
     font-size: 0.8em!important;
     height: 1em;
     white-space:nowrap;
+    margin-bottom: 0.4em;
 }
 
 .occ p {
