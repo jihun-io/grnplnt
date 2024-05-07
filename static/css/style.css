@@ -853,6 +853,13 @@ hr {
     text-align: justify;
 }
 
+.chart_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .chart {
     display: flex;
     flex-direction: column;
@@ -911,6 +918,17 @@ hr {
     word-wrap: break-word;
     word-break: keep-all;
 
+}
+
+.notice {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice p {
+    font-size: 0.9em!important;
 }
 
 .desc_wrapper {
