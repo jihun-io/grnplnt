@@ -219,7 +219,7 @@ def qna():
 
 @app.route('/download/pdf')
 def download_pdf():
-    return send_file('static/files/혹성의 아이 캡스톤 발표본.pdf', as_attachment=True, mimetype='application/pdf', attachment_filename='혹성의 아이 캡스톤 발표본.pdf')
+    return send_file('static/files/혹성의 아이 캡스톤 발표본.pdf', as_attachment=True, mimetype='application/pdf', download_name='혹성의 아이 캡스톤 발표본.pdf')
 
 host_addr = "0.0.0.0"
 port_num = "4062"
