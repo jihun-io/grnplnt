@@ -217,7 +217,7 @@ def admin():
 def qna():
     return render_template('qna.html', selected_social = 'menu_bold')
 
-@app.route('/download/혹성의%20아이%20캡스톤%20발표본.pdf')
+@app.route('/download/pdf')
 def download_pdf():
     return send_file('static/files/혹성의 아이 캡스톤 발표본.pdf', as_attachment=True, mimetype='application/pdf', attachment_filename='혹성의 아이 캡스톤 발표본.pdf')
 
