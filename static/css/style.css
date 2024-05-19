@@ -993,7 +993,7 @@ hr {
 
 
 .card_top .card_profile {
-    width: 8vw;
+    width: 10vw;
 }
 
 .card_top,
@@ -1011,7 +1011,11 @@ hr {
 
 .card_top {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.card_top img {
+    width: 120%;
 }
 
 .card_mid {
@@ -1044,7 +1048,6 @@ hr {
     font-weight: 600;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
 
 }
 
@@ -1056,6 +1059,25 @@ hr {
     width: 3vw;
     text-align: center;
     margin-right: 1vw;
+}
+
+.card_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_content .card_profile {
+    width: 20%;
+    margin-bottom: 2em;
+}
+
+.card_content i {
+    margin-right: 0.5em;
+
 }
 
 .link {
@@ -1110,7 +1132,7 @@ hr {
     }
 
     .card_top .card_profile {
-        width: 6vw;
+        width: 8vw;
     }
 
     .name_ko {
@@ -1155,7 +1177,7 @@ hr {
     }
 
     .card_top .card_profile {
-        width: 4vw;
+        width: 6vw;
     }
 
     .name_ko {
@@ -1284,7 +1306,7 @@ hr {
     }
 
     .card_top .card_profile {
-        width: 11.2vw;
+        width: 13.2vw;
     }
 
     .name_ko {

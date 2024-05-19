@@ -8,10 +8,10 @@
             <h1>질문 및 문의</h1>
         </div>
         <div class="jobs">
-            <h2 class="underbar" id="staffs_btn" onclick="showContent(staffs)">스태프</h2>
-            <h2 id="actors_btn" onclick="showContent(actors)">배우</h2>
+            <h2 class="" id="staffs_btn" onclick="showContent(staffs)">스태프</h2>
+            <h2 class="underbar" id="actors_btn" onclick="showContent(actors)">배우</h2>
         </div>
-        <div class="participation show" id="staffs">
+        <div class="participation " id="staffs">
             <h3>참여 가능한 포지션</h3>
             <div class="chart_wrapper">
                 <div class="chart">
@@ -80,20 +80,20 @@
             <p>학교 근방에서 벗어나지 않도록 고려하여 시나리오를 구성했습니다.</p>
 
         </div>
-        <div class="participation" id="actors">
+        <div class="participation show" id="actors">
             <h3>배역</h3>
             <p>본 홈페이지와 <span class="link" onclick="scrollToAnchor('#document')">PDF 첨부파일</span>에 명시된 인물인 젤리, 허쉬, 포니,
                 풀페이스, 총 4명의 배역이 존재합니다. 엑스트라는 존재하지
                 않습니다.</p>
             <h3>지원방식</h3>
-            <p>명시된 감독의 번호, 혹은 이메일로 연락주시면 되며, 양식은 존재하지 않습니다. 이후 감독이 직접 찾아뵙도록 하겠습니다.</p>
+            <p>아래에 명시된 이메일을 통해 프로필을 보내주시면 되며, 양식은 존재하지 않습니다.</p>
             <h3>참여 방법</h3>
-            <p><span class="link" onclick="scrollToAnchor('#contact')">웹페이지 하단의 연락처</span>로 연락 주신다면 감독이 직접 찾아뵙도록 하겠습니다.
+            <p><span class="link" onclick="scrollToAnchor('#contact')">웹페이지 하단의 이메일</span>로 연락 주신다면 되며, 이후 연락드리도록 하겠습니다.
             </p>
             <h3>촬영일</h3>
-            <p>7월 말에서 8월 초가 될 가능성이 높습니다. 프리 프로덕션 속도에 따라서 변경될 수도 있지만 8월을 넘어가는 일이 없도록 할 것입니다.</p>
+            <p>7월 20일~22일 3일간, 혹은 7월 20일~21일 2일간 진행될 예정입니다.</p>
             <h3>촬영 지역</h3>
-            <p>학교 근방에서 벗어나지 않도록 고려하여 시나리오를 구성했습니다.</p>
+            <p>경기도 수원시 일대 혹은 서울시 중 한 곳이 될 예정입니다.</p>
         </div>
 
 
@@ -101,23 +101,10 @@
 
         <div id="contact" class="card_wrapper">
             <div class="card">
-                <div class="card_top">
+                <div class="card_content">
                     <img class="card_profile" src="{{ url_for('static', filename='img/logo_nomargin.png') }}">
-                </div>
-                <div class="card_mid">
-                    <div class="card_director">
-                        <p>감독</p>
-                    </div>
-                    <div class="card_name">
-                        <p class="name_ko">박 준</p>
-                        <p class="name_en">Jun Park</p>
-                    </div>
-                </div>
-                <div class="card_bottom">
-                    <p class="textphone"><i class="fas fa-mobile-alt"></i><a href="tel:01099261652">+82 10-9926-1652</a>
-                    </p>
                     <p class="textemail"><i class="far fa-envelope"></i><a
-                            href="mailto:wjtrks12@khu.ac.kr">wjtrks12@khu.ac.kr</a></p>
+                        href="mailto:greenplanet1415@gmail.com">greenplanet1415@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -126,11 +113,10 @@
         </div>
         <div class="embedded_document_wrapper">
             <iframe id="document" class="embedded_document"
-                src="https://drive.google.com/file/d/1aq1iqGtJMiBMv9L7wwK6IBOt7S_8YEqJ/preview"></iframe>
+                src="https://drive.google.com/file/d/1liLOT445SgxG7nDSfdcMrsXWGfeRkjGd/preview"></iframe>
         </div>
         <div class="download_wrapper">
-            <a class="download_btn" href="/download/pdf"
-                download="혹성의 아이 캡스톤 발표본.pdf">PDF 다운로드</a>
+            <a class="download_btn" href="/download/pdf">PDF 다운로드</a>
             <!-- <a class="download_btn" onclick="window.open('{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }};')" download="">PDF 다운로드</a> -->
         </div>
 
