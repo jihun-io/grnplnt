@@ -1,67 +1,85 @@
-{% extends 'layout.html' %}
-
-{% block content %}
+{% extends 'layout.html' %} {% block content %}
 
 <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
 <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
 
 <div class="cs_wrapper">
-    <div class="embla" onmousedown="loopStop();" ontouchend="loopStop();">
-        <div class="embla__container">
-            <div class="embla__slide">
-                <img src="{{ url_for('static', filename='img/hero-image1.jpg') }}">
-            </div>
-            <div class="embla__slide">
-                <img src="{{ url_for('static', filename='img/hero-image2.jpg') }}">
-            </div>
-            <div class="embla__slide">
-                <img src="{{ url_for('static', filename='img/hero-image3.jpg') }}">
-            </div>
-            <div class="embla__slide">
-                <img src="{{ url_for('static', filename='img/hero-image4.jpg') }}">
-            </div>
-            <div class="embla__slide">
-                <img src="{{ url_for('static', filename='img/hero-image5.jpg') }}">
-            </div>
-        </div>
+  <div class="embla" onmousedown="loopStop();" ontouchend="loopStop();">
+    <div class="embla__container">
+      <div class="embla__slide">
+        <img
+          src="{{ url_for('static', filename='img/hero-image1.jpg') }}"
+          alt="허쉬, 포니, 젤리가 풀밭에 서서 위를 향해 바라보고 있다."
+        />
+      </div>
+      <div class="embla__slide">
+        <img
+          src="{{ url_for('static', filename='img/hero-image2.jpg') }}"
+          alt="허쉬와 젤리가 해안 도로를 걸어가고 있다."
+        />
+      </div>
+      <div class="embla__slide">
+        <img
+          src="{{ url_for('static', filename='img/hero-image3.jpg') }}"
+          alt="젤리, 허쉬, 포니가 횡단보도를 나란히 걸어가고 있다."
+        />
+      </div>
+      <div class="embla__slide">
+        <img
+          src="{{ url_for('static', filename='img/hero-image4.jpg') }}"
+          alt="은하를 배경으로 젤리가 서서 위를 바라보고 있다."
+        />
+      </div>
+      <div class="embla__slide">
+        <img
+          src="{{ url_for('static', filename='img/hero-image5.jpg') }}"
+          alt="푸른 하늘을 배경으로 포니, 젤리, 허쉬가 서 있다."
+        />
+      </div>
     </div>
-    <div class="controller" onmousedown="loopStop();" ontouchend="loopStop();">
-        <button id="left" onclick="prev()"><i class="fas fa-chevron-left"></i></button>
-        <button id="rigft" onclick="next()"><i class="fas fa-chevron-right"></i></button>
-    </div>
+  </div>
+  <div class="controller" onmousedown="loopStop();" ontouchend="loopStop();">
+    <button id="left" onclick="prev()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="rigft" onclick="next()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 </div>
 <script type="text/javascript">
-    var emblaNode = document.querySelector(".embla");
-    var options = { loop: true };
-    // var plugins = [EmblaCarouselAutoplay()]; // Plugins
+  var emblaNode = document.querySelector(".embla");
+  var options = { loop: true };
+  // var plugins = [EmblaCarouselAutoplay()]; // Plugins
 
-    // var embla = EmblaCarousel(emblaNode, options, plugins);
-    var embla = EmblaCarousel(emblaNode, options);
-    
-    isLoop = true;
-    time = 3000;
+  // var embla = EmblaCarousel(emblaNode, options, plugins);
+  var embla = EmblaCarousel(emblaNode, options);
 
-    setInterval(autoPlay, time);
+  isLoop = true;
+  time = 3000;
 
-    function autoPlay() {
-        if (isLoop) {
-            embla.scrollNext();
-        }
+  setInterval(autoPlay, time);
+
+  function autoPlay() {
+    if (isLoop) {
+      embla.scrollNext();
     }
+  }
 
-    function prev() {
-        embla.scrollPrev();
-        loopStop();
-    }
-    function next() {
-        embla.scrollNext();
-        loopStop();
-    }
+  function prev() {
+    embla.scrollPrev();
+    loopStop();
+  }
+  function next() {
+    embla.scrollNext();
+    loopStop();
+  }
 
-    function loopStop() {
-        isLoop = false;
-        setTimeout(function(){isLoop = true;}, 10000)
-    }
-
+  function loopStop() {
+    isLoop = false;
+    setTimeout(function () {
+      isLoop = true;
+    }, 10000);
+  }
 </script>
 {% endblock %}
