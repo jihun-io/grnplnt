@@ -1,10 +1,11 @@
-{% extends 'layout.html' %}
- 
-{% block content %}
-
-<div class="cs_wrapper" style="background-image: url({{ url_for('static', filename='img/cs_bg.png') }}); background-size: cover; background-position: center center;">
-    <h1 class="comingsoon">COMING SOON</h1>
-</div>
+{% extends 'layout.html' %} {% block content %}
+<section>
+  <h2 class="sr-only">{{ menuName }}</h2>
+  <div
+    class="cs_wrapper"
+    style="background-image: url({{ url_for('static', filename='img/cs_bg.png') }}); background-size: cover; background-position: center center;"
+  >
+    <h3 class="comingsoon">COMING SOON</h2>
+  </div>
+</section>
 {% endblock %}
-
-

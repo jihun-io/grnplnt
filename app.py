@@ -57,19 +57,19 @@ def character():
 
 @app.route('/gallery')
 def gallery():
-    return render_template('comingsoon.html', selected_gallery = 'menu_bold')
+    return render_template('comingsoon.html', menuName = "갤러리", selected_gallery = 'menu_bold')
 
 @app.route('/videos')
 def videos():
-    return render_template('comingsoon.html', selected_videos = 'menu_bold')
+    return render_template('comingsoon.html', menuName = "영상", selected_videos = 'menu_bold')
 
 @app.route('/download')
 def download():
-    return render_template('comingsoon.html', selected_download = 'menu_bold')
+    return render_template('comingsoon.html', menuName = "다운로드", selected_download = 'menu_bold')
 
 @app.route('/social')
 def social():
-    return render_template('comingsoon.html', selected_social = 'menu_bold')
+    return render_template('comingsoon.html', menuName = "", selected_social = 'menu_bold')
 
 @app.route('/social/guestbook')
 def guestbook():
