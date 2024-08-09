@@ -1434,11 +1434,12 @@ hr {
     background-color: rgb(63, 63, 65);
   }
 
-  .jobs h3.underbar {
-    color: #f9f9f5;
+  .jobs .underbar {
+    color: #f9f9f5 !important;
   }
 
-  .jobs h3::after {
+  .jobs button#staffs_btn::after,
+  .jobs button#actors_btn::after {
     background-color: #f9f9f5;
   }
 
