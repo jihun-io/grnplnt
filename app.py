@@ -1,4 +1,4 @@
-from flask import Flask, render_template, render_template_string, url_for, request, redirect, session, send_file
+from flask import Flask, render_template, render_template_string, url_for, request, redirect, session, send_file, jsonify
 import sqlite3
 import os
 import hashlib
@@ -221,8 +221,9 @@ def qna():
 def download_pdf():
     return send_file('static/files/혹성의 아이 캡스톤 발표본.pdf', as_attachment=True, mimetype='application/pdf', download_name='혹성의 아이 캡스톤 발표본.pdf')
 
-host_addr = "0.0.0.0"
-port_num = "4062"
+@app.route('/deploy-test')
+def deploy_test():
+    return jsonify(result="success")
 
 if __name__ == "__main__":
-    app.run(host=host_addr, port=port_num, debug=True)
+    app.run(host='0.0.0.0', port=4062, debug=True)
