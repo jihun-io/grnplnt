@@ -15,6 +15,6 @@
 - 프론트엔드: HTML, CSS, JavaScript
 - 백엔드: Flask, Microsoft Azure, Cloudflare
 
-#### 링크
+## 링크
 
 [https://grnplnt.life](https://grnplnt.life)
