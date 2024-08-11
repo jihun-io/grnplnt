@@ -635,6 +635,7 @@ input {
 .edit_submit,
 .del_submit {
   font-weight: 800 !important;
+  cursor: pointer;
 }
 
 .edit_submit {
@@ -685,6 +686,7 @@ input {
   border-radius: 5px;
   background-color: rgb(137, 255, 80);
   font-weight: 900 !important;
+  cursor: pointer;
 }
 
 .guestbook_list {
@@ -738,6 +740,12 @@ hr {
 .more i {
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+
+.more button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .guestbook_post_input {
