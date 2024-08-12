@@ -436,12 +436,17 @@ main {
   /* background-color: #383430; */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .character_wrapper {
   /* max-width: 900px; */
   /* background-color: #383430;
     color: #fff; */
+}
+
+.character_info_wrapper {
+  max-width: 900px;
 }
 
 .character_hero {
