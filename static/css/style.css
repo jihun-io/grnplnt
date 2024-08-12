@@ -195,6 +195,13 @@ header {
   font-weight: 700;
 }
 
+.menu_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .menu_btn,
 .submenu_row {
   width: 100px;
@@ -210,6 +217,13 @@ header {
   cursor: pointer;
 }
 
+button.menu_link {
+  border: none;
+  background: none;
+  font-family: "PyeongChangPeace";
+  font-size: inherit;
+}
+
 #main {
   margin-top: 0px;
   transition-behavior: "height";
@@ -217,10 +231,10 @@ header {
 }
 
 #main.open {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
-.submenu_row_wrapper {
+#submenu_row_wrapper {
   /* width: calc(100vw - 80px); */
   height: 0px;
   margin-top: 0em;
@@ -228,14 +242,20 @@ header {
   transition-property: height;
   transition-duration: 0.3s;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.submenu_row_wrapper.open {
+#submenu_row_wrapper.open {
   height: 60px;
   margin-top: 0em;
+}
+
+#submenu_row_wrapper li {
+  margin-top: 8px;
+  /* margin: 8px 0; */
+  font-size: 0.8em;
 }
 
 /* .submenu_row {
@@ -1377,9 +1397,6 @@ hr {
 
   .menu_row {
     width: calc(100vw - 130px);
-  }
-
-  .submenu_row_wrapper {
   }
 
   .submenu_row {

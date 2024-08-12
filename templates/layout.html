@@ -181,7 +181,7 @@
         <div class="menu_left">
           <i class="fas fa-chevron-left"></i>
         </div>
-        <div class="menu_row" id="menu_row">
+        <nav class="menu_row" id="menu_row">
           <ul class="menu_row_1" id="menuBar">
             <li class="menu_btn">
               <a class="menu_link {{ selected_home }}" href="/">홈</a>
@@ -200,47 +200,33 @@
               <a class="menu_link {{ selected_gallery }}" href="/gallery"
                 >갤러리</a
               >
-              <!-- <ul class="submenu">
-                            <li class="submenu_items">
-                                <a href="/comingsoon">Coming Soon</a>
-                            </li>
-                        </ul> -->
             </li>
             <li class="menu_btn">
               <a class="menu_link {{ selected_videos }}" href="/videos">영상</a>
-              <!-- <ul class="submenu">
-                            <li class="submenu_items">
-                                <a href="/comingsoon">Coming Soon</a>
-                            </li>
-                        </ul> -->
             </li>
             <li class="menu_btn">
               <a class="menu_link {{ selected_download }}" href="/download"
                 >다운로드</a
               >
-              <!-- <ul class="submenu">
-                            <li class="submenu_items">
-                                <a href="/comingsoon">Coming Soon</a>
-                            </li>
-                        </ul> -->
             </li>
             <li class="menu_btn">
-              <span
+              <button
                 class="menu_link {{ selected_social }}"
                 onclick="toggleDropdown()"
-                >소셜<i id="dropdown_icon" class="fas fa-chevron-down"></i
-              ></span>
-              <!-- <ul class="submenu">
-                            <li class="submenu_items">
-                                <a href="/social/qna">질문 및 문의</a>
-                            </li>
-                            <li class="submenu_items">
-                                <a href="/social/guestbook">방명록</a>
-                            </li>
-                        </ul> -->
+              >
+                소셜<i
+                  id="dropdown_icon"
+                  class="fas fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <ul id="submenu_row_wrapper">
+                <li><a href="/social/qna">질문 및 문의</a></li>
+                <li><a href="/social/guestbook">방명록</a></li>
+              </ul>
             </li>
           </ul>
-          <div class="submenu_row_wrapper" id="submenu_row_wrapper">
+          <!-- <div class="submenu_row_wrapper" id="submenu_row_wrapper">
             <ul class="submenu_row"></ul>
             <ul class="submenu_row"></ul>
             <ul class="submenu_row"></ul>
@@ -255,8 +241,8 @@
                 <a href="/social/guestbook">방명록</a>
               </li>
             </ul>
-          </div>
-        </div>
+          </div> -->
+        </nav>
         <div class="menu_right">
           <i class="fas fa-chevron-right"></i>
         </div>
