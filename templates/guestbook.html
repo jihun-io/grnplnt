@@ -1,11 +1,11 @@
 {% extends 'layout.html' %} {% block content %}
-<section class="qna_wrapper">
+<section class="qna-wrapper">
   <div class="title">
     <h2>방명록</h2>
   </div>
 
   <script></script>
-  <form id="write" method="post" action="./guestbook/submit" class="write_area">
+  <form id="write" method="post" action="./guestbook/submit" class="write-area">
     <div class="userinfo">
       <input
         type="text"
@@ -25,19 +25,19 @@
       />
     </div>
     <textarea name="content" form="write" required></textarea>
-    <div class="write_btn">
-      <input type="submit" class="guestbook_submit" />
+    <div class="write-btn">
+      <input type="submit" class="guestbook-submit" />
     </div>
   </form>
-  <div class="guestbook_list">
+  <div class="guestbook-list">
     {% for post in posts %}
-    <div id="{{ post[3] }}" class="guestbook_post">
-      <div class="guestbook_post_info">
-        <div class="guestbook_post_namedate">
-          <div class="guestbook_post_name">
+    <div id="{{ post[3] }}" class="guestbook-post">
+      <div class="guestbook-post-info">
+        <div class="guestbook-post-namedate">
+          <div class="guestbook-post_name">
             <p>{{ post[0] }}</p>
           </div>
-          <div class="guestbook_post_date">
+          <div class="guestbook-post-date">
             <p>{{ post[1] }}</p>
           </div>
         </div>
@@ -47,10 +47,10 @@
           </button>
         </div>
       </div>
-      <div class="guestbook_post_input" id="edit{{ post[3] }}">
+      <div class="guestbook-post-input" id="edit{{ post[3] }}">
         <form id="editform{{ post[3] }}" method="post">
           <input
-            class="pw_input"
+            class="pw-input"
             type="password"
             id="pw_edit{{ post[3] }}"
             name="pw_edit"
@@ -58,19 +58,19 @@
           />
           <input
             type="submit"
-            class="edit_submit"
+            class="edit-submit"
             value="편집"
             onclick="editPost({{ post[3] }}, 0)"
           />
           <input
             type="submit"
-            class="del_submit"
+            class="del-submit"
             value="삭제"
             onclick="editPost({{ post[3] }}, 1)"
           />
         </form>
       </div>
-      <div class="guestbook_post_content">
+      <div class="guestbook-post-content">
         <p>{{ post[2] }}</p>
       </div>
     </div>

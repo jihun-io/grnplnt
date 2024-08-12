@@ -40,36 +40,36 @@ def dated_url_for(endpoint, **values):
 
 @app.route('/')
 def main():
-    return render_template('index.html', selected_home = 'menu_bold')
+    return render_template('index.html', selected_home = 'menu-bold')
 
 
-@app.route('/comingsoon')
+@app.route('/coming-soon')
 def comingsoon():
-    return render_template('comingsoon.html')
+    return render_template('coming-soon.html')
 
 @app.route('/synopsis')
 def synopsis():
-    return render_template('synopsis.html', selected_synopsis = 'menu_bold')
+    return render_template('synopsis.html', selected_synopsis = 'menu-bold')
 
 @app.route('/character')
 def character():
-    return render_template('character.html', selected_character = 'menu_bold')
+    return render_template('character.html', selected_character = 'menu-bold')
 
 @app.route('/gallery')
 def gallery():
-    return render_template('comingsoon.html', menuName = "갤러리", selected_gallery = 'menu_bold')
+    return render_template('coming-soon.html', menuName = "갤러리", selected_gallery = 'menu-bold')
 
 @app.route('/videos')
 def videos():
-    return render_template('comingsoon.html', menuName = "영상", selected_videos = 'menu_bold')
+    return render_template('coming-soon.html', menuName = "영상", selected_videos = 'menu-bold')
 
 @app.route('/download')
 def download():
-    return render_template('comingsoon.html', menuName = "다운로드", selected_download = 'menu_bold')
+    return render_template('coming-soon.html', menuName = "다운로드", selected_download = 'menu-bold')
 
 @app.route('/social')
 def social():
-    return render_template('comingsoon.html', menuName = "", selected_social = 'menu_bold')
+    return render_template('coming-soon.html', menuName = "", selected_social = 'menu-bold')
 
 @app.route('/social/guestbook')
 def guestbook():
@@ -78,7 +78,7 @@ def guestbook():
     c.execute("SELECT username, date, content, sn FROM guestbook ORDER BY date DESC")
     posts = c.fetchall()
     
-    return render_template('guestbook.html', selected_social = 'menu_bold', posts = posts)
+    return render_template('guestbook.html', selected_social = 'menu-bold', posts = posts)
 
 @app.route('/social/guestbook/submit', methods=['POST'])
 def guestbook_submit():
@@ -160,7 +160,7 @@ def guestbook_edit():
                 session['token'] = token
                 session['sn'] = sn
                 
-                return redirect(url_for('guestbook_modify'))
+                return redirect(url_for('guestbook-modify'))
             else:
                 return render_template_string("""<html><head><title>혹성의 아이</title><script type="text/javascript">window.onload = function() {alert("비밀번호가 올바르지 않습니다.");window.location.href = "/social/guestbook";};</script></head><body></body></html>""")
     else:
@@ -179,7 +179,7 @@ def guestbook_modify():
         if result == None:
             return redirect(url_for('guestbook'))
         else:
-            return render_template('guestbook_modify.html', result = result, sn = sn)
+            return render_template('guestbook-modify.html', result = result, sn = sn)
     else:
         return redirect(url_for('guestbook'))
 
@@ -215,7 +215,7 @@ def admin():
 
 @app.route('/social/qna')
 def qna():
-    return render_template('qna.html', selected_social = 'menu_bold')
+    return render_template('qna.html', selected_social = 'menu-bold')
 
 @app.route('/download/pdf')
 def download_pdf():

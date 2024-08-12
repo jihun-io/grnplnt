@@ -1,35 +1,20 @@
 {% extends 'layout.html' %} {% block content %}
-<section class="qna_wrapper">
-  <div class="dropdown_wrapper">
+<section class="qna-wrapper">
+  <div class="dropdown-wrapper">
     <div class="dropdown">
       <div class="title">
         <h2>방명록 수정</h2>
       </div>
-      <ul id="dropdown_list" class="dropdown_list">
-        <!-- <li class="dropdown_list_item">방명록</li> -->
-        <li class="dropdown_list_item"><a href="./qna">질문 및 문의</a></li>
+      <ul id="dropdown-list" class="dropdown-list">
+        <li class="dropdown-list-item"><a href="./qna">질문 및 문의</a></li>
       </ul>
     </div>
   </div>
-
-  <script>
-    // function toggleDropdown() {
-    //     var dropdownList = document.getElementById("dropdown_list");
-    //     var dropdownIcon = document.getElementById("dropdown_icon");
-    //     if (dropdownList.classList.contains("open")) {
-    //         dropdownList.classList.remove("open");
-    //         dropdownIcon.classList.remove("rotate");
-    //     } else {
-    //         dropdownList.classList.add("open");
-    //         dropdownIcon.classList.add("rotate");
-    //     }
-    // }
-  </script>
   <form
     id="write"
     method="post"
     action="./modify/submit?id={{ sn }}"
-    class="write_area"
+    class="write-area"
   >
     <div class="userinfo">
       <input
@@ -49,8 +34,8 @@
       />
     </div>
     <textarea name="content" form="write" required>{{ result[1] }}</textarea>
-    <div class="write_btn">
-      <input type="submit" class="guestbook_submit" />
+    <div class="write-btn">
+      <input type="submit" class="guestbook-submit" />
     </div>
   </form>
 </section>

@@ -167,8 +167,8 @@
 
   <body>
     <header>
-      <div class="menu_row_wrapper" id="menu_row_wrapper">
-        <div class="logo_wrapper">
+      <div class="menu-nav-wrapper" id="menu-nav-wrapper">
+        <div class="logo-wrapper">
           <h1>
             <a href="/"
               ><img
@@ -178,80 +178,64 @@
             /></a>
           </h1>
         </div>
-        <div class="menu_left">
+        <div class="menu-left">
           <i class="fas fa-chevron-left"></i>
         </div>
-        <nav class="menu_row" id="menu_row">
-          <ul class="menu_row_1" id="menuBar">
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_home }}" href="/">홈</a>
+        <nav class="menu-nav" id="menu-nav">
+          <ul id="menuBar">
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_home }}" href="/">홈</a>
             </li>
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_synopsis }}" href="/synopsis"
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_synopsis }}" href="/synopsis"
                 >시놉시스</a
               >
             </li>
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_character }}" href="/character"
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_character }}" href="/character"
                 >캐릭터</a
               >
             </li>
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_gallery }}" href="/gallery"
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_gallery }}" href="/gallery"
                 >갤러리</a
               >
             </li>
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_videos }}" href="/videos">영상</a>
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_videos }}" href="/videos">영상</a>
             </li>
-            <li class="menu_btn">
-              <a class="menu_link {{ selected_download }}" href="/download"
+            <li class="menu-btn">
+              <a class="menu-link {{ selected_download }}" href="/download"
                 >다운로드</a
               >
             </li>
-            <li class="menu_btn">
+            <li class="menu-btn">
               <button
-                class="menu_link {{ selected_social }}"
+                class="menu-link {{ selected_social }}"
                 onclick="toggleDropdown()"
               >
                 소셜<i
-                  id="dropdown_icon"
+                  id="dropdown-icon"
                   class="fas fa-chevron-down"
                   aria-hidden="true"
                 ></i>
               </button>
-              <ul id="submenu_row_wrapper">
+              <ul id="submenu-nav-wrapper">
                 <li><a href="/social/qna">질문 및 문의</a></li>
                 <li><a href="/social/guestbook">방명록</a></li>
               </ul>
             </li>
           </ul>
-          <!-- <div class="submenu_row_wrapper" id="submenu_row_wrapper">
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row"></ul>
-            <ul class="submenu_row">
-              <li class="submenu_items">
-                <a href="/social/qna">질문 및 문의</a>
-              </li>
-              <li class="submenu_items">
-                <a href="/social/guestbook">방명록</a>
-              </li>
-            </ul>
-          </div> -->
         </nav>
-        <div class="menu_right">
+        <div class="menu-right">
           <i class="fas fa-chevron-right"></i>
         </div>
       </div>
 
       <script>
         window.addEventListener("DOMContentLoaded", (event) => {
-          const menuBar = document.querySelector("#menu_row"); // 메뉴 바의 ID를 #menuBar로 가정
-          const activeLink = document.querySelector(".menu_bold"); // 현재 페이지를 나타내는 링크에 'active' 클래스가 있다고 가정
+          const menuBar = document.querySelector("#menu-nav"); // 메뉴 바의 ID를 #menuBar로 가정
+          const activeLink = document.querySelector(".menu-bold"); // 현재 페이지를 나타내는 링크에 'active' 클래스가 있다고 가정
 
           if (menuBar && activeLink) {
             const menuBarHalfWidth = menuBar.clientWidth / 2;
@@ -267,9 +251,9 @@
             console.log(menuBar.scrollLeft);
           }
 
-          const menuRow = document.querySelector(".menu_row");
-          const menuLeft = document.querySelector(".menu_left");
-          const menuRight = document.querySelector(".menu_right");
+          const menuRow = document.querySelector(".menu-nav");
+          const menuLeft = document.querySelector(".menu-left");
+          const menuRight = document.querySelector(".menu-right");
           function checkScroll() {
             let scrollLeft = menuRow.scrollLeft;
 
@@ -292,12 +276,12 @@
 
         function toggleDropdown() {
           var submenuRowWrapper = document.getElementById(
-            "submenu_row_wrapper"
+            "submenu-nav-wrapper"
           );
-          var menuRowWrapper = document.getElementById("menu_row_wrapper");
-          var menuRow = document.getElementById("menu_row");
+          var menuRowWrapper = document.getElementById("menu-nav-wrapper");
+          var menuRow = document.getElementById("menu-nav");
           var main = document.getElementById("main");
-          var dropdownIcon = document.getElementById("dropdown_icon");
+          var dropdownIcon = document.getElementById("dropdown-icon");
           if (submenuRowWrapper.classList.contains("open")) {
             submenuRowWrapper.classList.remove("open");
             main.classList.remove("open");

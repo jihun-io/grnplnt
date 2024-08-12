@@ -1,26 +1,29 @@
 {% extends 'layout.html' %} {% block content %}
 
 <div class="main">
-  <section class="qna_wrapper">
+  <section class="qna-wrapper">
     <div class="title">
       <h2>질문 및 문의</h2>
     </div>
     <div class="jobs">
-      <button class="" id="staffs_btn" onclick="showContent(staffs)">
+      <button class="" id="staffs-btn" onclick="showContent(staffs)">
         스태프
       </button>
-      <button class="underbar" id="actors_btn" onclick="showContent(actors)">
+      <button class="underbar" id="actors-btn" onclick="showContent(actors)">
         배우
       </button>
     </div>
     <div class="participation" id="staffs">
       <h3 class="sr-only">스태프</h3>
       <h4>참여 가능한 포지션</h4>
-      <div class="chart_wrapper">
+      <div class="chart-wrapper">
         <div class="chart">
           <div class="row_1">
-            <div class="logo_small">
-              <img src="{{ url_for('static', filename='img/logo.svg') }}" />
+            <div class="logo__small">
+              <img
+                src="{{ url_for('static', filename='img/logo.svg') }}"
+                alt="혹성의 아이 로고"
+              />
             </div>
             <div class="box title">
               <p>혹성의 아이</p>
@@ -28,7 +31,7 @@
           </div>
 
           <div class="row_2">
-            <div class="jobs_wrapper">
+            <div class="jobs-wrapper">
               <div class="text occ">
                 <p>모집 완료</p>
               </div>
@@ -36,7 +39,7 @@
                 <p>감독</p>
               </div>
             </div>
-            <div class="jobs_wrapper">
+            <div class="jobs-wrapper">
               <div class="text occ">
                 <p>모집 완료</p>
               </div>
@@ -44,7 +47,7 @@
                 <p>제작</p>
               </div>
             </div>
-            <div class="jobs_wrapper">
+            <div class="jobs-wrapper">
               <div class="text occ">
                 <p>모집 완료</p>
               </div>
@@ -52,7 +55,7 @@
                 <p>촬영·조명·음향</p>
               </div>
             </div>
-            <div class="jobs_wrapper">
+            <div class="jobs-wrapper">
               <div class="text occ">
                 <p>모집 완료</p>
               </div>
@@ -129,11 +132,11 @@
       <p>경기도 수원시 일대 혹은 서울시 중 한 곳이 될 예정입니다.</p>
     </div>
 
-    <div id="contact" class="card_wrapper">
+    <div id="contact" class="card-wrapper">
       <div class="card">
-        <div class="card_content">
+        <div class="card-content">
           <img
-            class="card_profile"
+            class="card-profile"
             src="{{ url_for('static', filename='img/logo.svg') }}"
             alt="혹성의 아이 로고"
           />
@@ -149,16 +152,16 @@
     <div class="title">
       <h3>자료</h3>
     </div>
-    <div class="embedded_document_wrapper">
+    <div class="embed-doc-wrapper">
       <iframe
         id="document"
-        class="embedded_document"
+        class="embed-doc"
         src="https://drive.google.com/file/d/1liLOT445SgxG7nDSfdcMrsXWGfeRkjGd/preview"
       ></iframe>
     </div>
-    <div class="download_wrapper">
-      <a class="download_btn" href="/download/pdf">PDF 다운로드</a>
-      <!-- <a class="download_btn" onclick="window.open('{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }};')" download="">PDF 다운로드</a> -->
+    <div class="download-wrapper">
+      <a class="download-btn" href="/download/pdf">PDF 다운로드</a>
+      <!-- <a class="download-btn" onclick="window.open('{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }};')" download="">PDF 다운로드</a> -->
     </div>
 
     <!-- <object data="{{ url_for('static', filename='files/혹성의 아이 캡스톤 발표본.pdf') }}" type="application/pdf" style="width: 100%; aspect-ratio: 16/9;"></object> -->
@@ -167,8 +170,8 @@
     function showContent(jobs) {
       var staffsContent = document.getElementById("staffs");
       var actorsContent = document.getElementById("actors");
-      var staffsBtn = document.getElementById("staffs_btn");
-      var actorsBtn = document.getElementById("actors_btn");
+      var staffsBtn = document.getElementById("staffs-btn");
+      var actorsBtn = document.getElementById("actors-btn");
       if (jobs == staffs) {
         staffsContent.classList.add("show");
         actorsContent.classList.remove("show");
