@@ -14,3 +14,4 @@ database.db
 *.db
 *.db
 database.db
+turnstile-secret-key.txt
