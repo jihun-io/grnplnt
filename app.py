@@ -5,6 +5,8 @@ import hashlib
 from time import time
 from datetime import datetime, timedelta
 import secrets
+import requests
+import json
 
 
 
@@ -14,6 +16,12 @@ app = Flask(__name__)
 secret_path = 'secret-key.txt'
 with open(secret_path, "r") as file:
     app.secret_key = file.read()
+    
+# 턴스타일 비밀 키 로드
+turnstile_secret_path = 'turnstile-secret-key.txt'
+with open(turnstile_secret_path, "r") as file:
+    app.turnstile_secret_key = file.read()
+    
 app.permanent_session_lifetime = timedelta(minutes=30)
 
 
@@ -86,20 +94,34 @@ def guestbook_submit():
         username = request.form['username']
         password = request.form['password']
         content = request.form['content']
+        turnstile = request.form['cf-turnstile-response']
         
-        conn = sqlite3.connect('database.db')
-        c = conn.cursor()
+        turnstileCheck = {
+            'secret': app.turnstile_secret_key,
+            'response': turnstile
+        }
         
-        salt = os.urandom(32)
-        hashed_password = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)
+        url = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
+        response = requests.post(url, data=turnstileCheck, timeout=10)
         
-        now = datetime.now()
-        
-        date = now.strftime('%Y-%m-%d %H:%M:%S')
-        
-        c.execute("INSERT INTO guestbook (username, password, salt, content, date) VALUES (?, ?, ?, ?, ?)", (username, hashed_password, salt, content, date))
-        conn.commit()
-        conn.close()
+        if response.status_code == 200:
+            result = json.loads(response.text)
+            if result['success'] == True:
+                conn = sqlite3.connect('database.db')
+                c = conn.cursor()
+                
+                salt = os.urandom(32)
+                hashed_password = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)
+                
+                now = datetime.now()
+                
+                date = now.strftime('%Y-%m-%d %H:%M:%S')
+                
+                c.execute("INSERT INTO guestbook (username, password, salt, content, date) VALUES (?, ?, ?, ?, ?)", (username, hashed_password, salt, content, date))
+                conn.commit()
+                conn.close()
+            else:
+                return redirect(url_for('guestbook'))
         return redirect(url_for('guestbook'))
     else:
         return redirect(url_for('guestbook'))
