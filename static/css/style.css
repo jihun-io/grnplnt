@@ -55,6 +55,16 @@ body {
   overflow-x: hidden;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   color: #383430;
   text-decoration-line: none;
@@ -568,7 +578,9 @@ input {
 }
 
 .write-area input,
-.write-area textarea {
+.write-area textarea,
+.admin-login input,
+.admin-login textarea {
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -635,12 +647,16 @@ input {
   width: 100%;
 }
 
+/* iframe[id^="cf-chl-widget"] {
+  width: 10px !important;
+} */
+
 .write-btn {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
 }
 
-.guestbook-submit {
+input.guestbook-submit {
   width: 6em;
   height: 3em;
   border: 1px solid #a1a1a8;
@@ -648,6 +664,7 @@ input {
   background-color: rgb(137, 255, 80);
   font-weight: 900 !important;
   cursor: pointer;
+  flex-shrink: 1;
 }
 
 .guestbook-list {
@@ -1112,6 +1129,29 @@ hr {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login.main {
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.admin-login h2 {
+  font-size: 1.25em;
+  margin: 0.5em 0;
+}
+
+.admin-login article {
+  width: 100%;
+}
+
+.admin-login form input:last-child {
+  margin-top: 3px;
 }
 
 @media (min-width: 1000px) {
