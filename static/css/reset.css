@@ -127,4 +127,5 @@ button,
 input[type="submit"] {
   border: none;
   background: none;
+  color: inherit;
 }
