@@ -4,8 +4,28 @@
     <h2>방명록</h2>
   </div>
 
-  <script></script>
-  <form id="write" method="post" action="./guestbook/submit" class="write-area">
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+    defer
+  ></script>
+  <script>
+    function turnstileCheck() {
+      turnstile = document.querySelectorAll('input[id ^= "cf-chl-widget-"]');
+      if (turnstile[0].value == "") {
+        return false;
+      } else {
+        return true;
+      }
+    }
+  </script>
+
+  <form
+    id="write"
+    method="post"
+    action="./guestbook/submit"
+    onsubmit="return turnstileCheck()"
+    class="write-area"
+  >
     <div class="userinfo">
       <input
         type="text"
@@ -26,6 +46,11 @@
     </div>
     <textarea name="content" form="write" required></textarea>
     <div class="write-btn">
+      <div
+        class="cf-turnstile"
+        data-size="compact"
+        data-sitekey="0x4AAAAAAAh5X07CUer4bS3L"
+      ></div>
       <input type="submit" class="guestbook-submit" />
     </div>
   </form>
