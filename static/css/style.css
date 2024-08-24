@@ -667,6 +667,10 @@ input.guestbook-submit {
   flex-shrink: 1;
 }
 
+.cf-turnstile {
+  margin: 5px;
+}
+
 .guestbook-list {
   width: 100%;
   margin-top: 50px;
