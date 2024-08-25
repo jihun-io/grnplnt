@@ -42,6 +42,9 @@ dev_mode = os.path.isfile(dev_path)
 # 플라스크를 재실행할 때마다 CSS를 새로 불러오는 로직
 startup_time = int(time())
 
+# 관리자 로그인 세션 유지 기간 설정
+app.permanent_session_lifetime = timedelta(minutes=60)
+
 
 @app.context_processor
 def override_url_for():
@@ -289,7 +292,18 @@ def guestbook_modify_submit():
 
 @app.route("/admin")
 def admin():
-    return render_template("admin.html")
+    if "admin_username" in session:
+        return redirect(url_for("admin_dashboard"))
+    else:
+        return render_template("admin.html")
+
+
+@app.route("/admin/dashboard")
+def admin_dashboard():
+    if "admin_username" in session:
+        return render_template("dashboard.html")
+    else:
+        return redirect(url_for("admin"))
 
 
 @app.route("/admin/login", methods=["GET", "POST"])
@@ -314,9 +328,9 @@ def admin_login():
                 "sha256", pw.encode("utf-8"), salt, 100000
             )
             if db_password == hashed_password:
-                return render_template_string(
-                    """<html><head><title>혹성의 아이</title><script type="text/javascript">window.onload = function() {alert("계정이 올바릅니다!");window.location.href = "/admin";};</script></head><body></body></html>"""
-                )
+                session.permanent = True
+                session["admin_username"] = email
+                return redirect(url_for("admin_dashboard"))
             else:
                 return render_template_string(
                     """<html><head><title>혹성의 아이</title><script type="text/javascript">window.onload = function() {alert("계정이 올바르지 않습니다.");window.location.href = "/admin";};</script></head><body></body></html>"""
