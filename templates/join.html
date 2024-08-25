@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="admin-login main flex-row center">
+  <article class="flex-col center">
+    <h2>관리자 가입</h2>
+    <form class="flex-col center" method="post" action="./join/submit">
+      <div class="flex-row">
+        <label class="sr-only" for="email">이메일</label>
+        <input placeholder="이메일" type="email" name="email" id="email" />
+      </div>
+      <div class="flex-row">
+        <label class="sr-only" for="pw">비밀번호</label>
+        <input placeholder="비밀번호" type="password" name="pw" id="pw" />
+      </div>
+      <div class="flex-row">
+        <label class="sr-only" for="token">초대 코드</label>
+        <input placeholder="초대 코드" type="text" name="token" id="token" />
+      </div>
+      <input type="submit" value="가입" />
+    </form>
+  </article>
+</div>
+{% endblock %}
