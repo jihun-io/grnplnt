@@ -667,6 +667,10 @@ input.guestbook-submit {
   flex-shrink: 1;
 }
 
+.cf-turnstile {
+  margin: 5px;
+}
+
 .guestbook-list {
   width: 100%;
   margin-top: 50px;
@@ -697,6 +701,7 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .guestbook-post-date {
@@ -1152,6 +1157,47 @@ hr {
 
 .admin-login form input:last-child {
   margin-top: 3px;
+}
+
+.admin-dashboard {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.admin-dashboard ul {
+  margin-left: 1em;
+}
+
+.admin-dashboard ul li {
+  list-style-type: disc;
+  margin: 12px 0;
+}
+
+.admin-dashboard ul li a {
+  text-decoration: underline;
+}
+
+.admin-guestbook .title {
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.admin-guestbook .title i.fas.fa-chevron-left {
+  margin-right: 0.5em;
+}
+
+.admin-guestbook div.more button {
+  width: 48px;
+  border: 1px solid #383430;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.admin-guestbook .guestbook-post-content textarea {
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 1000px) {
