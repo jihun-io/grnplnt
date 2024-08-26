@@ -8,7 +8,7 @@
   <div class="guestbook-list">
     {% for post in posts %}
     <div id="{{ post[3] }}" class="guestbook-post">
-      <form id="editform{{ post[3] }}" action="./edit" method="post">
+      <form id="editform{{ post[3] }}" method="post">
         <div class="guestbook-post-info">
           <div class="guestbook-post-namedate">
             <div class="guestbook-post_name">
@@ -19,10 +19,18 @@
             </div>
           </div>
           <div class="more flex-row">
-            <button class="edit-submit" onclick="editPost({{ post[3] }}, 0)">
+            <button
+              class="edit-submit"
+              type="submit"
+              onclick="editPost({{ post[3] }}, 0)"
+            >
               수정
             </button>
-            <button class="del-submit" onclick="editPost({{ post[3] }}, 1)">
+            <button
+              class="del-submit"
+              type="button"
+              onclick="editPost({{ post[3] }}, 1)"
+            >
               삭제
             </button>
           </div>

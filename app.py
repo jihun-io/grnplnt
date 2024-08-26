@@ -320,7 +320,7 @@ def admin_guestbook():
         return redirect(url_for("admin"))
 
 
-@app.route("/admin/guestbook/del", methods=["GET"])
+@app.route("/admin/guestbook/del", methods=["GET", "POST"])
 def admin_guestbook_del():
     if request.method == "GET":
         sn = request.args.get("id")
