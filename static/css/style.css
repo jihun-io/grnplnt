@@ -1184,6 +1184,10 @@ hr {
   justify-content: space-evenly;
 }
 
+.admin-guestbook .title i.fas.fa-chevron-left {
+  margin-right: 0.5em;
+}
+
 .admin-guestbook div.more button {
   width: 48px;
   border: 1px solid #383430;
