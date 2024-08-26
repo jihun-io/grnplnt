@@ -63,48 +63,66 @@ def dated_url_for(endpoint, **values):
 
 @app.route("/")
 def main():
-    return render_template("index.html", selected_home="menu-bold")
+    return render_template("index.html", selected_home="menu-bold", title="혹성의 아이")
 
 
 @app.route("/coming-soon")
 def comingsoon():
-    return render_template("coming-soon.html")
+    return render_template("coming-soon.html", title="COMING SOON - 혹성의 아이")
 
 
 @app.route("/synopsis")
 def synopsis():
-    return render_template("synopsis.html", selected_synopsis="menu-bold")
+    return render_template(
+        "synopsis.html", selected_synopsis="menu-bold", title="시놉시스 - 혹성의 아이"
+    )
 
 
 @app.route("/character")
 def character():
-    return render_template("character.html", selected_character="menu-bold")
+    return render_template(
+        "character.html", selected_character="menu-bold", title="캐릭터 - 혹성의 아이"
+    )
 
 
 @app.route("/gallery")
 def gallery():
     return render_template(
-        "coming-soon.html", menuName="갤러리", selected_gallery="menu-bold"
+        "coming-soon.html",
+        menuName="갤러리",
+        selected_gallery="menu-bold",
+        title="갤러리 - 혹성의 아이",
     )
 
 
 @app.route("/videos")
 def videos():
     return render_template(
-        "coming-soon.html", menuName="영상", selected_videos="menu-bold"
+        "coming-soon.html",
+        menuName="영상",
+        selected_videos="menu-bold",
+        title="영상 - 혹성의 아이",
     )
 
 
 @app.route("/download")
 def download():
     return render_template(
-        "coming-soon.html", menuName="다운로드", selected_download="menu-bold"
+        "coming-soon.html",
+        menuName="다운로드",
+        selected_download="menu-bold",
+        title="다운로드 - 혹성의 아이",
     )
 
 
 @app.route("/social")
 def social():
-    return render_template("coming-soon.html", menuName="", selected_social="menu-bold")
+    return render_template(
+        "coming-soon.html",
+        menuName="",
+        selected_social="menu-bold",
+        title="소셜 - 혹성의 아이",
+    )
 
 
 @app.route("/social/guestbook")
@@ -114,7 +132,12 @@ def guestbook():
     c.execute("SELECT username, date, content, sn FROM guestbook ORDER BY date DESC")
     posts = c.fetchall()
 
-    return render_template("guestbook.html", selected_social="menu-bold", posts=posts)
+    return render_template(
+        "guestbook.html",
+        selected_social="menu-bold",
+        posts=posts,
+        title="방명록 - 혹성의 아이",
+    )
 
 
 @app.route("/social/guestbook/submit", methods=["POST"])
@@ -247,7 +270,12 @@ def guestbook_modify():
         if result == None:
             return redirect(url_for("guestbook"))
         else:
-            return render_template("guestbook-modify.html", result=result, sn=sn)
+            return render_template(
+                "guestbook-modify.html",
+                result=result,
+                sn=sn,
+                title="방명록 수정 - 혹성의 아이",
+            )
     else:
         return redirect(url_for("guestbook"))
 
@@ -295,13 +323,13 @@ def admin():
     if "admin_username" in session:
         return redirect(url_for("admin_dashboard"))
     else:
-        return render_template("admin.html")
+        return render_template("admin.html", title="관리자 로그인 - 혹성의 아이")
 
 
 @app.route("/admin/dashboard")
 def admin_dashboard():
     if "admin_username" in session:
-        return render_template("dashboard.html")
+        return render_template("dashboard.html", title="관리자 설정 - 혹성의 아이")
     else:
         return redirect(url_for("admin"))
 
@@ -315,7 +343,9 @@ def admin_guestbook():
             "SELECT username, date, content, sn FROM guestbook ORDER BY date DESC"
         )
         posts = c.fetchall()
-        return render_template("admin-guestbook.html", posts=posts)
+        return render_template(
+            "admin-guestbook.html", posts=posts, title="방명록 관리 - 혹성의 아이"
+        )
     else:
         return redirect(url_for("admin"))
 
@@ -430,7 +460,7 @@ def admin_join():
     conn.close()
 
     if count == 0:
-        return render_template("join.html")
+        return render_template("join.html", title="관리자 등록 - 혹성의 아이")
     else:
         return redirect(url_for("admin"))
 
@@ -484,7 +514,9 @@ def admin_join_submit():
 
 @app.route("/social/qna")
 def qna():
-    return render_template("qna.html", selected_social="menu-bold")
+    return render_template(
+        "qna.html", selected_social="menu-bold", title="질문 및 문의 - 혹성의 아이"
+    )
 
 
 @app.route("/download/pdf")
