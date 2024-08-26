@@ -306,6 +306,75 @@ def admin_dashboard():
         return redirect(url_for("admin"))
 
 
+@app.route("/admin/guestbook")
+def admin_guestbook():
+    if "admin_username" in session:
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+        c.execute(
+            "SELECT username, date, content, sn FROM guestbook ORDER BY date DESC"
+        )
+        posts = c.fetchall()
+        return render_template("admin-guestbook.html", posts=posts)
+    else:
+        return redirect(url_for("admin"))
+
+
+@app.route("/admin/guestbook/del", methods=["GET"])
+def admin_guestbook_del():
+    if request.method == "GET":
+        sn = request.args.get("id")
+
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute("SELECT password, salt FROM guestbook WHERE SN = ?", (sn,))
+        result = c.fetchone()
+
+        if result is None:
+            return redirect(url_for("admin_guestbook"))
+        else:
+            c.execute("DELETE FROM guestbook WHERE SN = ?", (sn,))
+            conn.commit()
+            conn.close()
+
+            return redirect(url_for("admin_guestbook"))
+    else:
+        return redirect(url_for("admin_guestbook"))
+
+
+@app.route("/admin/guestbook/edit", methods=["GET", "POST"])
+def admin_guestbook_edit():
+    if request.method == "POST":
+        sn = request.args.get("id")
+        username = request.form["username"]
+        content = request.form["content"]
+
+        conn = sqlite3.connect("database.db")
+        c = conn.cursor()
+
+        c.execute("SELECT password, salt FROM guestbook WHERE SN = ?", (sn,))
+        result = c.fetchone()
+
+        if result is None:
+            return redirect(url_for("admin_guestbook"))
+        else:
+            c.execute(
+                "UPDATE guestbook SET username = ?, content = ? WHERE sn = ?",
+                (
+                    username,
+                    content,
+                    sn,
+                ),
+            )
+            conn.commit()
+            conn.close()
+
+            return redirect(url_for("admin_guestbook"))
+    else:
+        return redirect(url_for("admin_guestbook"))
+
+
 @app.route("/admin/login", methods=["GET", "POST"])
 def admin_login():
     if request.method == "POST":
@@ -337,6 +406,12 @@ def admin_login():
                 )
     else:
         return render_template("admin.html")
+
+
+@app.route("/admin/logout")
+def admin_logout():
+    session.pop("admin_username", None)
+    return redirect(url_for("main"))
 
 
 @app.route("/admin/join")
