@@ -1,0 +1,37 @@
+.privacy ul,
+.privacy ol {
+  padding-left: 2.8rem;
+  word-break: break-all;
+}
+.privacy > ul,
+.privacy > ol {
+  padding-left: 2.4rem;
+}
+
+.privacy ul {
+  list-style: initial;
+}
+.privacy ol {
+  list-style: decimal;
+}
+
+.privacy ol ol {
+  list-style: hangul;
+}
+
+.privacy ol ol ol {
+  list-style: upper-alpha;
+}
+
+.privacy ol li {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.privacy h2 {
+  font-size: 2.4em;
+}
+
+.privacy h3 {
+  font-size: 1.872em;
+}
