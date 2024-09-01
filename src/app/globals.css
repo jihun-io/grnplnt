@@ -218,6 +218,7 @@ header a.title img.logo {
 header a.title h1 {
   font-family: DNFBitBitv2;
   font-size: 3rem;
+  white-space: nowrap;
 }
 
 main {
