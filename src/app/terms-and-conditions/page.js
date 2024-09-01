@@ -3,7 +3,7 @@ import { generateMetadata } from "/utils/metadata";
 
 const title = "웹 사이트 이용 약관 - 혹성의 아이";
 const description =
-  "본 약관은 &#39;혹성의 아이&#39; 웹 사이트(이하 &quot;웹 사이트&quot;)의 이용 조건 및 절차, 이용자와 웹 사이트 운영자의 권리, 의무, 책임사항 등을 규정함을 목적으로 합니다.";
+  "본 약관은 &#39;혹성의 아이&#39; 웹 사이트의 이용 조건 및 절차, 이용자와 웹 사이트 운영자의 권리, 의무, 책임사항 등을 규정함을 목적으로 합니다.";
 
 export const metadata = generateMetadata(title, description);
 
@@ -39,8 +39,8 @@ export default function terms() {
       <h3>제4조 (저작권)</h3>
       <ol>
         <li>
-          웹 사이트에서 제공하는 모든 콘텐츠에 대한 저작권 및 기타 지적재산권은
-          웹 사이트 운영자에게 귀속됩니다.
+          웹 사이트에서 제공하는 모든 콘텐츠(방명록 내용을 제외함)에 대한 저작권
+          및 기타 지적재산권은 혹성의 아이에 귀속됩니다.
         </li>
         <li>
           이용자는 웹 사이트를 이용함으로써 얻은 정보를 웹 사이트 운영자의 사전
