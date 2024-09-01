@@ -1,4 +1,11 @@
 import styles from "@/styles/privacy.module.css";
+import { generateMetadata } from "/utils/metadata";
+
+const title = "개인정보 처리방침 - 혹성의 아이";
+const description =
+  "혹성의 아이는 다음과 같이 개인정보 처리방침을 수립·공개합니다.";
+
+export const metadata = generateMetadata(title, description);
 
 export default function privacy() {
   return (
