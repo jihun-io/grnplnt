@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="flex-col">
@@ -5,14 +7,14 @@ export default function Footer() {
         <p>Copyright © 2024 Jun Park. All rights reserved.</p>
         <ul className="links flex-row">
           <li>
-            <a href="/privacy-policy" className="privacy bold">
+            <Link href="/privacy-policy" className="privacy bold">
               개인정보 처리방침
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/terms" className="terms">
+            <Link href="/terms" className="terms">
               웹 사이트 이용 약관
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -26,9 +28,9 @@ export default function Footer() {
         </li>
         <li>
           <span className="bold">이메일: </span>
-          <a href="mailto:greenplanet1415@gmail.com">
+          <Link href="mailto:greenplanet1415@gmail.com">
             greenplanet1415@gmail.com
-          </a>
+          </Link>
         </li>
       </ul>
     </footer>
