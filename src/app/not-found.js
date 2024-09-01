@@ -1,4 +1,3 @@
-// App Router (src/app/not-found.js)
 import Link from "next/link";
 import { generateMetadata } from "/utils/metadata";
 
