@@ -53,6 +53,15 @@
   --bold-weight: 700;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #f6f6f6;
+    --foreground-light: #b0b0b0;
+    --background: #4f4f4f;
+    --background-light: #1a1a1a;
+  }
+}
+
 html {
   font-size: 10px;
   font-family: pretendard variable, Pretendard, -apple-system,
@@ -61,6 +70,10 @@ html {
     segoe ui emoji, segoe ui symbol, sans-serif;
   font-weight: 400;
   color: var(--foreground);
+}
+
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 .flex {
@@ -147,18 +160,22 @@ header div.title-row button {
   height: 4.4rem;
 }
 
-header nav button img {
-  width: 1.6rem;
-  height: 2.8rem;
-  transition: width 0.3s;
+header nav button span.material-symbols-rounded,
+header div.title-row button span.material-symbols-rounded {
+  font-size: 5rem;
 }
 
-header.close nav button img {
-  transform: rotate(0deg);
+header nav button span.material-symbols-rounded,
+header div.title-row button span.material-symbols-rounded {
+  transition: all 0.3s;
 }
 
-header.close nav button img {
-  transform: rotate(-180deg);
+header.open nav button span.material-symbols-rounded {
+  transform: rotate(180deg);
+}
+
+header.open div button span.material-symbols-rounded {
+  transform: rotate(180deg);
 }
 
 header nav ul {
@@ -282,7 +299,9 @@ footer ul.info {
   }
 
   header div.title-row button {
+    width: calc(100% - 25rem);
     display: flex;
+    justify-content: flex-end;
   }
 
   header nav {

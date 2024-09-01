@@ -26,22 +26,12 @@ export default function Header({ title }) {
           <h1>{title}</h1>
         </Link>
         <button id="nav-toggle-col" className="flex-center" onClick={toggleNav}>
-          <Image
-            src="/images/hamburger.svg"
-            alt="메뉴"
-            width={26}
-            height={26}
-          />
+          <span class="material-symbols-rounded">keyboard_arrow_down</span>
         </button>
       </div>
       <nav className="flex-row">
         <button id="nav-toggle-row" className="flex-center" onClick={toggleNav}>
-          <Image
-            src="/images/chevron-right.svg"
-            alt="메뉴"
-            width={16}
-            height={28}
-          />
+          <span className="material-symbols-rounded">chevron_left</span>
         </button>
         <ul>
           <li>
