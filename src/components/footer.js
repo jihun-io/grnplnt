@@ -12,7 +12,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/terms" className="terms">
+            <Link href="/terms-and-conditions" className="terms-and-conditions">
               웹 사이트 이용 약관
             </Link>
           </li>
