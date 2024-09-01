@@ -255,7 +255,7 @@ footer .bold {
 
 footer div.legal {
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   column-gap: 1.6rem;
 }
 
