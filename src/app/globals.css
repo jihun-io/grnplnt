@@ -1,29 +1,253 @@
+@import "../styles/reset.css";
+@import "https://use.typekit.net/rjd5iff.css";
+@import "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: pyeongchangpeace;
+  font-weight: 300;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot);
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.ttf)
+      format("truetype");
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
+@font-face {
+  font-family: pyeongchangpeace;
+  font-weight: 700;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot);
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot?#iefix)
+      format("embedded-opentype"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff2)
+      format("woff2"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff)
+      format("woff"),
+    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.ttf)
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: DNFBitBitv2;
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
+    format("opentype");
+}
+
+:root {
+  --foreground: #1a1a1a;
+  --foreground-light: #888;
+  --background: #fff;
+  --background-light: #f6f6f6;
+  --bold-weight: 700;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+html {
+  font-size: 16px;
+  font-family: pretendard variable, Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, helvetica neue, segoe ui,
+    apple sd gothic neo, noto sans kr, malgun gothic, apple color emoji,
+    segoe ui emoji, segoe ui symbol, sans-serif;
+  font-weight: 400;
+  color: var(--foreground);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--bold-weight);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.5em;
+}
+
+header {
+  width: 100vw;
+  height: 120px;
+  padding: 36px 38px;
+  font-family: pyeongchangpeace, sans-serif;
+  font-weight: 300;
+  justify-content: space-between;
+}
+
+header nav button {
+  width: 44px;
+  height: 44px;
+}
+
+header nav button img {
+  transition: all 0.3s;
+}
+
+header nav button.close img {
+  transform: rotate(0deg);
+}
+
+header nav button.close img {
+  transform: rotate(-180deg);
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 46px;
+  /* padding: 0 17px; */
+  width: 321px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+header nav ul.close {
+  width: 0;
+}
+
+header nav ul li {
+  font-size: 26px;
+  word-break: keep-all;
+}
+
+header nav ul li a {
+  display: inline-block;
+}
+
+header nav ul li:first-child {
+  margin-left: 17px;
+}
+
+header nav ul li:last-child {
+  margin-right: 17px;
+}
+
+header .bold {
+  font-weight: var(--bold-weight);
+}
+
+header a.title {
+  gap: 6px;
+}
+
+header a.title img.logo {
+  width: 40px;
+  height: 40px;
+}
+
+header a.title h1 {
+  font-family: DNFBitBitv2;
+  font-size: 30px;
+}
+
+main {
+  min-height: calc(100dvh - 120px - 120px);
+  padding: 0 36px;
+}
+
+main.privacy ul,
+main.privacy ol {
+  padding-left: 20px;
+}
+
+main.privacy ul {
+  list-style: initial;
+}
+main.privacy ol {
+  list-style: decimal;
+}
+
+main.privacy ol li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+main.privacy h2 {
+  font-size: 1.5em;
+}
+
+main.privacy h3 {
+  font-size: 1.17em;
+}
+
+footer.flex-col {
+  width: 100%;
+  height: 120px;
+  padding: 20px 38px;
+  font-size: 11px;
+  color: var(--foreground-light);
+  font-weight: 600;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+footer .bold {
+  font-weight: 900;
+}
+
+footer div.legal {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 12px;
+}
+
+footer div.legal ul.links {
+  gap: 12px;
+}
+
+footer ul.info {
+  column-gap: 12px;
+  flex-wrap: wrap;
 }
 
 @layer utilities {
