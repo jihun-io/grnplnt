@@ -50,7 +50,8 @@
   --foreground-light: #888;
   --background: #fff;
   --background-light: #f6f6f6;
-  --bold-weight: 700;
+  --font-regular: 500;
+  --font-bold: 800;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,7 +69,7 @@ html {
     BlinkMacSystemFont, system-ui, Roboto, helvetica neue, segoe ui,
     apple sd gothic neo, noto sans kr, malgun gothic, apple color emoji,
     segoe ui emoji, segoe ui symbol, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--foreground);
 }
 
@@ -108,7 +109,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--bold-weight);
+  font-weight: var(--font-bold);
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
@@ -203,7 +204,7 @@ header nav ul li a {
 }
 
 header .bold {
-  font-weight: var(--bold-weight);
+  font-weight: var(--font-bold);
 }
 
 header a.title {
@@ -227,6 +228,18 @@ main {
   background-color: var(--background-light);
   font-size: 16px;
   text-align: justify;
+}
+
+main.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+main.not-found p {
+  margin: 0;
 }
 
 footer {
