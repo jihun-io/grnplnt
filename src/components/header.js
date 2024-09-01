@@ -26,7 +26,7 @@ export default function Header({ title }) {
           <h1>{title}</h1>
         </Link>
         <button id="nav-toggle-col" className="flex-center" onClick={toggleNav}>
-          <span class="material-symbols-rounded">keyboard_arrow_down</span>
+          <span className="material-symbols-rounded">keyboard_arrow_down</span>
         </button>
       </div>
       <nav className="flex-row">
