@@ -16,3 +16,5 @@ database.db
 database.db
 turnstile-secret-key.txt
 /node_modules
+/.vercel
+/.next
