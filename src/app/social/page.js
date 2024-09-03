@@ -2,11 +2,9 @@ import styles from "@/styles/privacy.module.css";
 import { generateMetadata } from "/utils/metadata";
 
 const title = "소셜 - 혹성의 아이";
-const description = "소셜 페이지입니다.";
+const description = "혹성의 아이에 관한 소식을 만나 보세요.";
 
 export const metadata = generateMetadata(title, description);
-
-export const runtime = "edge";
 
 export default function social() {
   return (
