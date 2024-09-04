@@ -1,11 +1,11 @@
 .privacy ul,
 .privacy ol {
-  padding-left: 2.8rem;
+  padding-left: 1.094rem;
   word-break: break-all;
 }
 .privacy > ul,
 .privacy > ol {
-  padding-left: 2.4rem;
+  padding-left: 1.5rem;
 }
 
 .privacy ul {
@@ -24,14 +24,23 @@
 }
 
 .privacy ol li {
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.privacy h2:not(:first-child),
+.privacy h3 {
+  margin-top: 1.5em;
+}
+.privacy h2,
+.privacy h3 {
+  font-weight: 700;
 }
 
 .privacy h2 {
-  font-size: 2.4em;
+  font-size: 1.5em;
 }
 
 .privacy h3 {
-  font-size: 1.872em;
+  font-size: 1.17em;
 }

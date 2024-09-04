@@ -2,46 +2,76 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header({ title }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsNavOpen(false);
+  }, [pathname]);
 
   const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen((prev) => !prev);
   };
 
   return (
-    <header className={`flex-row ${isNavOpen ? "open" : "close"}`}>
-      <div className="title-row flex-row flex-center">
-        <Link className="title flex-row flex-center" href="/">
-          <Image
-            className="logo"
-            src="/images/logo.svg"
-            alt=""
-            width={40}
-            height={40}
+    <header className="grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-xl px-6 md:px-8 lg:px-10 xl:px-12">
+      <h1 className="sr-only">혹성의 아이</h1>
+      <Link href="/">
+        <img src="/images/logo.svg" alt="혹성의 아이" className="w-10" />
+      </Link>
+      <button className="relative ml-auto sm:hidden" onClick={toggleNav}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="3"
+          stroke="currentColor"
+          className={`absolute transition-opacity top-0 right-0 size-10 ${
+            isNavOpen ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
-          <h1>{title}</h1>
-        </Link>
-        <button id="nav-toggle-col" className="flex-center" onClick={toggleNav}>
-          <span className="material-symbols-rounded">keyboard_arrow_down</span>
-        </button>
-      </div>
-      <nav className="flex-row">
-        <button id="nav-toggle-row" className="flex-center" onClick={toggleNav}>
-          <span className="material-symbols-rounded">chevron_left</span>
-        </button>
-        <ul>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="3"
+          stroke="currentColor"
+          className={`absolute transition-opacity top-0 right-0 size-10 ${
+            isNavOpen ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+        <p className="sr-only">메뉴</p>
+      </button>
+      <nav
+        className={`flex col-span-2 sm:row-span-1 sm:col-span-1 sm:w-96 justify-center overflow-hidden transition-all ${
+          isNavOpen ? "h-8" : "h-0 sm:h-8"
+        }`}
+      >
+        <ul className="px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between font-bold">
           <li>
-            <Link href="/social">소셜</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/videos">영상</Link>
+            <Link href="/merchandise">Merchandise</Link>
           </li>
           <li>
-            <Link href="/downloads">다운로드</Link>
+            <Link href="/social">Social</Link>
           </li>
         </ul>
       </nav>

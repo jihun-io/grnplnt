@@ -8,7 +8,7 @@ export const metadata = generateMetadata(title, description);
 
 export default function social() {
   return (
-    <main className="test">
+    <main className="px-6 md:px-8 lg:px-10 xl:px-12">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque libero
       asperiores, incidunt minus magnam labore facilis velit saepe mollitia
       quisquam quos at dicta cumque repudiandae accusamus illum rerum maxime

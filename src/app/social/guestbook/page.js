@@ -27,7 +27,7 @@ async function getPosts() {
 export default async function guestbook() {
   const posts = await getPosts();
   return (
-    <main className="">
+    <main className="px-6 md:px-8 lg:px-10 xl:px-12">
       <section className="w-full flex flex-col items-center">
         <h2 className="text-6xl mb-7">방명록</h2>
         <ul className="w-11/12 flex flex-col items-center">

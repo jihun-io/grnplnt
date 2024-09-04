@@ -9,7 +9,7 @@ export const metadata = generateMetadata(title, description);
 
 export default function terms() {
   return (
-    <main className={styles.privacy}>
+    <main className={`px-6 md:px-8 lg:px-10 xl:px-12 ${styles.privacy}`}>
       <h2>혹성의 아이 웹 사이트 이용 약관</h2>
       <h3>제1조 (목적)</h3>
       <p>

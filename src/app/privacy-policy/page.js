@@ -9,7 +9,7 @@ export const metadata = generateMetadata(title, description);
 
 export default function privacy() {
   return (
-    <main className={styles.privacy}>
+    <main className={`px-6 md:px-8 lg:px-10 xl:px-12 ${styles.privacy}`}>
       <h2>혹성의 아이 개인정보 처리방침</h2>
       <p>
         혹성의 아이는 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="px-6 md:px-8 lg:px-10 xl:px-12">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
         corporis aliquid voluptatem reiciendis cumque molestias omnis unde

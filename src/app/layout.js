@@ -97,14 +97,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className="md:text-[17px] lg:text-[18px] xl:text-[19px] ">
       <head>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
         />
       </head>
-      <body>
+      <body className="min-h-[100vh] grid grid-rows-[auto,1fr,auto]">
         <Header title={metadata.title} />
         {children}
         <Footer />
