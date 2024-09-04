@@ -24,7 +24,7 @@ async function getPosts() {
   return response.json();
 }
 
-export default async function guestbook() {
+export default async function Guestbook() {
   const posts = await getPosts();
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
@@ -33,13 +33,14 @@ export default async function guestbook() {
         <ul className="w-11/12 flex flex-col items-center">
           {posts.map(([title, date, content, id]) => (
             <li
+              key={id}
               className="flex flex-col w-9/12 bg-white mb-8 gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100"
               id={id}
             >
               <div className="flex flex-row items-center flex-wrap justify-between">
                 <h2 className=" m-0">{title}</h2>
                 <p className=" m-0">
-                  <date>{date}</date>
+                  <time>{date}</time>
                 </p>
               </div>
               <p className="m-0  break-keep text-left">{content}</p>
