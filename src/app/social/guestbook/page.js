@@ -14,7 +14,7 @@ async function getPosts() {
     headers: {
       "X-API-Key": API_KEY,
     },
-    cf: { cacheTtl: 0, cacheEverything: false },
+    "Cache-Control": "no-store, max-age=0",
   });
 
   if (!response.ok) {
