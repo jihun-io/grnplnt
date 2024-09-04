@@ -14,7 +14,7 @@ async function getPosts() {
     headers: {
       "X-API-Key": API_KEY,
     },
-    cache: "no-store",
+    cf: { cacheTtl: 0, cacheEverything: false },
   });
 
   if (!response.ok) {
