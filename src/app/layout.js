@@ -97,7 +97,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className="md:text-[17px] lg:text-[18px] xl:text-[19px] ">
+    <html lang="ko" className="md:text-[17px] lg:text-[18px] xl:text-[19px]">
       <head>
         <link
           rel="stylesheet"
