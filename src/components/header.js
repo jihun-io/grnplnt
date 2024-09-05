@@ -18,7 +18,7 @@ export default function Header({ title }) {
   };
 
   return (
-    <header className="grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-xl px-6 md:px-8 lg:px-10 xl:px-12">
+    <header className="grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-2xl px-6 md:px-8 lg:px-10 xl:px-12">
       <h1 className="sr-only">혹성의 아이</h1>
       <Link href="/">
         <img src="/images/logo.svg" alt="혹성의 아이" className="w-10" />
@@ -63,15 +63,30 @@ export default function Header({ title }) {
           isNavOpen ? "h-8" : "h-0 sm:h-8"
         }`}
       >
-        <ul className="px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between font-bold">
+        <ul className="px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between font-[900]">
           <li>
-            <Link href="/">Home</Link>
+            <Link
+              className="hover:text-sugar-cane-800 transition-colors"
+              href="/"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/merchandise">Merchandise</Link>
+            <Link
+              className="hover:text-sugar-cane-800 transition-colors"
+              href="/merchandise"
+            >
+              Merchandise
+            </Link>
           </li>
           <li>
-            <Link href="/social">Social</Link>
+            <Link
+              className="hover:text-sugar-cane-800 transition-colors"
+              href="/social"
+            >
+              Social
+            </Link>
           </li>
         </ul>
       </nav>

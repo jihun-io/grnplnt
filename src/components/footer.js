@@ -19,7 +19,7 @@ export default function Footer() {
         </ul>
       </div>
       <ul className="flex flex-row gap-x-2 flex-wrap">
-        <li className="bold">혹성의 아이</li>
+        <li className="font-bold">혹성의 아이</li>
         <li>
           <span className="font-bold">대표: </span>박 준
         </li>
