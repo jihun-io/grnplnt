@@ -60,7 +60,7 @@ export default function Header({ title }) {
       </button>
       <nav
         className={`flex col-span-2 sm:row-span-1 sm:col-span-1 sm:w-96 justify-center overflow-hidden transition-all ${
-          isNavOpen ? "h-8" : "h-0 sm:h-8"
+          isNavOpen ? "h-9" : "h-0 sm:h-8"
         }`}
       >
         <ul className="px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between font-[900]">
