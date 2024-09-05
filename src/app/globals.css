@@ -1,5 +1,4 @@
 @import "../styles/reset.css";
-@import "https://use.typekit.net/rjd5iff.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,6 +56,12 @@ html {
     -apple-system, BlinkMacSystemFont, system-ui, Roboto, helvetica neue,
     segoe ui, apple sd gothic neo, noto sans kr, malgun gothic,
     apple color emoji, segoe ui emoji, segoe ui symbol, sans-serif;
+}
+
+.futura {
+  font-family: "futura-pt-condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 @layer utilities {
