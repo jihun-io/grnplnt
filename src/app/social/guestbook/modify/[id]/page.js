@@ -1,4 +1,11 @@
-import GuestbookFormModify from "@/components/guestbook-form-modify";
+import dynamic from "next/dynamic";
+
+const GuestbookFormModify = dynamic(
+  () => import("@/components/guestbook-form-modify"),
+  {
+    ssr: false,
+  }
+);
 
 export const runtime = "edge";
 
