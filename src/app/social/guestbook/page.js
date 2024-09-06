@@ -1,8 +1,10 @@
 import { generateMetadata } from "/utils/metadata";
+
 import Link from "next/link";
 import SocialNav from "@/components/social-nav";
 import Button from "@/components/button";
 import GuestbookForm from "@/components/guestbook-form";
+import Modal from "@/components/modify-modal";
 
 const title = "소셜 - 혹성의 아이";
 const description = "혹성의 아이에 관한 소식을 만나 보세요.";
@@ -55,13 +57,29 @@ export default async function Guestbook() {
               <div className="absolute bottom-2 right-2">
                 <ul className="flex flex-row gap-x-2 justify-between items-center text-xs">
                   <li>
-                    <Button className="px-2">수정</Button>
+                    <Modal
+                      API_URL={API_URL}
+                      API_KEY={API_KEY}
+                      type="modify"
+                      id={id}
+                      className="px-2"
+                    >
+                      수정
+                    </Modal>
                   </li>
                   <li>
-                    <Button className="px-2" variant="red">
+                    <Modal
+                      API_URL={API_URL}
+                      API_KEY={API_KEY}
+                      type="delete"
+                      id={id}
+                      className="px-2"
+                      variant="red"
+                    >
                       삭제
-                    </Button>
+                    </Modal>
                   </li>
+                  <li></li>
                 </ul>
               </div>
               <p className="m-0  break-keep text-left">{content}</p>
