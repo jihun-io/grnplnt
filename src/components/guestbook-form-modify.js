@@ -36,11 +36,18 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
         }
 
         const result = await response.json();
+        if (result.result === "fail") {
+          router.push(`/social/guestbook/`);
+          alert(
+            "방명록을 가져오는 중 오류가 발생했습니다. 다시 시도해 주세요."
+          );
+        }
 
         setFormData({
           username: result.username,
           content: result.content,
         });
+        setIsLoading(false);
 
         // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
       } catch (error) {
@@ -62,7 +69,7 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const endpoint = `${API_URL}guestbook/modify/submit?id=${id}`;
 
     try {
@@ -119,6 +126,7 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
           value={formData.username}
           onChange={handleChange}
           required
+          {...(isLoading && { disabled: true })}
         />
       </fieldset>
 
@@ -133,9 +141,10 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
         value={formData.content}
         onChange={handleChange}
         required
+        {...(isLoading && { disabled: true })}
       ></textarea>
       <Button className="ml-auto" type="submit">
-        작성
+        {isLoading ? "처리 중..." : "수정"}
       </Button>
     </form>
   );

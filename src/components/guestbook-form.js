@@ -13,6 +13,8 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
 
   const router = useRouter();
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -22,6 +24,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
     e.preventDefault();
     const endpoint =
       type === "modify"
@@ -51,13 +54,14 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
         password: "",
         content: "",
       });
-
+      setIsLoading(false);
       router.refresh(); // 방명록 목록을 다시 불러오기
 
       // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
     } catch (error) {
       // 여기에 에러 메시지를 표시하는 로직을 추가할 수 있습니다.
       alert("방명록 작성 중 오류가 발생했습니다. 다시 시도해 주세요.");
+      setIsLoading(false);
     }
   };
 
@@ -80,6 +84,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
           value={formData.username}
           onChange={handleChange}
           required
+          {...(isLoading && { disabled: true })}
         />
 
         <label className="sr-only" htmlFor="password">
@@ -94,6 +99,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
           value={formData.password}
           onChange={handleChange}
           required
+          {...(isLoading && { disabled: true })}
         />
       </fieldset>
 
@@ -108,9 +114,10 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
         value={formData.content}
         onChange={handleChange}
         required
+        {...(isLoading && { disabled: true })}
       ></textarea>
       <Button className="ml-auto" type="submit">
-        작성
+        {isLoading ? "처리 중..." : "작성"}
       </Button>
     </form>
   );
