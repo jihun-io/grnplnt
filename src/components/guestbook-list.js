@@ -1,3 +1,5 @@
+"use client";
+
 import Modal from "@/components/modify-modal";
 
 export default async function Guestbook({ API_URL, API_KEY }) {
