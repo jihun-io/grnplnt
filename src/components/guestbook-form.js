@@ -79,6 +79,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
           placeholder="이름"
           value={formData.username}
           onChange={handleChange}
+          required
         />
 
         <label className="sr-only" htmlFor="password">
@@ -92,6 +93,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
           placeholder="비밀번호"
           value={formData.password}
           onChange={handleChange}
+          required
         />
       </fieldset>
 
@@ -105,6 +107,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
         rows="7"
         value={formData.content}
         onChange={handleChange}
+        required
       ></textarea>
       <Button className="ml-auto" type="submit">
         작성

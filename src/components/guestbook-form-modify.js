@@ -118,6 +118,7 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
           placeholder="이름"
           value={formData.username}
           onChange={handleChange}
+          required
         />
       </fieldset>
 
@@ -131,6 +132,7 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
         rows="7"
         value={formData.content}
         onChange={handleChange}
+        required
       ></textarea>
       <Button className="ml-auto" type="submit">
         작성
