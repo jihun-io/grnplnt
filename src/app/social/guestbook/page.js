@@ -1,10 +1,22 @@
 import { generateMetadata } from "/utils/metadata";
-
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
 import SocialNav from "@/components/social-nav";
 import Button from "@/components/button";
-import GuestbookForm from "@/components/guestbook-form";
-import Modal from "@/components/modify-modal";
+// import GuestbookForm from "@/components/guestbook-form";
+// import Modal from "@/components/modify-modal";
+const Modal = dynamic(() => import("@/components/modify-modal"), {
+  ssr: false,
+});
+
+const GuestbookForm = dynamic(() => import("@/components/guestbook-form"), {
+  ssr: false,
+});
+
+const GuestbookList = dynamic(() => import("@/components/guestbook-list"), {
+  ssr: false,
+});
 
 const title = "소셜 - 혹성의 아이";
 const description = "혹성의 아이에 관한 소식을 만나 보세요.";
@@ -41,51 +53,7 @@ export default async function Guestbook() {
       <SocialNav />
       <section className="w-full flex flex-col items-center gap-8">
         <GuestbookForm API_URL={API_URL} API_KEY={API_KEY} />
-        <ul className="w-11/12 flex flex-col gap-6 items-center">
-          {posts.map(([title, date, content, id]) => (
-            <li
-              key={id}
-              className="flex flex-col w-9/12 bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 bg-[#fff] relative overflow-hidden"
-              id={id}
-            >
-              <div className="flex flex-row items-center flex-wrap justify-between">
-                <p className=" m-0 font-bold">{title}</p>
-                <p className=" m-0 font-semibold">
-                  <time>{date}</time>
-                </p>
-              </div>
-              <div className="absolute bottom-2 right-2">
-                <ul className="flex flex-row gap-x-2 justify-between items-center text-xs">
-                  <li>
-                    <Modal
-                      API_URL={API_URL}
-                      API_KEY={API_KEY}
-                      type="modify"
-                      id={id}
-                      className="px-2"
-                    >
-                      수정
-                    </Modal>
-                  </li>
-                  <li>
-                    <Modal
-                      API_URL={API_URL}
-                      API_KEY={API_KEY}
-                      type="delete"
-                      id={id}
-                      className="px-2"
-                      variant="red"
-                    >
-                      삭제
-                    </Modal>
-                  </li>
-                  <li></li>
-                </ul>
-              </div>
-              <p className="m-0  break-keep text-left">{content}</p>
-            </li>
-          ))}
-        </ul>
+        <GuestbookList API_URL={API_URL} API_KEY={API_KEY} />
       </section>
     </main>
   );
