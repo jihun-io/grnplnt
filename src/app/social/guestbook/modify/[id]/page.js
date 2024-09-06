@@ -1,5 +1,7 @@
 import GuestbookFormModify from "@/components/guestbook-form-modify";
 
+export const runtime = "edge";
+
 export default function ModifyEntry({ params }) {
   const API_URL = process.env.API_URL;
   const API_KEY = process.env.API_KEY;
