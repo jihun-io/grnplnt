@@ -8,8 +8,7 @@ const Button = ({
   children,
   onClick,
 }) => {
-  const baseClasses =
-    "px-4 py-1 rounded-md ml-auto font-bold transition-colors";
+  const baseClasses = "px-4 py-1 rounded-md font-bold transition-colors";
 
   const variantClasses = {
     default:
