@@ -122,7 +122,7 @@ export default function GuestbookFormModify({ id }) {
           이름
         </label>
         <input
-          className="basis-6 flex-grow h-12 px-4 rounded-md shadow-md"
+          className="basis-6 flex-grow h-12 px-4 rounded-md border-[1px] border-sugar-cane-600"
           type="text"
           id="username"
           name="username"
@@ -138,7 +138,7 @@ export default function GuestbookFormModify({ id }) {
         내용
       </label>
       <textarea
-        className="w-full p-4 rounded-md shadow-md"
+        className="w-full p-4 rounded-md border-[1px] border-sugar-cane-600"
         id="content"
         name="content"
         rows="7"
