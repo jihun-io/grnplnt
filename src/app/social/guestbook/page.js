@@ -1,14 +1,7 @@
 import { generateMetadata } from "/utils/metadata";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 
 import SocialNav from "@/components/social-nav";
-import Button from "@/components/button";
-// import GuestbookForm from "@/components/guestbook-form";
-// import Modal from "@/components/modify-modal";
-const Modal = dynamic(() => import("@/components/modify-modal"), {
-  ssr: false,
-});
 
 const GuestbookForm = dynamic(() => import("@/components/guestbook-form"), {
   ssr: false,
@@ -39,21 +32,20 @@ async function getPosts() {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  return response.json();
+  const result = await response.json();
+  return result;
 }
 
 export default async function Guestbook() {
-  const API_URL = process.env.API_URL;
-  const API_KEY = process.env.API_KEY;
-
   const posts = await getPosts();
+  // console.log(posts);
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
       <h2 className="text-4xl font-bold mb-4">소셜</h2>
       <SocialNav />
       <section className="w-full flex flex-col items-center gap-8">
-        <GuestbookForm API_URL={API_URL} API_KEY={API_KEY} />
-        <GuestbookList API_URL={API_URL} API_KEY={API_KEY} />
+        <GuestbookForm />
+        <GuestbookList posts={posts} />
       </section>
     </main>
   );

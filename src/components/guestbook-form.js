@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
 
-export default function GuestbookForm({ API_URL, API_KEY, type }) {
+export default function GuestbookForm() {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -26,20 +26,14 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
-    const endpoint =
-      type === "modify"
-        ? `${API_URL}guestbook/modify/submit${data.id}`
-        : `${API_URL}guestbook/submit`;
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch(`/social/guestbook/api/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": API_KEY,
         },
         body: JSON.stringify(formData),
-        mode: "cors", // 명시적으로 CORS 모드 설정
       });
 
       if (!response.ok) {
@@ -47,7 +41,7 @@ export default function GuestbookForm({ API_URL, API_KEY, type }) {
       }
 
       const result = await response.json();
-
+      console.log(result);
       // 폼 초기화
       setFormData({
         username: "",

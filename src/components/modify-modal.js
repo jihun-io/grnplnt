@@ -5,15 +5,9 @@ import { useRouter } from "next/navigation";
 
 import Button from "@/components/button";
 
-export default function ModalWrapper({
-  API_URL,
-  API_KEY,
-  type,
-  id,
-  variant,
-  children,
-}) {
+export default function ModalWrapper({ type, id, variant, children }) {
   const [formData, setFormData] = useState({
+    id: id,
     pw: "",
   });
 
@@ -30,13 +24,11 @@ export default function ModalWrapper({
   const handleAction = async (e, actionType, sn) => {
     e.preventDefault();
 
-    const API_ACTION = `${API_URL}guestbook/${actionType}?id=${sn}`;
     try {
-      const response = await fetch(API_ACTION, {
+      const response = await fetch(`/social/guestbook/api/${actionType}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": API_KEY,
         },
         body: JSON.stringify(formData),
         mode: "cors", // 명시적으로 CORS 모드 설정
@@ -51,6 +43,7 @@ export default function ModalWrapper({
       // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
       // 폼 초기화
       setFormData({
+        id: id,
         pw: "",
       });
 

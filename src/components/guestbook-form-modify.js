@@ -5,8 +5,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
 
-export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
+export default function GuestbookFormModify({ id }) {
   const [formData, setFormData] = useState({
+    id: id,
+    session_id: localStorage.getItem("guestbook_session"),
     username: "",
     content: "",
   });
@@ -17,15 +19,15 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
 
   useEffect(() => {
     const getData = async () => {
-      const API_GET = `${API_URL}guestbook/modify/getdata?id=${id}`;
+      const API_GET = `/social/guestbook/api/getdata`;
       try {
         const response = await fetch(API_GET, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-API-Key": API_KEY,
           },
           body: JSON.stringify({
+            id: id,
             session_id: localStorage.getItem("guestbook_session"),
           }),
           mode: "cors", // 명시적으로 CORS 모드 설정
@@ -44,6 +46,8 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
         }
 
         setFormData({
+          id: id,
+          session_id: localStorage.getItem("guestbook_session"),
           username: result.username,
           content: result.content,
         });
@@ -57,7 +61,7 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
       }
     };
     getData();
-  }, [API_URL, API_KEY, id, router]);
+  }, [id, router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -70,14 +74,12 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const endpoint = `${API_URL}guestbook/modify/submit?id=${id}`;
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch(`/social/guestbook/api/resubmit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": API_KEY,
           "Session-ID": localStorage.getItem("guestbook_session"),
         },
         body: JSON.stringify(formData),
@@ -92,6 +94,8 @@ export default function GuestbookFormModify({ API_URL, API_KEY, id }) {
 
       // 폼 초기화
       setFormData({
+        id: id,
+        session_id: localStorage.getItem("guestbook_session"),
         username: "",
         content: "",
       });
