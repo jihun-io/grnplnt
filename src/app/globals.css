@@ -64,6 +64,16 @@ html {
   font-style: normal;
 }
 
+.pyeongchangpeace {
+  font-family: "pyeongchangpeace", sans-serif;
+  font-weight: 300;
+}
+
+.pyeongchangpeace-bold {
+  font-family: "pyeongchangpeace", sans-serif;
+  font-weight: 700;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
