@@ -19,9 +19,16 @@ export default function Header({ title }) {
 
   return (
     <header className="grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-2xl px-6 md:px-8 lg:px-10 xl:px-12">
-      <h1 className="sr-only">혹성의 아이</h1>
       <Link href="/">
-        <img src="/images/logo.svg" alt="혹성의 아이" className="w-10" />
+        <h1>
+          <Image
+            src="/images/logo.svg"
+            alt="혹성의 아이"
+            width={0}
+            height={0}
+            className="w-10"
+          />
+        </h1>
       </Link>
       <button className="relative ml-auto sm:hidden" onClick={toggleNav}>
         <svg
