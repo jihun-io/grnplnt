@@ -1,0 +1,26 @@
+// src/styles/custom-bootstrap.scss
+.bootstrap-scope {
+  @import "bootstrap/scss/functions";
+  @import "bootstrap/scss/variables";
+  @import "bootstrap/scss/variables-dark";
+  @import "bootstrap/scss/maps";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/utilities";
+
+  // 레이아웃 및 컴포넌트
+  @import "bootstrap/scss/root";
+  @import "bootstrap/scss/reboot";
+  @import "bootstrap/scss/type";
+  @import "bootstrap/scss/images";
+  @import "bootstrap/scss/containers";
+  @import "bootstrap/scss/grid";
+
+  // 캐러셀 관련 컴포넌트
+  @import "bootstrap/scss/carousel";
+
+  // 유틸리티
+  @import "bootstrap/scss/helpers";
+  @import "bootstrap/scss/utilities/api";
+  position: relative;
+}
+// 설정 및 함수
