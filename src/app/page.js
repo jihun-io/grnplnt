@@ -69,9 +69,9 @@ export default function Home() {
             <div className="flex flex-col justify-center flex-1 gap-y-10 min-w-44 h-[240px]">
               <h4 className="pyeongchangpeace text-3xl">젤리 (18)</h4>
               <p className="break-keep">
-                남들이 기억 못하는 자신의 '고향별'을 기억한다는 별난 소녀. 겁도
-                많고 자신감도 살짝 떨어지는 것 같지만, 어떻게든 고향별과
-                연락하고 말겠다는 자신의 목표에 진심으로 임한다.
+                남들이 기억 못하는 자신의 &lsquo;고향별&rsquo;을 기억한다는 별난
+                소녀. 겁도 많고 자신감도 살짝 떨어지는 것 같지만, 어떻게든
+                고향별과 연락하고 말겠다는 자신의 목표에 진심으로 임한다.
               </p>
             </div>
           </li>
