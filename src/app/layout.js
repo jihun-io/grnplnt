@@ -110,7 +110,10 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/rjd5iff.css" />
       </head>
       <body className="min-h-[100vh] grid grid-rows-[auto,1fr,auto] bg-sugar-cane-50 box-border">
-        <Header title={metadata.title} />
+        <Header
+          title={metadata.title}
+          className="sticky top-0 z-50 bg-sugar-cane-50"
+        />
         {children}
         <Footer />
       </body>
