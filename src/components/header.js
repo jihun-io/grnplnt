@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
-export default function Header({ title }) {
+export default function Header({ title, className }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathname = usePathname();
 
@@ -17,8 +18,12 @@ export default function Header({ title }) {
     setIsNavOpen((prev) => !prev);
   };
 
+  const defaultClasses =
+    "grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-2xl px-6 md:px-8 lg:px-10 xl:px-12";
+
+  const headerClasses = classNames(defaultClasses, className);
   return (
-    <header className="grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-2xl px-6 md:px-8 lg:px-10 xl:px-12">
+    <header className={headerClasses}>
       <Link href="/">
         <h1>
           <Image
