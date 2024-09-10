@@ -144,6 +144,7 @@ export default function GuestbookFormModify({ id }) {
         rows="7"
         value={formData.content}
         onChange={handleChange}
+        placeholder="타인의 권리를 침해하거나 관련 법령에 위반되는 내용을 게시할 경우 삭제 및 제재될 수 있습니다."
         required
         {...(isLoading && { disabled: true })}
       ></textarea>
