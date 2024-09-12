@@ -41,6 +41,9 @@ export default function ModalWrapper({ type, id, variant, children }) {
       const result = await response.json();
 
       // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
+      setTimeout(() => {
+        window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
+      }, 500);
       // 폼 초기화
       setFormData({
         id: id,
