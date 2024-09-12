@@ -1,40 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Script from "next/script";
-import { useRouter } from "next/navigation";
-
-window.onloadTurnstileCallback = function () {
-  turnstile.render("#turnstile-widget", {
-    sitekey: "0x4AAAAAAAh5X07CUer4bS3L",
-    callback: function (token) {
-      // console.log(`Challenge Success ${token}`);
-    },
-  });
-};
+import { useEffect, useRef } from "react";
 
 export default function TurnstileWidget() {
-  const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
+  const widgetRef = useRef(null);
+  const widgetId = useRef(null);
+
+  const renderTurnstile = () => {
+    if (window.turnstile && widgetRef.current) {
+      if (widgetId.current) {
+        window.turnstile.remove(widgetId.current);
+      }
+      widgetId.current = window.turnstile.render(widgetRef.current, {
+        sitekey: "0x4AAAAAAAh5X07CUer4bS3L",
+        callback: function (token) {
+          console.log(`Challenge Success ${token}`);
+        },
+      });
+    }
+  };
 
   useEffect(() => {
+    renderTurnstile();
+
     const handleGuestbookUpdated = () => {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-      setTimeout(() => {
-        onloadTurnstileCallback();
-        router.push;
-      }, 1000);
+      setTimeout(renderTurnstile, 500);
     };
 
     window.addEventListener("guestbookUpdated", handleGuestbookUpdated);
 
     return () => {
       window.removeEventListener("guestbookUpdated", handleGuestbookUpdated);
+      if (widgetId.current) {
+        window.turnstile.remove(widgetId.current);
+      }
     };
-  }, [setIsLoading]);
+  }, []);
 
-  return <>{!isLoading && <div id="turnstile-widget"></div>}</>;
+  return <div ref={widgetRef} />;
 }
