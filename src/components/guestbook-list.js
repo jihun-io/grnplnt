@@ -43,7 +43,7 @@ export default function GuestbookList({ posts }) {
                 <li></li>
               </ul>
             </div>
-            <p className="m-0  break-keep text-left">{post.content}</p>
+            <p className="m-0 text-left">{post.content}</p>
           </li>
         ))}
     </ul>
