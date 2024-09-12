@@ -131,7 +131,7 @@ export default function GuestbookForm() {
         required
         {...(isLoading && { disabled: true })}
       ></textarea>
-      <div className="w-full flex flex-row justify-between items-start">
+      <div className="w-full h-[148px] flex flex-row justify-between items-start">
         <TurnstileWidget />
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
