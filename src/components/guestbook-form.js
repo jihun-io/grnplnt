@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button";
+import Script from "next/script";
+import dynamic from "next/dynamic";
+
+const TurnstileWidget = dynamic(() => import("@/components/turnstileWidget"), {
+  ssr: false,
+});
 
 export default function GuestbookForm() {
   const [formData, setFormData] = useState({
@@ -26,6 +32,19 @@ export default function GuestbookForm() {
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
+
+    const turnstileInput = document.querySelectorAll(
+      'input[id ^= "cf-chl-widget-"]'
+    );
+    if (turnstileInput[0]?.value == "") {
+      // alert("로봇이 아님을 확인해주세요.");
+      setIsLoading(false);
+      return;
+    } else {
+      formData.turnstile = turnstileInput[0]?.value;
+    }
+
+    console.log(formData);
 
     try {
       const response = await fetch(`/social/guestbook/api/submit`, {
@@ -112,9 +131,16 @@ export default function GuestbookForm() {
         required
         {...(isLoading && { disabled: true })}
       ></textarea>
-      <Button className="ml-auto" type="submit">
-        {isLoading ? "처리 중..." : "작성"}
-      </Button>
+      <div className="w-full flex flex-row justify-between items-start">
+        <TurnstileWidget />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
+          strategy="afterInteractive"
+        ></Script>
+        <Button className="ml-auto" type="submit">
+          {isLoading ? "처리 중..." : "작성"}
+        </Button>
+      </div>
     </form>
   );
 }
