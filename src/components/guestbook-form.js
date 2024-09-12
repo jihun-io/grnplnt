@@ -20,6 +20,7 @@ export default function GuestbookForm() {
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [notSolved, setNotSolved] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,10 +38,11 @@ export default function GuestbookForm() {
       'input[id ^= "cf-chl-widget-"]'
     );
     if (turnstileInput[0]?.value == "") {
-      // alert("로봇이 아님을 확인해주세요.");
+      setNotSolved(true);
       setIsLoading(false);
       return;
     } else {
+      setNotSolved(false);
       formData.turnstile = turnstileInput[0]?.value;
     }
 
@@ -137,8 +139,12 @@ export default function GuestbookForm() {
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
           strategy="afterInteractive"
         ></Script>
-        <Button className="ml-auto" type="submit">
-          {isLoading ? "처리 중..." : "작성"}
+        <Button className="ml-auto break-keep" type="submit">
+          {notSolved
+            ? "사람인지 확인하십시오..."
+            : isLoading
+            ? "처리 중..."
+            : "작성"}
         </Button>
       </div>
     </form>
