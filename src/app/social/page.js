@@ -36,9 +36,6 @@ export default function social() {
           </li>
         </ul>
       </section>
-      <section>
-        <h2 className="sr-only">방명록</h2>
-      </section>
     </main>
   );
 }
