@@ -1,12 +1,55 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Modal from "@/components/modify-modal";
 
-export default function GuestbookList({ posts }) {
-  // const [posts, setPosts] = useState([]);
+// export default function GuestbookList({ posts }) {
+export default function GuestbookList() {
+  const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const fetchPosts = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`/social/guestbook/api/json`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setPosts(result);
+      setIsLoading(false);
+      // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
+    } catch (error) {
+      // 여기에 에러 메시지를 표시하는 로직을 추가할 수 있습니다.
+      alert("방명록 로드 중 오류가 발생했습니다. 다시 시도해 주세요.");
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchPosts();
+
+    const handleGuestbookUpdate = () => {
+      fetchPosts();
+    };
+
+    window.addEventListener("guestbookUpdated", handleGuestbookUpdate);
+
+    return () => {
+      window.removeEventListener("guestbookUpdated", handleGuestbookUpdate);
+    };
+  }, [fetchPosts]);
+
+  if (isLoading) return <div></div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <ul className="w-11/12 flex flex-col gap-6 items-center">

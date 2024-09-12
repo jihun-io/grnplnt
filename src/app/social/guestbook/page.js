@@ -18,26 +18,8 @@ export const metadata = generateMetadata(title, description);
 
 export const runtime = "edge";
 
-async function getPosts() {
-  const API_LIST = process.env.API_URL + "guestbook/json";
-  const API_KEY = process.env.API_KEY;
-  const response = await fetch(API_LIST, {
-    headers: {
-      "X-API-Key": API_KEY,
-    },
-    "Cache-Control": "no-store, max-age=0",
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const result = await response.json();
-  return result;
-}
-
-export default async function Guestbook() {
-  const posts = await getPosts();
+export default function Guestbook() {
+  // const posts = await getPosts();
   // console.log(posts);
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
@@ -45,7 +27,7 @@ export default async function Guestbook() {
       <SocialNav />
       <section className="w-full flex flex-col items-center gap-8">
         <GuestbookForm />
-        <GuestbookList posts={posts} />
+        <GuestbookList />
       </section>
     </main>
   );
