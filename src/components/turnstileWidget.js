@@ -13,6 +13,7 @@ export default function TurnstileWidget() {
       }
       widgetId.current = window.turnstile.render(widgetRef.current, {
         sitekey: "0x4AAAAAAAh5X07CUer4bS3L",
+        size: "compact",
         callback: function (token) {
           console.log(`Challenge Success ${token}`);
         },
