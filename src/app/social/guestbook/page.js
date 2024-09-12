@@ -3,13 +3,15 @@ import dynamic from "next/dynamic";
 
 import SocialNav from "@/components/social-nav";
 
-const GuestbookForm = dynamic(() => import("@/components/guestbook-form"), {
-  ssr: false,
-});
+import GuestbookForm from "@/components/guestbook-form";
+import GuestbookList from "@/components/guestbook-list";
+// const GuestbookForm = dynamic(() => import("@/components/guestbook-form"), {
+//   ssr: false,
+// });
 
-const GuestbookList = dynamic(() => import("@/components/guestbook-list"), {
-  ssr: false,
-});
+// const GuestbookList = dynamic(() => import("@/components/guestbook-list"), {
+//   ssr: false,
+// });
 
 const title = "소셜 - 혹성의 아이";
 const description = "혹성의 아이에 관한 소식을 만나 보세요.";
