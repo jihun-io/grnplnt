@@ -49,7 +49,9 @@ export default function GuestbookForm() {
         content: "",
       });
       setIsLoading(false);
-      window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
+      setTimeout(() => {
+        window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
+      }, 500);
       // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
     } catch (error) {
       // 여기에 에러 메시지를 표시하는 로직을 추가할 수 있습니다.
