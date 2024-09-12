@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Modal from "@/components/modify-modal";
 
-// export default function GuestbookList({ posts }) {
 export default function GuestbookList() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
