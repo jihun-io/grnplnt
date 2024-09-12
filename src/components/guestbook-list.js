@@ -12,7 +12,7 @@ export default function GuestbookList() {
     setIsLoading(true);
     try {
       const response = await fetch(`/social/guestbook/api/json`, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
