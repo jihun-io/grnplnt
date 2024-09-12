@@ -18,7 +18,7 @@ export const metadata = generateMetadata(title, description);
 
 export const runtime = "edge";
 
-export default function Guestbook() {
+export default async function Guestbook() {
   // const posts = await getPosts();
   // console.log(posts);
   return (
