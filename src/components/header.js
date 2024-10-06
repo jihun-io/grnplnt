@@ -75,7 +75,7 @@ export default function Header({ title, className }) {
           isNavOpen ? "h-9" : "h-0 sm:h-8"
         }`}
       >
-        <ul className="px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between font-[900]">
+        <ul className="font-extrabold px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between">
           <li>
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
