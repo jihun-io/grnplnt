@@ -88,6 +88,25 @@ strong,
   font-family: "KoddiUDOnGothic-ExtraBold";
 }
 
+.drag-none {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
