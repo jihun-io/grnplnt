@@ -107,7 +107,6 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
         />
-        <link rel="stylesheet" href="https://use.typekit.net/rjd5iff.css" />
       </head>
       <body className="min-h-[100vh] grid grid-rows-[auto,1fr,auto] bg-sugar-cane-50 box-border">
         <Header
