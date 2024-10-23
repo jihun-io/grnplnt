@@ -107,7 +107,10 @@ export default function Home() {
       <hr className="mx-32 my-32 border-sugar-cane-950" />
       <section className="more">
         <h2 className="sr-only">더 보기</h2>
-        <div className="mt-10 bg-[url('/images/more-1280.jpeg')] w-full aspect-video bg-cover bg-center flex flex-col justify-center"></div>
+        <OptimizedImage
+          src="/images/more-1280.jpeg"
+          className="mt-10 w-full aspect-video bg-cover bg-center flex flex-col justify-center"
+        />
         <article className="w-full p-8 bg-contain bg-no-repeat bg-center flex flex-col justify-center items-center gap-y-1`">
           <Merch />
           <h3 className="text-4xl font-bold">Merchandise</h3>
