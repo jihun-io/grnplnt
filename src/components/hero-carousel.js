@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import OptimizedImage from "./OptimizedImage";
 import Carousel from "react-bootstrap/Carousel";
 
 import "/src/styles/custom-bootstrap.scss";
@@ -15,8 +15,8 @@ const HeroCarousel = () => {
       interval={10000}
     >
       <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
-        <Image
-          src="/images/hero-1.jpeg"
+        <OptimizedImage
+          src="/images/hero-1.png"
           fill
           quality={100}
           loading="lazy"
@@ -25,8 +25,8 @@ const HeroCarousel = () => {
         />
       </Carousel.Item>
       <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
-        <Image
-          src="/images/hero-2.jpeg"
+        <OptimizedImage
+          src="/images/hero-2.png"
           fill
           quality={100}
           loading="lazy"
@@ -35,8 +35,8 @@ const HeroCarousel = () => {
         />
       </Carousel.Item>
       <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
-        <Image
-          src="/images/hero-3.jpeg"
+        <OptimizedImage
+          src="/images/hero-3.png"
           fill
           quality={100}
           loading="lazy"
@@ -45,8 +45,8 @@ const HeroCarousel = () => {
         />
       </Carousel.Item>
       <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
-        <Image
-          src="/images/hero-4.jpeg"
+        <OptimizedImage
+          src="/images/hero-4.png"
           fill
           quality={100}
           loading="lazy"
@@ -55,8 +55,8 @@ const HeroCarousel = () => {
         />
       </Carousel.Item>
       <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
-        <Image
-          src="/images/hero-5.jpeg"
+        <OptimizedImage
+          src="/images/hero-5.png"
           fill
           quality={100}
           loading="lazy"

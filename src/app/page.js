@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "../components/hero-carousel";
 import SynopsisText from "@/components/synopsis-text";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function Home() {
   const characterDesc =
@@ -15,7 +16,7 @@ export default function Home() {
         <h3 className="sr-only">메인 이미지</h3>
         <HeroCarousel />
       </section>
-      <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/images/synopsis-background_1920.jpg')] bg-cover flex justify-center items-center">
+      <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/optimized/synopsis-background_1920-1080.webp')] bg-cover flex justify-center items-center">
         <div className="flex flex-col gap-16 justify-center items-center">
           <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl ">
             SYNOPSIS
@@ -37,18 +38,14 @@ export default function Home() {
         ></iframe>
       </section>
       <section className="character w-full h-fit">
-        <div className="bg-wrapper bg-[url('/images/character-hero_1920.jpg')] h-[720px] bg-top bg-cover">
-          <h3 className="pyeongchangpeace-bold text-sugar-cane-950 text-center pt-32 text-5xl md:text-5xl lg:text-6xl ">
-            캐릭터
-          </h3>
-        </div>
+        <h3 className="sr-only">캐릭터</h3>
         <ul>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
             <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <Image
+              <OptimizedImage
                 fill
                 className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/hush.jpeg"
+                src="/images/hush.png"
                 alt="팔짱을 끼고 앉아 있는 허쉬의 모습."
               />
             </div>
@@ -66,10 +63,10 @@ export default function Home() {
           </li>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
             <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <Image
+              <OptimizedImage
                 fill
                 className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/jelly.jpeg"
+                src="/images/jelly.png"
                 alt="웃고 있는 젤리의 모습."
               />
             </div>
@@ -86,10 +83,10 @@ export default function Home() {
           </li>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
             <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <Image
+              <OptimizedImage
                 fill
                 className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/pony.jpeg"
+                src="/images/pony.png"
                 alt="미소를 짓고 있는 포니의 모습."
               />
             </div>

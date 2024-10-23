@@ -2,12 +2,14 @@
   "name": "a_child_from_green_planet",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "optimize-images": "node scripts/optimize-images.js",
+    "dev": "npm run optimize-images && next dev",
+    "build": "npm run optimize-images && next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:build": "npm run optimize-images && npx @cloudflare/next-on-pages",
     "preview": "npm run pages:build && wrangler pages dev",
     "deploy": "npm run pages:build && wrangler pages deploy"
   },
@@ -18,6 +20,7 @@
     "react": "^18",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18",
+    "sharp": "^0.33.5",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
