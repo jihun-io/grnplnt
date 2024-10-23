@@ -19,7 +19,7 @@ export default function Header({ title, className }) {
   };
 
   const defaultClasses =
-    "grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-2xl px-6 md:px-8 lg:px-10 xl:px-12";
+    "grid grid-cols-2 sm:flex sm:flex-row sm:justify-between sm:items-center py-8 text-lg px-6 md:px-8 lg:px-10 xl:px-12";
 
   const headerClasses = classNames(defaultClasses, className);
   return (
@@ -35,14 +35,17 @@ export default function Header({ title, className }) {
           />
         </h1>
       </Link>
-      <button className="relative ml-auto sm:hidden" onClick={toggleNav}>
+      <button
+        className="relative ml-auto sm:hidden w-10 h-10 flex justify-center items-center"
+        onClick={toggleNav}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="3"
           stroke="currentColor"
-          className={`absolute transition-opacity top-0 right-0 size-10 ${
+          className={`absolute transition-opacity top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 size-8 ${
             isNavOpen ? "opacity-0" : "opacity-100"
           }`}
         >
@@ -58,7 +61,7 @@ export default function Header({ title, className }) {
           viewBox="0 0 24 24"
           strokeWidth="3"
           stroke="currentColor"
-          className={`absolute transition-opacity top-0 right-0 size-10 ${
+          className={`absolute transition-opacity top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 size-8 ${
             isNavOpen ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -71,11 +74,11 @@ export default function Header({ title, className }) {
         <p className="sr-only">메뉴</p>
       </button>
       <nav
-        className={`flex col-span-2 sm:row-span-1 sm:col-span-1 sm:w-96 justify-center overflow-hidden transition-all ${
+        className={`flex col-span-2 sm:row-span-1 sm:col-span-1 justify-center overflow-hidden transition-all ${
           isNavOpen ? "h-9" : "h-0 sm:h-8"
         }`}
       >
-        <ul className="font-extrabold px-5 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between">
+        <ul className="font-extrabold px-0 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between">
           <li>
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
@@ -90,6 +93,14 @@ export default function Header({ title, className }) {
               href="/merchandise"
             >
               Merchandise
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:text-sugar-cane-800 transition-colors"
+              href="/videos"
+            >
+              Contents
             </Link>
           </li>
           <li>
