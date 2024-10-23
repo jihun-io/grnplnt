@@ -20,12 +20,7 @@ export default function Home() {
           <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl ">
             SYNOPSIS
           </h3>
-          <p
-            className="text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48"
-            aria-hidden="true"
-          >
-            <SynopsisText />
-          </p>
+          <SynopsisText />
           <p className="sr-only">
             자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는
             수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의
