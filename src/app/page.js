@@ -1,9 +1,10 @@
 import "./globals.css";
 import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import HeroCarousel from "../components/hero-carousel";
 import SynopsisText from "@/components/synopsis-text";
-import OptimizedImage from "@/components/OptimizedImage";
+import Merch from "@/components/merch";
 
 export default function Home() {
   const characterDesc =
@@ -81,7 +82,7 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
+          <li className="flex flex-col justify-center items-center flex-wrap gap-6">
             <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
               <OptimizedImage
                 fill
@@ -103,35 +104,36 @@ export default function Home() {
           </li>
         </ul>
       </section>
+      <hr className="mx-32 my-32 border-sugar-cane-950" />
       <section className="more">
         <h2 className="sr-only">더 보기</h2>
-        <div className="mt-32 bg-[url('/images/more-1280.jpeg')] w-full aspect-video bg-cover bg-center flex flex-col justify-center"></div>
-        <div className="flex flex-col justify-center gap-x-32">
-          <article className="w-full h-80 bg-[url('https://placehold.co/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
-            <h3 className="text-4xl font-bold">Merchandise</h3>
-            <p className="text-xl leading-loose">
-              혹성의 아이의 공식 상품을 소개합니다.
-            </p>
-            <Link
-              className="bg-sugar-cane-700 rounded-xl py-2 px-6 font-bold text-sugar-cane-50 hover:bg-sugar-cane-800 transition-colors"
-              href="./merchandise"
-            >
-              공식 상품 보기
-            </Link>
-          </article>
-          <article className="w-full h-80 bg-[url('https://placehold.co/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
-            <h3 className="text-4xl font-bold">Social</h3>
-            <p className="text-xl leading-loose">
-              혹성의 아이의 소식을 만나 보세요.
-            </p>
-            <Link
-              className="bg-sugar-cane-700 rounded-xl py-2 px-6 font-bold text-sugar-cane-50 hover:bg-sugar-cane-800 transition-colors"
-              href="./social"
-            >
-              소셜
-            </Link>
-          </article>
-        </div>
+        <div className="mt-10 bg-[url('/images/more-1280.jpeg')] w-full aspect-video bg-cover bg-center flex flex-col justify-center"></div>
+        <article className="w-full p-8 bg-contain bg-no-repeat bg-center flex flex-col justify-center items-center gap-y-1`">
+          <Merch />
+          <h3 className="text-4xl font-bold">Merchandise</h3>
+          <p className="text-xl leading-8 break-keep text-center">
+            Coming Soon
+          </p>
+          <Link
+            className="bg-sugar-cane-700 rounded-xl py-2 px-6 mt-5 font-bold text-sugar-cane-50 hover:bg-sugar-cane-800 transition-colors"
+            href="./merchandise"
+          >
+            공식 상품 보기
+          </Link>
+        </article>
+        <article className="w-full bg-cover bg-center flex flex-col justify-center items-center gap-y-1 mb-64">
+          <OptimizedImage className="w-full my-8" src="/images/fireworks.png" />
+          <h3 className="text-4xl font-bold">Social</h3>
+          <p className="text-xl leading-8 break-keep text-center">
+            혹성의 아이의 소식을 만나 보세요.
+          </p>
+          <Link
+            className="bg-sugar-cane-700 rounded-xl py-2 px-6 mt-5 font-bold text-sugar-cane-50 hover:bg-sugar-cane-800 transition-colors"
+            href="./social"
+          >
+            소셜
+          </Link>
+        </article>
       </section>
     </main>
   );
