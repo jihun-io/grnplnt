@@ -1,5 +1,6 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+
+import React from "react";
 import Image from "next/image";
 import Carousel from "react-bootstrap/Carousel";
 
@@ -13,53 +14,53 @@ const HeroCarousel = () => {
       touch={true}
       interval={10000}
     >
-      <Carousel.Item className="h-[calc(100vh-4rem-2.5rem)]">
+      <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
         <Image
-          src="/images/hero-image1.jpg"
-          width={1920}
-          height={1080}
+          src="/images/hero-1.jpeg"
+          fill
+          quality={100}
           loading="lazy"
-          alt="허쉬, 포니, 젤리가 풀밭에 서서 위를 향해 바라보고 있다."
+          alt="포니, 젤리, 허쉬가 가방을 메고 나란히 길을 걸어가고 있는 뒷모습."
           className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] object-cover"
         />
       </Carousel.Item>
-      <Carousel.Item className="h-[calc(100vh-4rem-2.5rem)]">
+      <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
         <Image
-          src="/images/hero-image2.jpg"
-          width={1920}
-          height={1080}
+          src="/images/hero-2.jpeg"
+          fill
+          quality={100}
           loading="lazy"
-          alt="허쉬와 젤리가 해안 도로를 걸어가고 있다."
+          alt="젤리, 허쉬, 포니가 전자 장비가 놓인 테이블에 앉아 대화를 나누고 있다."
           className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] object-cover"
         />
       </Carousel.Item>
-      <Carousel.Item className="h-[calc(100vh-4rem-2.5rem)]">
+      <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
         <Image
-          src="/images/hero-image3.jpg"
-          width={1920}
-          height={1080}
+          src="/images/hero-3.jpeg"
+          fill
+          quality={100}
           loading="lazy"
-          alt="젤리, 허쉬, 포니가 횡단보도를 나란히 걸어가고 있다."
+          alt="허쉬와 젤리가 나란히 소파에 누워 있다. 허쉬는 자신의 휴대전화를 바라보고 있고, 젤리는 허쉬의 휴대전화를 옆에서 본다."
           className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] object-cover"
         />
       </Carousel.Item>
-      <Carousel.Item className="h-[calc(100vh-4rem-2.5rem)]">
+      <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
         <Image
-          src="/images/hero-image4.jpg"
-          width={1920}
-          height={1080}
+          src="/images/hero-4.jpeg"
+          fill
+          quality={100}
           loading="lazy"
-          alt="은하를 배경으로 젤리가 서서 위를 바라보고 있다."
+          alt="포니와 허쉬가 젤리와 마주치며 이야기를 나누고 있다."
           className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] object-cover"
         />
       </Carousel.Item>
-      <Carousel.Item className="h-[calc(100vh-4rem-2.5rem)]">
+      <Carousel.Item className="relative w-[100vw] h-[calc(100vh-4rem-2.5rem)]">
         <Image
-          src="/images/hero-image5.jpg"
-          width={1920}
-          height={1080}
+          src="/images/hero-5.jpeg"
+          fill
+          quality={100}
           loading="lazy"
-          alt="푸른 하늘을 배경으로 포니, 젤리, 허쉬가 서 있다."
+          alt="젤리가 봉지를 들며 허쉬를 향해 웃고 있다."
           className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] object-cover"
         />
       </Carousel.Item>
