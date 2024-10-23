@@ -93,6 +93,8 @@ module.exports = {
         900: "#343434",
         950: "#262626",
       },
+      white: "#ffffff",
+      black: "#000000",
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
