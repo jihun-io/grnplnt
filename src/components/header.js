@@ -98,7 +98,7 @@ export default function Header({ title, className }) {
           <li>
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
-              href="/videos"
+              href="/contents"
             >
               Contents
             </Link>
