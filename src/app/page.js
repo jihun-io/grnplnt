@@ -2,8 +2,12 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "../components/hero-carousel";
+import SynopsisText from "@/components/synopsis-text";
 
 export default function Home() {
+  const characterDesc =
+    "flex flex-col sm:flex-row justify-center flex-1 gap-x-4 gap-y-10 px-8 sm:px-16 lg:px-32 min-w-44 h-[240px]";
+
   return (
     <main className="w-[100vw]">
       <h2 className="sr-only">홈</h2>
@@ -11,27 +15,29 @@ export default function Home() {
         <h3 className="sr-only">메인 이미지</h3>
         <HeroCarousel />
       </section>
-      <section className="synopsis w-full h-[100vh] bg-[url('/images/synopsis-background_1920.jpg')] bg-cover flex justify-center items-center">
+      <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/images/synopsis-background_1920.jpg')] bg-cover flex justify-center items-center">
         <div className="flex flex-col gap-16 justify-center items-center">
           <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl ">
             SYNOPSIS
           </h3>
-          <p className=" text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48">
+          <p
+            className="text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48"
+            aria-hidden="true"
+          >
+            <SynopsisText />
+          </p>
+          <p className="sr-only">
             자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는
             수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의
             부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다.
           </p>
         </div>
       </section>
-      <section className="trailer w-full h-[100vh] bg-[#000] flex flex-col justify-center items-center">
+      <section className="trailer w-full h-[calc(100vh-4rem-2.5rem)] bg-[#000] flex flex-col justify-center items-center">
         <h3 className="sr-only">예고편</h3>
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=duJ2z1mHm0nLZxCT"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?si=duJ2z1mHm0nLZxCT"}
+          allowFullScreen
           className="w-full aspect-video"
         ></iframe>
       </section>
@@ -41,16 +47,20 @@ export default function Home() {
             캐릭터
           </h3>
         </div>
-        <ul className="px-12 md:px-24 lg:px-48">
-          <li className="flex flex-row justify-center items-center flex-wrap gap-4 px-8 py-7">
-            <Image
-              class="rounded-full w-48 h-48 object-cover bg-[#fff]"
-              src="/images/hush.png"
-              width={320}
-              height={320}
-            />
-            <div className="flex flex-col justify-center flex-1 gap-y-10 min-w-44 h-[240px]">
-              <h4 className="pyeongchangpeace text-3xl">허쉬 (18)</h4>
+        <ul>
+          <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
+            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
+              <Image
+                fill
+                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+                src="/images/hush.jpeg"
+                alt="팔짱을 끼고 앉아 있는 허쉬의 모습."
+              />
+            </div>
+            <div className={characterDesc}>
+              <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
+                허쉬 (18)
+              </h4>
               <p className="break-keep">
                 어딘가 심드렁 하고 무미건조한 듯 보이는 소녀. 그러나 장난기
                 넘치는 포니와 맞장구 칠 줄 알고 엉뚱한 젤리의 마음을
@@ -59,15 +69,19 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li className="flex flex-row justify-center items-center flex-wrap gap-4 px-8 py-7">
-            <Image
-              class="rounded-full w-48 h-48 object-cover bg-[#fff]"
-              src="/images/jelly.png"
-              width={320}
-              height={320}
-            />
-            <div className="flex flex-col justify-center flex-1 gap-y-10 min-w-44 h-[240px]">
-              <h4 className="pyeongchangpeace text-3xl">젤리 (18)</h4>
+          <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
+            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
+              <Image
+                fill
+                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+                src="/images/jelly.jpeg"
+                alt="웃고 있는 젤리의 모습."
+              />
+            </div>
+            <div className={characterDesc}>
+              <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
+                젤리 (18)
+              </h4>
               <p className="break-keep">
                 남들이 기억 못하는 자신의 &lsquo;고향별&rsquo;을 기억한다는 별난
                 소녀. 겁도 많고 자신감도 살짝 떨어지는 것 같지만, 어떻게든
@@ -75,15 +89,19 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li className="flex flex-row justify-center items-center flex-wrap gap-4 px-8 py-7">
-            <Image
-              class="rounded-full w-48 h-48 object-cover bg-[#fff]"
-              src="/images/pony.png"
-              width={320}
-              height={320}
-            />
-            <div className="flex flex-col justify-center flex-1 gap-y-10 min-w-44 h-[240px]">
-              <h4 className="pyeongchangpeace text-3xl">포니 (18)</h4>
+          <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
+            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
+              <Image
+                fill
+                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+                src="/images/pony.jpeg"
+                alt="미소를 짓고 있는 포니의 모습."
+              />
+            </div>
+            <div className={characterDesc}>
+              <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
+                포니 (18)
+              </h4>
               <p className="break-keep">
                 훤칠한 키에 뛰어난 운동신경, 거기에 컴퓨터까지 잘 다루지만 정작
                 좋아하는 건 실없이 수다떨기와 시종일관 허쉬에게 장난치기.
@@ -91,30 +109,13 @@ export default function Home() {
               </p>
             </div>
           </li>
-          <li className="flex flex-row justify-center items-center flex-wrap gap-4 px-8 py-7">
-            <Image
-              class="rounded-full w-48 h-48 object-cover bg-[#fff]"
-              src="/images/fullface.png"
-              width={320}
-              height={320}
-            />
-            <div className="flex flex-col justify-center flex-1 gap-y-10 min-w-44 h-[240px]">
-              <h4 className="pyeongchangpeace text-3xl">풀페이스 (미상)</h4>
-              <p className="break-keep">
-                허쉬와 포니, 젤리 앞에 나타난 수상한 남자.
-              </p>
-            </div>
-          </li>
         </ul>
       </section>
       <section className="more">
-        <div className="bg-[url('/images/firework.png')] w-full aspect-video bg-cover bg-center flex flex-col justify-center">
-          <h2 className="pyeongchangpeace-bold text-2xl md:text-3xl lg:text-4xl  text-center">
-            더 보기
-          </h2>
-        </div>
+        <h2 className="sr-only">더 보기</h2>
+        <div className="mt-32 bg-[url('/images/more-1280.jpeg')] w-full aspect-video bg-cover bg-center flex flex-col justify-center"></div>
         <div className="flex flex-col justify-center gap-x-32">
-          <article className="w-full h-80 bg-[url('https://via.placeholder.com/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
+          <article className="w-full h-80 bg-[url('https://placehold.co/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
             <h3 className="text-4xl font-bold">Merchandise</h3>
             <p className="text-xl leading-loose">
               혹성의 아이의 공식 상품을 소개합니다.
@@ -126,7 +127,7 @@ export default function Home() {
               공식 상품 보기
             </Link>
           </article>
-          <article className="w-full h-80 bg-[url('https://via.placeholder.com/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
+          <article className="w-full h-80 bg-[url('https://placehold.co/900x300')] bg-cover bg-center flex flex-col justify-center items-center gap-y-6">
             <h3 className="text-4xl font-bold">Social</h3>
             <p className="text-xl leading-loose">
               혹성의 아이의 소식을 만나 보세요.
