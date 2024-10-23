@@ -38,32 +38,18 @@
   font-family: pyeongchangpeace;
   font-weight: 300;
   font-style: normal;
-  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot);
-  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff2)
-      format("woff2"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff)
-      format("woff"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.ttf)
-      format("truetype");
-  font-display: swap;
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2")
+    format("woff2");
+  font-display: block;
 }
 
 @font-face {
   font-family: pyeongchangpeace;
   font-weight: 700;
   font-style: normal;
-  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot);
-  src: url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.eot?#iefix)
-      format("embedded-opentype"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff2)
-      format("woff2"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.woff)
-      format("woff"),
-    url(https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Bold.ttf)
-      format("truetype");
-  font-display: swap;
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-display: block;
 }
 
 @font-face {
@@ -72,6 +58,7 @@
   font-weight: 400;
   src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
     format("opentype");
+  font-display: block;
 }
 
 html {
@@ -79,12 +66,6 @@ html {
     BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
-}
-
-.futura {
-  font-family: "futura-pt-condensed", sans-serif;
-  font-weight: 500;
-  font-style: normal;
 }
 
 .pyeongchangpeace {
