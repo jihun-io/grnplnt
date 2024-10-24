@@ -96,7 +96,7 @@ strong,
   user-drag: none;
 }
 
-.embla {
+article.embla {
   overflow: hidden;
   height: calc(100dvh);
   display: flex;
