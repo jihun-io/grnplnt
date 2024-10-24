@@ -13,7 +13,9 @@ import Autoplay from "embla-carousel-autoplay";
 
 const HeroCarousel = () => {
   const options = { loop: true };
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ delay: 6000 }),
+  ]);
 
   const onNavButtonClick = useCallback((emblaApi) => {
     const autoplay = emblaApi?.plugins()?.autoplay;
