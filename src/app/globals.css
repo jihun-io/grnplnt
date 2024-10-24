@@ -103,6 +103,7 @@ strong,
   flex-direction: column;
   justify-content: center;
   margin-top: -6.5rem;
+  cursor: grab;
 }
 .embla__container {
   display: flex;
