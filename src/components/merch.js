@@ -8,7 +8,7 @@ export default function Merch() {
 
   return (
     <div
-      className="embla w-full flex justify-center items-center overflow-x-scroll scrollbar-hide mb-4 cursor-grab active:cursor-grabbing"
+      className="embla w-full flex justify-center items-center overflow-hidden scrollbar-hide mb-4 cursor-grab active:cursor-grabbing"
       ref={emblaRef}
     >
       <ul className="embla__container w-[50vw] gap-x-6 flex flex-row before:w-[50vw] before:h-auto after:w-[50vw] after:h-auto ">
