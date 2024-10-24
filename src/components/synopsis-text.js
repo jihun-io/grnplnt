@@ -2,9 +2,20 @@
 
 import { useState, useEffect, useRef } from "react";
 
-// ScrollTrigger 컴포넌트
 const ScrollTrigger = ({ onVisible, threshold = 0.1, children }) => {
   const ref = useRef(null);
+  const heightRef = useRef(null);
+  const [containerHeight, setContainerHeight] = useState(0);
+  const [heightCalculated, setHeightCalculated] = useState(false);
+
+  // 전체 텍스트의 높이를 미리 계산
+  useEffect(() => {
+    if (heightRef.current) {
+      const height = heightRef.current.getBoundingClientRect().height;
+      setContainerHeight(height);
+      setHeightCalculated(true);
+    }
+  }, [children]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,13 +35,30 @@ const ScrollTrigger = ({ onVisible, threshold = 0.1, children }) => {
   }, [onVisible, threshold]);
 
   return (
-    <p
-      className="text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48"
-      aria-hidden="true"
-      ref={ref}
-    >
-      {children}
-    </p>
+    <>
+      {/* 높이 계산을 위한 요소 - 계산 후 제거 */}
+      {!heightCalculated && (
+        <p
+          ref={heightRef}
+          className="text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48 opacity-0"
+          aria-hidden="true"
+        >
+          {text}
+        </p>
+      )}
+
+      {/* 실제 보여지는 요소 */}
+      <p
+        ref={ref}
+        className="text-sugar-cane-50 text-md md:text-lg md:leading-normal xl:text-xl xl:leading-normal break-keep text-center px-12 md:px-24 lg:px-48"
+        aria-hidden="true"
+        style={{
+          height: containerHeight > 0 ? `${containerHeight}px` : "auto",
+        }}
+      >
+        {children}
+      </p>
+    </>
   );
 };
 

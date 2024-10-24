@@ -18,8 +18,8 @@ export default function Home() {
         <HeroCarousel />
       </section>
       <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/optimized/synopsis-background_1920-1080.webp')] bg-cover flex justify-center items-center">
-        <div className="flex flex-col gap-16 justify-center items-center">
-          <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl ">
+        <div className="flex flex-col justify-center items-center">
+          <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl mb-16">
             SYNOPSIS
           </h3>
           <SynopsisText />
