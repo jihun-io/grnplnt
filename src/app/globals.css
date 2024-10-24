@@ -98,13 +98,38 @@ strong,
 
 .embla {
   overflow: hidden;
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -6.5rem;
 }
 .embla__container {
   display: flex;
+  position: relative;
 }
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.embla__controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.embla__controls .embla__buttons {
+  display: flex;
+  width: 100vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: space-between;
+}
+
+.embla__buttons button {
+  width: 2rem;
+  color: #fff;
 }
 
 @layer utilities {
