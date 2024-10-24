@@ -25,7 +25,7 @@ export default async function Guestbook() {
   // console.log(posts);
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
-      <h2 className="text-4xl font-bold mb-4">소셜</h2>
+      <h2 className="text-2xl font-bold mb-4">소셜</h2>
       <SocialNav />
       <section className="w-full flex flex-col items-center gap-8">
         <GuestbookForm />
