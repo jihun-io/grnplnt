@@ -16,36 +16,42 @@ export default function Merch() {
           <OptimizedImage
             src="/images/mockup-disc.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 디스크 목업 이미지"
           />
         </li>
         <li className="embla__slide flex  rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
             src="/images/mockup-hood.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 후드집업 목업 이미지"
           />
         </li>
         <li className="embla__slide flex  rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
             src="/images/mockup-shirt-animal.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 티셔츠(WE GO TOGETHER) 목업 이미지"
           />
         </li>
         <li className="embla__slide flex  rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
             src="/images/mockup-shirt-dont-call-me.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 티셔츠(DON'T CALL ME) 목업 이미지"
           />
         </li>
         <li className="embla__slide flex  rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
             src="/images/mockup-shirts.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 티셔츠(WE GO TOGETHER, DON'T CALL ME) 목업 이미지"
           />
         </li>
         <li className="embla__slide flex  rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
             src="/images/mockup-book.png"
             className=" select-none drag-none"
+            alt="혹성의 아이 각본집 목업 이미지"
           />
         </li>
       </ul>

@@ -111,6 +111,7 @@ export default function Home() {
         <OptimizedImage
           src="/images/more-1280.jpeg"
           className="mt-10 w-full aspect-video bg-cover bg-center flex flex-col justify-center"
+          alt="헤드폰을 쓴 젤리가 무언가를 집중해서 듣고 있다."
         />
         <article className="w-full p-8 bg-contain bg-no-repeat bg-center flex flex-col justify-center items-center gap-y-1`">
           <Merch />
@@ -126,7 +127,11 @@ export default function Home() {
           </Link>
         </article>
         <article className="w-full bg-cover bg-center flex flex-col justify-center items-center gap-y-1 mb-64">
-          <OptimizedImage className="w-full my-8" src="/images/fireworks.png" />
+          <OptimizedImage
+            className="w-full my-8"
+            src="/images/fireworks.png"
+            alt="두 개의 스파클라가 타면서 반짝이고 있고, 끄트머리가 서로 맞닿아 있다."
+          />
           <h3 className="text-4xl font-bold">Social</h3>
           <p className="text-xl leading-8 break-keep text-center">
             혹성의 아이의 소식을 만나 보세요.
