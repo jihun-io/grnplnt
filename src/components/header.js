@@ -38,7 +38,10 @@ export default function Header({ title, className }) {
       <button
         className="relative ml-auto sm:hidden w-10 h-10 flex justify-center items-center"
         onClick={toggleNav}
+        tabIndex={0}
       >
+        <span className="sr-only">메뉴 바 열기</span>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -83,6 +86,7 @@ export default function Header({ title, className }) {
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
               href="/"
+              tabIndex={isNavOpen ? 0 : -1}
             >
               Home
             </Link>
@@ -91,6 +95,7 @@ export default function Header({ title, className }) {
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
               href="/merchandise"
+              tabIndex={isNavOpen ? 0 : -1}
             >
               Merchandise
             </Link>
@@ -99,6 +104,7 @@ export default function Header({ title, className }) {
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
               href="/contents"
+              tabIndex={isNavOpen ? 0 : -1}
             >
               Contents
             </Link>
@@ -107,6 +113,7 @@ export default function Header({ title, className }) {
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
               href="/social"
+              tabIndex={isNavOpen ? 0 : -1}
             >
               Social
             </Link>
