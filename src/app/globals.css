@@ -105,6 +105,11 @@ strong,
   margin-top: -6.5rem;
   cursor: grab;
 }
+
+.embla:active {
+  cursor: grabbing;
+}
+
 .embla__container {
   display: flex;
   position: relative;
