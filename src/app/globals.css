@@ -106,11 +106,11 @@ article.embla {
   cursor: grab;
 }
 
-.embla:active {
+article.embla:active {
   cursor: grabbing;
 }
 
-.embla__container {
+article.embla .embla__container {
   display: flex;
   position: relative;
 }
@@ -119,13 +119,13 @@ article.embla {
   min-width: 0;
 }
 
-.embla__controls {
+article.embla .embla__controls {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.embla__controls .embla__buttons {
+article.embla .embla__controls .embla__buttons {
   display: flex;
   width: 100vw;
   padding-left: 2rem;
@@ -133,7 +133,7 @@ article.embla {
   justify-content: space-between;
 }
 
-.embla__buttons button {
+article.embla .embla__buttons button {
   width: 2rem;
   color: #fff;
 }
