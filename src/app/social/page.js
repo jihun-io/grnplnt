@@ -11,7 +11,7 @@ export const metadata = generateMetadata(title, description);
 export default function social() {
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
-      <h2 className="text-4xl font-bold mb-4">소셜</h2>
+      <h2 className="text-3xl font-bold mb-4">소셜</h2>
       <SocialNav />
       <section>
         <h2 className="sr-only">공지사항</h2>
@@ -19,7 +19,7 @@ export default function social() {
           <li className="mb-4">
             <h3 className="text-2xl font-bold">Lorem ipsum dolor sit.</h3>
             <time>2021년 3월 25일</time>
-            <p className="text-lg">
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
               impedit minus obcaecati sapiente odio animi quod officia assumenda
               similique labore?
@@ -28,7 +28,7 @@ export default function social() {
           <li className="mb-4">
             <h3 className="text-2xl font-bold">Lorem ipsum dolor sit.</h3>
             <time>2021년 3월 25일</time>
-            <p className="text-lg">
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
               impedit minus obcaecati sapiente odio animi quod officia assumenda
               similique labore?
