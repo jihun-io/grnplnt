@@ -35,6 +35,7 @@ export default function Home() {
         <iframe
           src={"https://www.youtube.com/embed/dQw4w9WgXcQ?si=duJ2z1mHm0nLZxCT"}
           allowFullScreen
+          loading="lazy"
           className="w-full aspect-video"
         ></iframe>
       </section>
