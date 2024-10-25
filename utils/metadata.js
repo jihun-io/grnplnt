@@ -4,7 +4,7 @@ export function generateMetadata(
   currentUrl = "https://grnplnt.life/"
 ) {
   return {
-    metadataBase: new URL("https://experiment.grnplnt-dev.pages.dev/"), //실제 배포할 때는 수정해야 함!!
+    metadataBase: new URL("https://grnplnt.life"), //실제 배포할 때는 수정해야 함!!
     title: title,
     description: description,
     icons: {
