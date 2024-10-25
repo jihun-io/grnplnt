@@ -17,18 +17,16 @@ export default function Home() {
         <h3 className="sr-only">메인 이미지</h3>
         <HeroCarousel />
       </section>
-      <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/optimized/synopsis-background_1920-1080.webp')] bg-cover flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center">
-          <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl mb-16">
-            SYNOPSIS
-          </h3>
-          <SynopsisText />
-          <p className="sr-only">
-            자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는
-            수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의
-            부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다.
-          </p>
-        </div>
+      <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/optimized/synopsis-background_1920-1080.webp')] bg-cover flex flex-col justify-center items-center">
+        <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl mb-16">
+          SYNOPSIS
+        </h3>
+        <SynopsisText />
+        <p className="sr-only">
+          자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는
+          수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을
+          받은 허쉬와 포니가 그녀를 찾아 나선다.
+        </p>
       </section>
       <section className="trailer w-full h-[calc(100vh-4rem-2.5rem)] bg-[#000] flex flex-col justify-center items-center">
         <h3 className="sr-only">예고편</h3>
@@ -43,14 +41,11 @@ export default function Home() {
         <h3 className="sr-only">캐릭터</h3>
         <ul>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
-            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <OptimizedImage
-                fill
-                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/hush.png"
-                alt="팔짱을 끼고 앉아 있는 허쉬의 모습."
-              />
-            </div>
+            <OptimizedImage
+              className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+              src="/images/hush.png"
+              alt="팔짱을 끼고 앉아 있는 허쉬의 모습."
+            />
             <div className={characterDesc}>
               <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
                 허쉬 (18)
@@ -64,14 +59,11 @@ export default function Home() {
             </div>
           </li>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6 pb-10">
-            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <OptimizedImage
-                fill
-                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/jelly.png"
-                alt="웃고 있는 젤리의 모습."
-              />
-            </div>
+            <OptimizedImage
+              className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+              src="/images/jelly.png"
+              alt="웃고 있는 젤리의 모습."
+            />
             <div className={characterDesc}>
               <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
                 젤리 (18)
@@ -84,14 +76,11 @@ export default function Home() {
             </div>
           </li>
           <li className="flex flex-col justify-center items-center flex-wrap gap-6">
-            <div className="relative w-full max-h-[60dvh] aspect-[4/3]">
-              <OptimizedImage
-                fill
-                className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
-                src="/images/pony.png"
-                alt="미소를 짓고 있는 포니의 모습."
-              />
-            </div>
+            <OptimizedImage
+              className="w-full max-h-[60dvh] object-cover aspect-[4/3] bg-[#fff]"
+              src="/images/pony.png"
+              alt="미소를 짓고 있는 포니의 모습."
+            />
             <div className={characterDesc}>
               <h4 className="pyeongchangpeace text-3xl whitespace-nowrap">
                 포니 (18)
