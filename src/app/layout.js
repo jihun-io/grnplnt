@@ -7,8 +7,6 @@ import { generateMetadata } from "../../utils/metadata";
 
 export const metadata = generateMetadata();
 
-console.log(generateMetadata());
-
 export default function RootLayout({ children }) {
   return (
     <html

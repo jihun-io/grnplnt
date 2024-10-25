@@ -21,8 +21,6 @@ export const metadata = generateMetadata(title, description);
 export const runtime = "edge";
 
 export default async function Guestbook() {
-  // const posts = await getPosts();
-  // console.log(posts);
   return (
     <main className="px-6 md:px-8 lg:px-10 xl:px-12">
       <h2 className="text-3xl font-bold mb-4">소셜</h2>

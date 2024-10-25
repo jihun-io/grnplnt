@@ -46,8 +46,6 @@ export default function GuestbookForm() {
       formData.turnstile = turnstileInput[0]?.value;
     }
 
-    console.log(formData);
-
     try {
       const response = await fetch(`/social/guestbook/api/submit`, {
         method: "POST",
@@ -62,7 +60,6 @@ export default function GuestbookForm() {
       }
 
       const result = await response.json();
-      console.log(result);
       // 폼 초기화
       setFormData({
         username: "",
