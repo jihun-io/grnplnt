@@ -34,8 +34,7 @@ function IconInstagram() {
 export default function Footer() {
   return (
     <footer className="flex flex-col text-[0.7rem] gap-y-[0.125rem] pt-16 pb-8 px-6 md:px-8 lg:px-10 xl:px-12">
-      <div className="mb-5 ml-auto text-md">
-        <ul className="text-[1rem] flex flex-row gap-x-2">
+        <ul className="mb-5 ml-auto text-md text-[1rem] flex flex-row flex-wrap gap-x-2">
           <li>
             <a
               className="inline-flex flex-row items-center"
@@ -53,7 +52,6 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-      </div>
       <div className="flex flex-row gap-x-2 flex-wrap">
         <p>Copyright © 2024 Jun Park. All rights reserved.</p>
         <ul className="flex flex-row gap-x-2">
