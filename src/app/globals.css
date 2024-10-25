@@ -96,13 +96,15 @@ strong,
   user-drag: none;
 }
 
-article.embla {
-  overflow: hidden;
+section.hero article.embla {
   height: calc(100dvh);
+  margin-top: -6.5rem;
+}
+article.embla {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -6.5rem;
+  overflow: hidden;
   cursor: grab;
 }
 
@@ -119,13 +121,13 @@ article.embla .embla__container {
   min-width: 0;
 }
 
-article.embla .embla__controls {
+section.hero article.embla .embla__controls {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-article.embla .embla__controls .embla__buttons {
+section.hero article.embla .embla__controls .embla__buttons {
   display: flex;
   width: 100vw;
   padding-left: 2rem;
