@@ -15,7 +15,7 @@ export default function Contents() {
       <section>
         <h3 className="text-xl my-4">포스터</h3>
         <img
-          aspectRatio="210/297"
+          style={{ aspectRatio: "210/297" }}
           src="https://placehold.co/210x297"
           className="w-[60vw]"
         />
