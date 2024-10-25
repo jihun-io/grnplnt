@@ -7,6 +7,7 @@ const description =
   "자신의 고향이 게자리 너머에 위치한 초록빛 M5107 행성이라고 주장하는 수상한 소녀 젤리는 일주일 째 학교에 나오지 않고, 이에 선생님의 부탁을 받은 허쉬와 포니가 그녀를 찾아 나선다.";
 
 export const metadata = {
+  metadataBase: new URL("https://experiment.grnplnt-dev.pages.dev/"), //실제 배포할 때는 수정해야 함!!
   title: "혹성의 아이",
   description: description,
   icons: {
