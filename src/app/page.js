@@ -5,6 +5,8 @@ import Link from "next/link";
 import HeroCarousel from "../components/HeroCarousel";
 import SynopsisText from "@/components/SynopsisText";
 import Merch from "@/components/Merch";
+import SocialButton from "@/components/SocialButton";
+import { data } from "./social/page";
 
 export default function Home() {
   const characterDesc =
@@ -125,12 +127,7 @@ export default function Home() {
           <p className="text-xl leading-8 break-keep text-center">
             혹성의 아이의 소식을 만나 보세요.
           </p>
-          <Link
-            className="bg-sugar-cane-700 rounded-xl py-2 px-6 mt-5 font-bold text-sugar-cane-50 hover:bg-sugar-cane-800 transition-colors"
-            href="./social"
-          >
-            소셜
-          </Link>
+          <SocialButton data={data} />
         </article>
       </section>
     </main>
