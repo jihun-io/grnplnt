@@ -11,13 +11,13 @@ export default function privacy() {
   return (
     <main className="flex flex-col justify-center items-center capitalize px-8 text-3xl">
       <h2 className="sr-only">상품</h2>
-      <p className="sr-only">Green Planet Merchandise Coming Soon</p>
       <Merch />
       <Image
         width={320}
         height={320}
         className="mb-32"
         src="/images/cs-text.svg"
+        alt="Green Planet Merchandise Coming Soon"
       />
     </main>
   );
