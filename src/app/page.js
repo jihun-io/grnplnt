@@ -115,7 +115,7 @@ export default function Home() {
             공식 상품 보기
           </Link>
         </article>
-        <article className="w-full bg-cover bg-center flex flex-col justify-center items-center gap-y-1 mb-64">
+        <article className="w-full bg-cover bg-center flex flex-col justify-center items-center gap-y-1 mb-32">
           <OptimizedImage
             className="w-full my-8 max-h-[60vh] object-cover"
             src="/images/fireworks.png"
