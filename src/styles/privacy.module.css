@@ -1,0 +1,46 @@
+.privacy ul,
+.privacy ol {
+  padding-left: 1.094rem;
+  word-break: break-all;
+}
+.privacy > ul,
+.privacy > ol {
+  padding-left: 1.5rem;
+}
+
+.privacy ul {
+  list-style: initial;
+}
+.privacy ol {
+  list-style: decimal;
+}
+
+.privacy ol ol {
+  list-style: hangul;
+}
+
+.privacy ol ol ol {
+  list-style: upper-alpha;
+}
+
+.privacy ol li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+.privacy h2:not(:first-child),
+.privacy h3 {
+  margin-top: 1.5em;
+}
+.privacy h2,
+.privacy h3 {
+  font-family: "KoddiUDOnGothic-Bold";
+}
+
+.privacy h2 {
+  font-size: 1.5em;
+}
+
+.privacy h3 {
+  font-size: 1.17em;
+}

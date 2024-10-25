@@ -1,0 +1,37 @@
+{
+  "name": "a_child_from_green_planet",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.js",
+    "dev": "npm run optimize-images && next dev",
+    "build": "npm run optimize-images && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npm run optimize-images && npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "classnames": "^2.5.1",
+    "embla-carousel-auto-scroll": "^8.3.0",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
+    "next": "14.2.7",
+    "react": "^18",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18",
+    "sharp": "^0.33.5",
+    "tailwind-scrollbar-hide": "^1.1.7"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "postcss": "^8",
+    "sass": "^1.78.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
