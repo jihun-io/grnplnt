@@ -56,7 +56,7 @@ export default function GuestbookList() {
         posts.map((post) => (
           <li
             key={post.sn}
-            className="flex flex-col w-9/12 bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 relative overflow-hidden"
+            className="flex flex-col w-9/12 min-w-[300px] bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 relative overflow-hidden"
             id={post.sn}
           >
             <div className="flex flex-row items-center flex-wrap justify-between">
@@ -65,27 +65,24 @@ export default function GuestbookList() {
                 <time>{post.date}</time>
               </p>
             </div>
-            <div className="absolute bottom-2 right-2">
-              <ul className="flex flex-row gap-x-2 justify-between items-center text-xs">
-                <li>
-                  <Modal type="modify" id={post.sn} className="px-2">
-                    수정
-                  </Modal>
-                </li>
-                <li>
-                  <Modal
-                    type="delete"
-                    id={post.sn}
-                    className="px-2"
-                    variant="red"
-                  >
-                    삭제
-                  </Modal>
-                </li>
-                <li></li>
-              </ul>
-            </div>
-            <p className="m-0 text-left">{post.content}</p>
+            <p className="m-0 mb-4 text-left">{post.content}</p>
+            <ul className="flex absolute bottom-4 right-2 flex-row gap-x-2 justify-between items-center text-xs">
+              <li>
+                <Modal type="modify" id={post.sn} className="px-2">
+                  수정
+                </Modal>
+              </li>
+              <li>
+                <Modal
+                  type="delete"
+                  id={post.sn}
+                  className="px-2"
+                  variant="red"
+                >
+                  삭제
+                </Modal>
+              </li>
+            </ul>
           </li>
         ))}
     </ul>
