@@ -5,19 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-
-function NewDot() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
-      fill="currentColor"
-      className="fill-wisp-pink-500 size-2 absolute top-2/4 -translate-y-1/2 -left-[10px]"
-    >
-      <circle cx="8" cy="8" r="8" />
-    </svg>
-  );
-}
+import NewDot from "./NewDot";
 
 export default function Header({ title, className, socialLastDate }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -138,7 +126,16 @@ export default function Header({ title, className, socialLastDate }) {
               {" "}
               {pathname === "/social" ? null : socialLastDate >
                 isSocialVisited ? (
-                <NewDot />
+                <NewDot
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    left: "-10px",
+                    width: "0.5rem",
+                    height: "0.5rem",
+                  }}
+                />
               ) : null}
               Social
             </Link>
