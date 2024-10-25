@@ -56,7 +56,7 @@ export default function GuestbookList() {
         posts.map((post) => (
           <li
             key={post.sn}
-            className="flex flex-col w-9/12 min-w-[300px] bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 relative overflow-hidden"
+            className="flex flex-col w-full bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 relative overflow-hidden"
             id={post.sn}
           >
             <div className="flex flex-row items-center flex-wrap justify-between">
