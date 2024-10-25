@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -19,7 +20,15 @@ export default function Footer() {
         </ul>
       </div>
       <ul className="flex flex-row gap-x-2 flex-wrap">
-        <li className="font-bold">혹성의 아이</li>
+        <li className="font-bold inline-flex">
+          <Image
+            src="/images/logo.svg"
+            width={12}
+            height={12}
+            className="mr-1"
+          />
+          혹성의 아이
+        </li>
         <li>
           <span className="font-bold">대표: </span>박 준
         </li>
