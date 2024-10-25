@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Modal from "@/components/modify-modal";
+import Modal from "@/components/ModifyModal";
 
 export default function GuestbookList() {
   const [posts, setPosts] = useState([]);

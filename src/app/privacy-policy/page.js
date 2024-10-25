@@ -7,7 +7,7 @@ const description =
 
 export const metadata = generateMetadata(title, description);
 
-export default function privacy() {
+export default function Privacy() {
   return (
     <main className={`px-6 md:px-8 lg:px-10 xl:px-12 ${styles.privacy}`}>
       <h2>혹성의 아이 개인정보 처리방침</h2>

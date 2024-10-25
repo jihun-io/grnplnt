@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "@/components/button";
+import Button from "@/components/Button";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 
-const TurnstileWidget = dynamic(() => import("@/components/turnstileWidget"), {
+const TurnstileWidget = dynamic(() => import("@/components/TurnstileWidget"), {
   ssr: false,
 });
 

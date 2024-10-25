@@ -1,13 +1,13 @@
 import { generateMetadata } from "/utils/metadata";
 import Image from "next/image";
-import Merch from "@/components/merch";
+import Merch from "@/components/Merch";
 
 const title = "상품 - 혹성의 아이";
 const description = "혹성의 아이의 공식 상품을 만나 보세요.";
 
 export const metadata = generateMetadata(title, description);
 
-export default function privacy() {
+export default function Merchandise() {
   return (
     <main className="flex flex-col justify-center items-center capitalize px-8 text-3xl">
       <h2 className="sr-only">상품</h2>

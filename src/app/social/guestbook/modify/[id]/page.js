@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 const GuestbookFormModify = dynamic(
-  () => import("@/components/guestbook-form-modify"),
+  () => import("@/components/GuestbookFormModify"),
   {
     ssr: false,
   }

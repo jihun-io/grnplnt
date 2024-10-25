@@ -9,10 +9,11 @@ const SocialNav = () => {
 
   const getLinkClassName = (path) => {
     const baseClasses =
-      "border-solid border-2 border-sugar-cane-700 rounded-xl py-2 px-6 font-bold transition-all duration-300";
-    const activeClasses = "bg-sugar-cane-700 text-sugar-cane-50";
+      "whitespace-nowrap border-solid border-2 border-sugar-cane-700 rounded-xl py-2 px-6 font-bold transition-all duration-300";
+    const activeClasses =
+      "whitespace-nowrap bg-sugar-cane-700 text-sugar-cane-50";
     const inactiveClasses =
-      "bg-sugar-cane-50 text-sugar-cane-950 hover:bg-sugar-cane-200";
+      "whitespace-nowrap bg-sugar-cane-50 text-sugar-cane-950 hover:bg-sugar-cane-200";
 
     return `${baseClasses} ${isActive(path) ? activeClasses : inactiveClasses}`;
   };

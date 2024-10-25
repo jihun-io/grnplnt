@@ -2,9 +2,9 @@ import "./globals.css";
 import Image from "next/image";
 import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
-import HeroCarousel from "../components/hero-carousel";
-import SynopsisText from "@/components/synopsis-text";
-import Merch from "@/components/merch";
+import HeroCarousel from "../components/HeroCarousel";
+import SynopsisText from "@/components/SynopsisText";
+import Merch from "@/components/Merch";
 
 export default function Home() {
   const characterDesc =

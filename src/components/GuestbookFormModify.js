@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Button from "@/components/button";
+import Button from "@/components/Button";
 
 export default function GuestbookFormModify({ id }) {
   const [formData, setFormData] = useState({

@@ -1,15 +1,15 @@
 import { generateMetadata } from "/utils/metadata";
 import dynamic from "next/dynamic";
 
-import SocialNav from "@/components/social-nav";
+import SocialNav from "@/components/SocialNav";
 
 // import GuestbookForm from "@/components/guestbook-form";
 // import GuestbookList from "@/components/guestbook-list";
-const GuestbookForm = dynamic(() => import("@/components/guestbook-form"), {
+const GuestbookForm = dynamic(() => import("@/components/GuestbookForm"), {
   ssr: false,
 });
 
-const GuestbookList = dynamic(() => import("@/components/guestbook-list"), {
+const GuestbookList = dynamic(() => import("@/components/GuestbookList"), {
   ssr: false,
 });
 
