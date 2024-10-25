@@ -37,8 +37,8 @@ export default function Header({ title, className, socialLastDate }) {
           <Image
             src="/images/logo.svg"
             alt="혹성의 아이"
-            width={0}
-            height={0}
+            width={40}
+            height={40}
             className="w-10"
           />
         </h1>

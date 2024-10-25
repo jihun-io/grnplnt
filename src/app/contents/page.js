@@ -2,8 +2,6 @@ import OptimizedImage from "@/components/OptimizedImage";
 import Image from "next/image";
 import Link from "next/link";
 
-import ImagesCarousel from "@/components/ImagesCarousel";
-
 import { generateMetadata } from "../../../utils/metadata";
 
 function ImageLink({ src, alt, style }) {
