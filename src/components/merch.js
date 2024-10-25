@@ -49,7 +49,7 @@ export default function Merch() {
         </li>
         <li className="embla__slide flex justify-center items-center bg-white rounded-xl shadow-xl my-8 overflow-hidden w-[50vw]">
           <OptimizedImage
-            src="/images/mockup-book.png"
+            src="/images/mockup-book.jpg"
             className="h-full select-none drag-none"
             alt="혹성의 아이 각본집 목업 이미지"
           />
