@@ -13,7 +13,7 @@ export function generateMetadata(
       description,
       images: [
         {
-          url: "/images/hero-image1.jpg",
+          url: "/images/hero-2.png",
         },
       ],
     },
@@ -21,7 +21,7 @@ export function generateMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: ["/images/hero-image1.jpg"],
+      images: ["/images/hero-2.png"],
     },
   };
 }

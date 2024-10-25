@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/header.js";
@@ -81,7 +80,7 @@ export const metadata = {
     description: description,
     images: [
       {
-        url: "/images/hero-image1.jpg",
+        url: "/images/hero-2.jpeg",
       },
     ],
   },
@@ -89,7 +88,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "혹성의 아이",
     description: description,
-    images: ["/images/hero-image1.jpg"],
+    images: ["/images/hero-2.jpeg"],
   },
   other: {
     "msapplication-TileImage": "/metadata/ms-icon-144x144.png",
