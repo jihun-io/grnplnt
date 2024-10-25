@@ -46,7 +46,7 @@ const HeroCarousel = () => {
             quality={100}
             loading="lazy"
             alt="포니, 젤리, 허쉬가 가방을 메고 나란히 길을 걸어가고 있는 뒷모습."
-            className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
+            className="select-none drag-none w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
         </li>
         <li className="embla__slide relative w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw]">
@@ -56,7 +56,7 @@ const HeroCarousel = () => {
             quality={100}
             loading="lazy"
             alt="젤리, 허쉬, 포니가 전자 장비가 놓인 테이블에 앉아 대화를 나누고 있다."
-            className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
+            className="select-none drag-none w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
         </li>
         <li className="embla__slide relative w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw]">
@@ -66,7 +66,7 @@ const HeroCarousel = () => {
             quality={100}
             loading="lazy"
             alt="허쉬와 젤리가 나란히 소파에 누워 있다. 허쉬는 자신의 휴대전화를 바라보고 있고, 젤리는 허쉬의 휴대전화를 옆에서 본다."
-            className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
+            className="select-none drag-none w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
         </li>
         <li className="embla__slide relative w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw]">
@@ -76,7 +76,7 @@ const HeroCarousel = () => {
             quality={100}
             loading="lazy"
             alt="포니와 허쉬가 젤리와 마주치며 이야기를 나누고 있다."
-            className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
+            className="select-none drag-none w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
         </li>
         <li className="embla__slide relative w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw]">
@@ -86,7 +86,7 @@ const HeroCarousel = () => {
             quality={100}
             loading="lazy"
             alt="젤리가 봉지를 들며 허쉬를 향해 웃고 있다."
-            className="w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
+            className="select-none drag-none w-[100vw] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
         </li>
       </ul>
