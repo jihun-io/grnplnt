@@ -13,9 +13,9 @@ export default function Home() {
     "flex flex-col sm:flex-row justify-center flex-1 gap-x-4 gap-y-10 px-8 sm:px-16 lg:px-32 min-w-44 h-[240px]";
 
   return (
-    <main className="w-[100vw]">
+    <main className="max-w-full">
       <h2 className="sr-only">홈</h2>
-      <section className="hero">
+      <section className="hero max-w-full">
         <h3 className="sr-only">메인 이미지</h3>
         <HeroCarousel />
       </section>
