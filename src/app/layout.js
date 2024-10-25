@@ -9,6 +9,11 @@ import { generateMetadata } from "../../utils/metadata";
 
 export const metadata = generateMetadata();
 
+const socialLastDate = data
+  .map((item) => new Date(item.date))
+  .sort()
+  .reverse()[0];
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -25,6 +30,7 @@ export default function RootLayout({ children }) {
         <Header
           title={metadata.title}
           className="sticky top-0 z-50 bg-sugar-cane-50"
+          socialLastDate={socialLastDate}
         />
         {children}
         <Footer />

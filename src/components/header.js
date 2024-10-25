@@ -6,9 +6,29 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 
-export default function Header({ title, className }) {
+function NewDot() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      className="fill-wisp-pink-500 size-2 absolute top-2/4 -translate-y-1/2 -left-[10px]"
+    >
+      <circle cx="8" cy="8" r="8" />
+    </svg>
+  );
+}
+
+export default function Header({ title, className, socialLastDate }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSocialVisited, setIsSocialVisited] = useState(new Date());
+  const [isNew, setIsNew] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const date = new Date(localStorage.getItem("socialVisit"));
+    setIsSocialVisited(date);
+  }, [pathname]);
 
   useEffect(() => {
     setIsNavOpen(false);
@@ -111,10 +131,15 @@ export default function Header({ title, className }) {
           </li>
           <li>
             <Link
-              className="hover:text-sugar-cane-800 transition-colors"
+              className="relative hover:text-sugar-cane-800 transition-colors"
               href="/social"
               tabIndex={isNavOpen ? 0 : -1}
             >
+              {" "}
+              {pathname === "/social" ? null : socialLastDate >
+                isSocialVisited ? (
+                <NewDot />
+              ) : null}
               Social
             </Link>
           </li>
