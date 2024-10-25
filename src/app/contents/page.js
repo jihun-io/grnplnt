@@ -1,6 +1,13 @@
 import OptimizedImage from "@/components/OptimizedImage";
 import Image from "next/image";
 
+import { generateMetadata } from "../../../utils/metadata";
+
+const title = "콘텐츠 - 혹성의 아이";
+const description = "혹성의 아이의 콘텐츠를 만나 보세요.";
+
+export const metadata = generateMetadata(title, description);
+
 export default function Contents() {
   return (
     <main className="px-8">
