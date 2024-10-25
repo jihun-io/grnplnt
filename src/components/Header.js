@@ -89,7 +89,7 @@ export default function Header({ title, className, socialLastDate }) {
           isNavOpen ? "h-9" : "h-0 sm:h-8"
         }`}
       >
-        <ul className="font-extrabold text-sm sm:text-lg px-0 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between">
+        <ul className="font-bold text-sm sm:text-lg px-0 sm:px-0 mt-4 sm:mt-0 flex flex-row w-full justify-around items-center sm:gap-x-6 sm:justify-between">
           <li className="hidden sm:list-item">
             <Link
               className="hover:text-sugar-cane-800 transition-colors"
