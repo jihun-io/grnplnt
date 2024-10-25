@@ -117,7 +117,7 @@ export default function Home() {
         </article>
         <article className="w-full bg-cover bg-center flex flex-col justify-center items-center gap-y-1 mb-64">
           <OptimizedImage
-            className="w-full my-8"
+            className="w-full my-8 max-h-[60vh] object-cover"
             src="/images/fireworks.png"
             alt="두 개의 스파클라가 타면서 반짝이고 있고, 끄트머리가 서로 맞닿아 있다."
           />
