@@ -97,7 +97,7 @@ strong,
 }
 
 section.hero article.embla {
-  height: calc(100dvh - 16rem);
+  height: calc(100dvh - 8rem);
   margin-top: -6.5rem;
 }
 article.embla {

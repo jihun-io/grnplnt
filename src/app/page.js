@@ -19,7 +19,7 @@ export default function Home() {
         <h3 className="sr-only">메인 이미지</h3>
         <HeroCarousel />
       </section>
-      <hr class="mx-32 my-32 border-sugar-cane-950"></hr>
+      <hr class="mx-32 my-16 border-sugar-cane-950"></hr>
       <section className="synopsis w-full h-[calc(100vh-4rem-2.5rem)] bg-[url('/optimized/synopsis-background_1920-1080.webp')] bg-cover flex flex-col justify-center items-center">
         <h3 className="pyeongchangpeace-bold text-sugar-cane-50 text-4xl md:text-5xl lg:text-6xl mb-16">
           SYNOPSIS
