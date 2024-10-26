@@ -15,3 +15,5 @@ database.db
 *.db
 database.db
 turnstile-secret-key.txt
+/node_modules
+/.next
