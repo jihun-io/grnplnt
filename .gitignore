@@ -17,3 +17,4 @@ database.db
 turnstile-secret-key.txt
 /node_modules
 /.next
+api-key.txt
