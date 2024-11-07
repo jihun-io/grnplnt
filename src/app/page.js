@@ -34,7 +34,7 @@ export default function Home() {
       </section>
       <section className="trailer w-full h-[calc(100vh-4rem-2.5rem)] bg-[#000] flex flex-col justify-center items-center">
         <h3 className="sr-only">예고편</h3>
-        <Trailer className="w-full aspect-video" />
+        <Trailer videoId="M91mq47DVe0" className="w-full aspect-video" />
       </section>
       <hr className="mx-32 my-32 border-sugar-cane-950"></hr>
       <section className="character w-full h-fit">
