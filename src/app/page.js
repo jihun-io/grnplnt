@@ -34,7 +34,7 @@ export default function Home() {
       <section className="trailer w-full h-[calc(100vh-4rem-2.5rem)] bg-[#000] flex flex-col justify-center items-center">
         <h3 className="sr-only">예고편</h3>
         <iframe
-          src={"https://www.youtube.com/embed/M91mq47DVe0"}
+          src="https://www.youtube.com/embed/M91mq47DVe0?controls=2&showinfo=0&modestbranding=1"
           allowFullScreen
           loading="lazy"
           className="w-full aspect-video"
