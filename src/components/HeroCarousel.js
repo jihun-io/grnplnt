@@ -44,7 +44,6 @@ const HeroCarousel = () => {
             src="/images/hero-1.png"
             fill
             quality={100}
-            loading="lazy"
             alt="포니, 젤리, 허쉬가 가방을 메고 나란히 길을 걸어가고 있는 뒷모습."
             className="select-none drag-none w-[100%] h-[calc(100vh-4rem-2.5rem)] max-h-[100vw] object-cover"
           />
