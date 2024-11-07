@@ -7,6 +7,7 @@ import SynopsisText from "@/components/SynopsisText";
 import Merch from "@/components/Merch";
 import SocialButton from "@/components/SocialButton";
 import { data } from "./social/page";
+import Trailer from "@/components/Trailer";
 
 export default function Home() {
   const characterDesc =
@@ -33,13 +34,7 @@ export default function Home() {
       </section>
       <section className="trailer w-full h-[calc(100vh-4rem-2.5rem)] bg-[#000] flex flex-col justify-center items-center">
         <h3 className="sr-only">예고편</h3>
-        <iframe
-          src="https://www.youtube.com/embed/M91mq47DVe0?controls=2&showinfo=0&modestbranding=1"
-          allowFullScreen
-          loading="lazy"
-          className="w-full aspect-video"
-          title="혹성의 아이 예고편"
-        ></iframe>
+        <Trailer className="w-full aspect-video" />
       </section>
       <hr className="mx-32 my-32 border-sugar-cane-950"></hr>
       <section className="character w-full h-fit">
