@@ -5,6 +5,7 @@ export default function OptimizedImage({
   alt,
   fill,
   className,
+  loading = "eager",
   ...props
 }) {
   // 이미지 크기 배열 정의
@@ -32,7 +33,7 @@ export default function OptimizedImage({
                  (max-width: 1080px) 100vw,
                  1200px"
           className={`absolute w-full h-full object-cover ${className || ""}`}
-          loading="lazy"
+          loading={loading}
           {...props}
         />
       </div>
