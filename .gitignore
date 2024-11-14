@@ -37,3 +37,6 @@ next-env.d.ts
 *.local
 /.wrangler/tmp
 node_modules
+/public/images
+/public/optimized
+/public
