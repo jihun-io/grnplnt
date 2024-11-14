@@ -91,7 +91,7 @@ async function optimizeImage(imageBuffer, fileName) {
 
       await image
         .resize(size)
-        .toFormat(format, { quality: 80 })
+        .toFormat(format, { quality: 95 })
         .toFile(outputPath);
 
       console.log(`Optimized: ${outputFileName}`);
