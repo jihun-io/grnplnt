@@ -4,18 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "optimize-images": "node scripts/optimize-images.js",
-    "dev": "npm run optimize-images && next dev",
-    "build": "npm run optimize-images && next build",
+    "fetch-images": "node scripts/fetchImages.js",
+    "dev": "npm run fetch-images && next dev",
+    "build": "npm run fetch-images && next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npm run optimize-images && npx @cloudflare/next-on-pages",
+    "pages:build": "npm run fetch-images && npx @cloudflare/next-on-pages",
     "preview": "npm run pages:build && wrangler pages dev",
     "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
+    "dotenv": "^16.4.5",
     "embla-carousel-auto-scroll": "^8.3.0",
     "embla-carousel-autoplay": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
