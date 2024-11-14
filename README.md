@@ -11,6 +11,8 @@
 
 ![grnplnt-2-1 (1)](https://github.com/user-attachments/assets/59bb2c8b-96bc-46d9-8528-b9f7b16031c4)
 
+https://grnplnt.life
+
 ## 프로젝트 소개
 
 단편영화 ⟨혹성의 아이⟩(2024)의 영화와 상품 홍보, 커뮤니케이션을 위한 홈페이지입니다.
