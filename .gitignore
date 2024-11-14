@@ -36,3 +36,4 @@ next-env.d.ts
 .env.local
 *.local
 /.wrangler/tmp
+node_modules
