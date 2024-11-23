@@ -17,3 +17,6 @@ database.db
 turnstile-secret-key.txt
 /node_modules
 /.next
+.vercel
+public
+.env.local
