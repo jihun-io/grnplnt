@@ -20,3 +20,4 @@ turnstile-secret-key.txt
 .vercel
 public
 .env.local
+.idea
