@@ -21,6 +21,7 @@ export default function GuestbookForm() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [notSolved, setNotSolved] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,24 +31,32 @@ export default function GuestbookForm() {
     }));
   };
 
+  const handleTurnstileToken = (token) => {
+    setTurnstileToken(token);
+    setNotSolved(!token);
+  };
+
+  const handleTurnstileError = (error) => {
+    console.error('Turnstile error:', error);
+    setTurnstileToken(null);
+    setNotSolved(true);
+  };
+
   const handleSubmit = async (e) => {
     setIsLoading(true);
     e.preventDefault();
 
-    const turnstileInput = document.querySelectorAll(
-      'input[id ^= "cf-chl-widget-"]'
-    );
-    if (turnstileInput[0]?.value == "") {
+    if (!turnstileToken) {
       setNotSolved(true);
       setIsLoading(false);
       return;
-    } else {
-      setNotSolved(false);
-      formData.turnstile = turnstileInput[0]?.value;
     }
 
+    setNotSolved(false);
+    formData.turnstile = turnstileToken;
+
     try {
-      const response = await fetch(`/social/guestbook/api/submit`, {
+      const response = await fetch(`/social/guestbook/api/entries`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +65,20 @@ export default function GuestbookForm() {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorData = await response.json();
+        if (errorData.error === "CAPTCHA verification failed") {
+          setNotSolved(true);
+          setTurnstileToken(null);
+          alert("CAPTCHA 검증에 실패했습니다. 다시 시도해주세요.");
+        } else if (errorData.error === "CAPTCHA verification required") {
+          setNotSolved(true);
+          setTurnstileToken(null);
+          alert("CAPTCHA 검증이 필요합니다.");
+        } else {
+          alert(`오류가 발생했습니다: ${errorData.error}`);
+        }
+        setIsLoading(false);
+        return;
       }
 
       const result = await response.json();
@@ -66,6 +88,7 @@ export default function GuestbookForm() {
         password: "",
         content: "",
       });
+      setTurnstileToken(null);
       setIsLoading(false);
       setTimeout(() => {
         window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
@@ -131,7 +154,10 @@ export default function GuestbookForm() {
         {...(isLoading && { disabled: true })}
       ></textarea>
       <div className="w-full h-[148px] flex flex-row justify-between items-start">
-        <TurnstileWidget />
+        <TurnstileWidget 
+          onTokenReceived={handleTurnstileToken}
+          onError={handleTurnstileError}
+        />
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback"
           strategy="afterInteractive"
@@ -140,8 +166,8 @@ export default function GuestbookForm() {
           {notSolved
             ? "사람인지 확인하십시오..."
             : isLoading
-            ? "처리 중..."
-            : "작성"}
+              ? "처리 중..."
+              : "작성"}
         </Button>
       </div>
     </form>

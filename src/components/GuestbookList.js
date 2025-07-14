@@ -11,7 +11,7 @@ export default function GuestbookList() {
   const fetchPosts = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/social/guestbook/api/json`, {
+      const response = await fetch(`/social/guestbook/api/entries`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -23,6 +23,9 @@ export default function GuestbookList() {
       }
 
       const result = await response.json();
+
+      console.log("Fetched posts:", result);
+
       setPosts(result);
       setIsLoading(false);
       // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
@@ -55,9 +58,9 @@ export default function GuestbookList() {
       {Array.isArray(posts) &&
         posts.map((post) => (
           <li
-            key={post.sn}
+            key={post.id}
             className="flex flex-col w-full bg-white gap-8 px-6 py-8 rounded-lg shadow-md shadow-slate-100 relative overflow-hidden"
-            id={post.sn}
+            id={post.id}
           >
             <div className="flex flex-row items-center flex-wrap justify-between">
               <p className=" m-0 font-bold">{post.username}</p>
@@ -68,14 +71,14 @@ export default function GuestbookList() {
             <p className="m-0 mb-4 text-left">{post.content}</p>
             <ul className="flex absolute bottom-4 right-2 flex-row gap-x-2 justify-between items-center text-xs">
               <li>
-                <Modal type="modify" id={post.sn} className="px-2">
+                <Modal type="modify" id={post.id} className="px-2">
                   수정
                 </Modal>
               </li>
               <li>
                 <Modal
                   type="delete"
-                  id={post.sn}
+                  id={post.id}
                   className="px-2"
                   variant="red"
                 >

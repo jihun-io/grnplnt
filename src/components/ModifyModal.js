@@ -25,44 +25,80 @@ export default function ModalWrapper({ type, id, variant, children }) {
     e.preventDefault();
 
     try {
-      const response = await fetch(`/social/guestbook/api/${actionType}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        mode: "cors", // 명시적으로 CORS 모드 설정
-      });
+      if (actionType === "delete") {
+        // 삭제 API: DELETE /social/guestbook/api/entries/[id]
+        const response = await fetch(`/social/guestbook/api/entries/${id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password: formData.pw }),
+          mode: "cors",
+        });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-
-      // 여기에 성공 메시지를 표시하는 로직을 추가할 수 있습니다.
-      setTimeout(() => {
-        window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
-      }, 500);
-      // 폼 초기화
-      setFormData({
-        id: id,
-        pw: "",
-      });
-
-      router.refresh(); // 방명록 목록을 다시 불러오기
-      if (result.result === "checked") {
-        if (actionType === "delete") {
-          closeModal();
-        } else {
-          localStorage.setItem("guestbook_session", result.session_id);
-          router.push(`/social/guestbook/modify/${sn}`);
+        if (!response.ok) {
+          const errorData = await response.json();
+          if (response.status === 401) {
+            alert("비밀번호가 일치하지 않습니다.");
+          } else if (response.status === 404) {
+            alert("방명록을 찾을 수 없습니다.");
+          } else {
+            alert(`오류가 발생했습니다: ${errorData.error}`);
+          }
+          return;
         }
-      } else {
-        alert("비밀번호가 일치하지 않습니다.");
+
+        const result = await response.json();
+        
+        // 성공 처리
+        setTimeout(() => {
+          window.dispatchEvent(new Event("guestbookUpdated", { bubbles: true }));
+        }, 500);
+        
+        setFormData({
+          id: id,
+          pw: "",
+        });
+        
+        router.refresh();
+        closeModal();
+        
+      } else if (actionType === "modify") {
+        // 수정 권한 확인 API: POST /social/guestbook/api/entries/[id]/auth
+        const response = await fetch(`/social/guestbook/api/entries/${id}/auth`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ password: formData.pw }),
+          mode: "cors",
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          if (response.status === 401) {
+            alert("비밀번호가 일치하지 않습니다.");
+          } else if (response.status === 404) {
+            alert("방명록을 찾을 수 없습니다.");
+          } else {
+            alert(`오류가 발생했습니다: ${errorData.error}`);
+          }
+          return;
+        }
+
+        const result = await response.json();
+        
+        // 세션 ID 저장 및 수정 페이지로 이동
+        localStorage.setItem("guestbook_session", result.session_id);
+        router.push(`/social/guestbook/modify/${sn}`);
+        
+        setFormData({
+          id: id,
+          pw: "",
+        });
       }
     } catch (error) {
-      // 여기에 에러 메시지를 표시하는 로직을 추가할 수 있습니다.
+      console.error("Error in handleAction:", error);
       alert(
         `방명록 ${
           actionType === "modify" ? "수정" : "삭제"
