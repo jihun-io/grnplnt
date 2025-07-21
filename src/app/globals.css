@@ -97,8 +97,7 @@ strong,
 }
 
 section.hero article.embla {
-  height: calc(100dvh - 8rem);
-  margin-top: -6.5rem;
+  height: calc(100dvh - 8rem - 6.5rem);
 }
 article.embla {
   display: flex;
@@ -124,8 +123,6 @@ article.embla .embla__container {
 section.hero article.embla .embla__controls {
   position: absolute;
   width: 100%;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 section.hero article.embla .embla__controls .embla__buttons {
